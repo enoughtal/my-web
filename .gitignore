@@ -13,7 +13,7 @@ dist-ssr
 *.local
 private
 fetch.js
-img/
+img
 
 # Editor directories and files
 .vscode/*
