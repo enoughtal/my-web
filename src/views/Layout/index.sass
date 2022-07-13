@@ -1,0 +1,61 @@
+.myapp-layout
+    min-height: 100vh
+    &-header
+        box-sizing: border-box
+        position: sticky
+        top: 0
+        z-index: 1
+        background: linear-gradient(30deg, #ffffff 0 10%, #dddddd 20% 40%, #bbbbbb 50% 70%, #dddddd 80% 90%, #eeeeee 100%)
+        height: 6vh
+        border-bottom: 1px solid gray
+        display: flex
+        align-items: center
+        &-logo
+            flex: 2
+            height: 100%
+            background-image: url('../../img/logo.png')
+            background-size: contain
+            background-repeat: no-repeat
+            background-position: 10%
+        &-text
+            flex: 4
+            >span
+                font-style: italic
+                cursor: pointer
+            code:nth-child(1)
+                color: brown
+            code:nth-child(2)
+                color: green
+            code:nth-child(3)
+                color: blue
+            code:nth-child(4)
+                color: chocolate
+        &-nav
+            flex: 8
+            font-size: 1rem
+            color: gray
+            >span
+                text-decoration: underline
+                margin: 0 1rem
+            &-link-active
+                font-weight: bold
+        &-user
+            flex: 2
+            margin: 0 1.5rem
+            &-registered
+                font-size: 1.2rem
+        &-sign
+            flex: 1
+            >span
+                text-decoration: underline
+                color: royalblue
+                cursor: pointer
+                &:hover
+                    font-weight: bold
+        &-theme
+            flex: 1
+            &-button
+                font-size: 1.5rem
+                cursor: pointer
+    &-main
+        min-height: 94vh

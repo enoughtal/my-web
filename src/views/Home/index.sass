@@ -1,0 +1,56 @@
+.myapp-home
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-auto-rows: auto
+    gap: 1.5rem
+    &-main-left
+        grid-column: 1
+        grid-row: 2
+        text-align: center
+        &-resume
+            position: sticky
+            top: 25vh
+            >img
+                width: 50px
+                border-radius: 25px
+            >div
+                font-size: 1.5rem
+                >a
+                    color: inherit
+                @at-root .myapp-home-main-left-resume-wx
+                    font-size: 1rem
+                    color: white
+                    background-color: rgba(0, 0, 0, 0.800)
+                    height: 2rem
+                    line-height: 2rem
+                    padding: 0 4px
+                    margin: 0 4px
+                    border-radius: 4px
+                    position: absolute
+    &-main-center
+        grid-column: 2 / 9
+        grid-row: 2
+        min-height: calc(94vh - 1.5rem)// 1.5rem是gap
+        padding: 0 1.5rem
+        h1
+            color: inherit
+        p, li
+            font-size: large
+        &-time
+            margin-bottom: 1rem
+    &-main-right
+        grid-column: 9 / 11
+        grid-row: 2
+        &-category-subject
+            font-size: 1.2rem
+            margin: 0.8rem 0
+            >span
+                cursor: pointer
+            @at-root .myapp-home-main-right-category-file
+                font-size: 1rem
+                margin: 0.4rem 0
+                >span:nth-child(1)
+                    display: inline-block
+                    width: 1.2rem
+                >span:nth-child(2)
+                    cursor: pointer
