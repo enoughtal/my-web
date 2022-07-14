@@ -3,7 +3,7 @@ import express from 'express'
 import session from 'express-session'
 import https from 'https'
 import path from 'path'
-import { api, cwd, GUEST_ID, isProduction, PORT, SESSION_TTL, tls, vite } from './global.js'
+import { cwd, GUEST_ID, isProduction, PORT, secret, SESSION_TTL, tls, token, vite } from './global.js'
 import initDb from './mongodb/index.js'
 import connectDb from './mongodb/session.js'
 import filesRoute from './routes/files/index.js'
@@ -26,7 +26,7 @@ async function createServer() {
     else {
         /* session middleware */
         app.use(session({
-            secret: api.st,
+            secret,
             store: new (connectDb(session))(undefined, SESSION_TTL),
             resave: false,
             saveUninitialized: false,
@@ -35,14 +35,6 @@ async function createServer() {
                 secure: true,
             }
         }))
-
-        /* initialize userId */
-        app.use((req, res, next) => {
-            if (req.session.userId === undefined) {
-                req.session.userId = GUEST_ID
-            }
-            next()
-        })
 
         /* compression */
         app.use(compression())
@@ -54,10 +46,22 @@ async function createServer() {
             { index: false }//http://expressjs.com/en/4x/api.html#express.static
         ))
 
-        /* routes */
-        usersRoute(app)
-        todosRoute(app)
-        filesRoute(app)
+        /* api routes */
+        const apiRouter = express.Router()
+        /* validate token and initialize userId */
+        apiRouter.use((req, res, next) => {
+            if (req.get('token') !== token) {
+                return res.end()
+            }
+            if (req.session.userId === undefined) {
+                req.session.userId = GUEST_ID
+            }
+            next()
+        })
+        usersRoute(apiRouter)
+        todosRoute(apiRouter)
+        filesRoute(apiRouter)
+        app.use('/api', apiRouter)
     }
 
     /* ssr */

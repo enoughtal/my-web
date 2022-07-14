@@ -1,5 +1,4 @@
 import debug from 'debug'
-import { api } from '../../global.js'
 import {
     operateDeleteMany,
     operateFindAndToArray,
@@ -7,10 +6,10 @@ import {
     operateUpsertMany
 } from '../../mongodb/index.js'
 
-const COLL_NAME = api.cs[2]
+const COLL_NAME = 'todos'
 
 /* 读取一个或多个todo */
-async function rs(req, res, next) {
+async function readTodos(req, res, next) {
     const filter = req.body
     const sort = { createdTime: -1 }
     try {
@@ -24,7 +23,7 @@ async function rs(req, res, next) {
 }
 
 /* 更新todos */
-async function us(req, res, next) {
+async function upsertTodos(req, res, next) {
     let { entities, ids, userId } = req.body
     entities = ids.map(id => {
         // eslint-disable-next-line no-unused-vars
@@ -45,6 +44,6 @@ async function us(req, res, next) {
 }
 
 export default function todosRoute(app) {
-    app.post('/' + api.rs, rs)
-    app.post('/' + api.us, us)
+    app.post('/readTodos', readTodos)
+    app.post('/upsertTodos', upsertTodos)
 }

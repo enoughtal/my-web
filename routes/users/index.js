@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import debug from 'debug'
 import { nanoid } from 'nanoid'
-import { api, GUEST_ID } from '../../global.js'
+import { GUEST_ID } from '../../global.js'
 import {
     operateFindAndToArray,
     operateFindOne,
@@ -10,10 +10,10 @@ import {
     operateUpdateOne
 } from '../../mongodb/index.js'
 
-const COLL_NAME = api.cs[1]
+const COLL_NAME = 'users'
 
 /* 读取全部users，存储在req */
-async function rs(req, res, next) {
+async function readUsers(req, res, next) {
     try {
         const users = await operateInCollection(operateFindAndToArray({}), COLL_NAME)
         req._existedUsers = users
@@ -29,7 +29,7 @@ async function rs(req, res, next) {
 }
 
 /* 注册 */
-async function rr(req, res, next) {
+async function register(req, res, next) {
     const userId = nanoid(5)
     const newUser = { ...req.body, userId }//preference也保存了
 
@@ -63,7 +63,7 @@ async function rr(req, res, next) {
 }
 
 /* 登录 */
-async function ln(req, res, next) {
+async function login(req, res, next) {
     const comingUser = req.body
     const index = req._existedUsers.map(user => user.username).indexOf(comingUser.username)
 
@@ -97,7 +97,7 @@ async function ln(req, res, next) {
 }
 
 /* 登出 */
-function lt(req, res, next) {
+function logout(req, res, next) {
     req.session.userId = GUEST_ID//登出就是把session的userId改成guest，不存储任何数据
     res.send({
         code: '31',
@@ -106,7 +106,7 @@ function lt(req, res, next) {
 }
 
 /* 获取用户 */
-async function gr(req, res, next) {
+async function getUser(req, res, next) {
     const userId = req.session.userId
 
     if (userId === GUEST_ID) {
@@ -131,7 +131,7 @@ async function gr(req, res, next) {
 }
 
 /* 保存个人设置 */
-async function se(req, res, next) {
+async function savePreference(req, res, next) {
     const { theme, element, userId } = req.body
     const filter = { userId }
 
@@ -161,7 +161,7 @@ async function se(req, res, next) {
 }
 
 /* 保存tictactoe的数据 */
-async function sc(req, res, next) {
+async function saveTic(req, res, next) {
     const { tic, userId } = req.body
     const filter = { userId }
     const doc = {
@@ -178,10 +178,10 @@ async function sc(req, res, next) {
 }
 
 export default function usersRoute(app) {
-    app.post('/' + api.rr, rs, rr)
-    app.post('/' + api.ln, rs, ln)
-    app.post('/' + api.lt, lt)
-    app.get('/' + api.gr, gr)
-    app.post('/' + api.se, se)
-    app.post('/' + api.sc, sc)
+    app.post('/register', readUsers, register)
+    app.post('/login', readUsers, login)
+    app.post('/logout', logout)
+    app.get('/getUser', getUser)
+    app.post('/savePreference', savePreference)
+    app.post('/saveTic', saveTic)
 }

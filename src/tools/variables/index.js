@@ -17,3 +17,4 @@ export const scoreValues = [2, 4, 20, 400]
 export const powerValues = [0, 10, 30, 100, 500]
 export const prizeEmojiArr = ['😄', '😜', '😎', '👑', '💎']
 export const prizeTextArr = ['-', '孤者', '勇者', '孤勇者', '孤独患者']
+export const token = '22/7/13/18/57'

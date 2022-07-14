@@ -5,8 +5,9 @@ export const isProduction = process.env.NODE_ENV === 'production'
 export const PORT = 443
 export const GUEST_ID = 'guest'
 export const SESSION_TTL = 60_000 * 60 * 24 * 7//ms
+export const secret = '22/7/12'
+export const token = '22/7/13/18/57'
 export const cwd = process.cwd()
-export const api = JSON.parse(fs.readFileSync(path.resolve(cwd, 'private/api.json'), 'utf8'))
 
 /* https */
 let tls
@@ -40,3 +41,4 @@ if (!isProduction) {
 }
 
 export { tls, vite }
+

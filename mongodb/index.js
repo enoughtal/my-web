@@ -1,10 +1,10 @@
 import debug from 'debug'
 import { MongoClient } from "mongodb"
-import { api, isProduction } from '../global.js'
+import { isProduction } from '../global.js'
 
-const DB_URL = api.mb
-const DB_NAME = isProduction ? api.ds[0] : api.ds[1]
-const COLLECTIONS = api.cs
+const DB_URL = 'mongodb://localhost:27017'
+const DB_NAME = isProduction ? 'myweb' : 'test'
+const COLLECTIONS = ["sessions", "users", "todos"]
 
 /* 连接数据库，执行数据库操作 */
 export async function operateInCollection(operator, collName, dbName = DB_NAME, dbUrl = DB_URL) {

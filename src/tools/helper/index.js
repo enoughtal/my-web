@@ -1,3 +1,5 @@
+import { token } from "../variables"
+
 /* 生成带主题的类名 */
 export function themeClass(theme, className = '') {
     return `${className}${theme === 'dark' ? ' dark-theme' : ''}`
@@ -18,7 +20,10 @@ export async function postData(url, data = {}, handle = 'json') {
         const res = await fetch(url, {
             method: 'POST',
             credentials: 'include',
-            headers: { 'Content-Type': 'application/json' },
+            headers: {
+                'Content-Type': 'application/json',
+                token
+            },
             body: JSON.stringify(data)
         })
 
@@ -41,7 +46,10 @@ export async function getData(url) {
     try {
         const res = await fetch(url, {
             method: 'GET',
-            credentials: 'include'
+            credentials: 'include',
+            headers: {
+                token
+            },
         })
 
         if (res.ok) {

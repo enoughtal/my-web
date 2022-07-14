@@ -1,9 +1,8 @@
 import { readdir, readFile, stat } from 'fs/promises'
 import path from 'path'
-import { api } from '../../global.js'
 
 /* 读取文件，返回文件内容和创建时间 */
-async function ge(req, res, next) {
+async function getFile(req, res, next) {
     const { subject, filename } = req.body
 
     try {
@@ -22,7 +21,7 @@ async function ge(req, res, next) {
 }
 
 /* 获取目录结构 */
-async function gy(req, res, next) {
+async function getCategory(req, res, next) {
     let result = []
 
     async function getFilesInDir(dir, result) {
@@ -55,6 +54,6 @@ async function gy(req, res, next) {
 }
 
 export default function filesRoute(app) {
-    app.post('/' + api.ge, ge)
-    app.get('/' + api.gy, gy)
+    app.post('/getFile', getFile)
+    app.get('/getCategory', getCategory)
 }

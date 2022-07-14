@@ -1,5 +1,4 @@
 import debug from 'debug'
-import { api } from '../global.js'
 import {
     operateDeleteMany,
     operateDocsCount,
@@ -15,7 +14,7 @@ export default function connectDb(session) {
     https://github.com/expressjs/session#session-store-implementation
     */
     return class MongodbStore extends Store {
-        constructor(collName = api.cs[0], ttl) {
+        constructor(collName = 'sessions', ttl) {
             super(collName)
             this.collName = collName
             this.ttl = ttl//millisecond

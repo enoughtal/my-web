@@ -12,8 +12,9 @@ dist
 dist-ssr
 *.local
 private
-fetch.js
 img
+variables
+global.js
 
 # Editor directories and files
 .vscode/*
