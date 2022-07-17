@@ -121,6 +121,16 @@ export default function Layout() {
                             Tic Tac Toe
                         </NavLink>
                     </span>
+                    {' | '}
+                    <span>
+                        <NavLink to='/about'
+                            className={({ isActive }) =>
+                                isActive ? 'myapp-layout-header-nav-link-active' : undefined
+                            }
+                        >
+                            About
+                        </NavLink>
+                    </span>
                 </nav>
 
                 <div className='myapp-layout-header-user'>

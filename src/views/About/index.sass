@@ -1,0 +1,60 @@
+.myapp-about
+    display: grid
+    grid-template-columns: repeat(10, 1fr)
+    grid-auto-rows: auto
+    gap: 1.5rem
+    &-main-left
+        grid-column: 1 / 3
+        grid-row: 2
+        text-align: center
+        &-resume
+            position: sticky
+            top: 25vh
+            >img
+                width: 50px
+                border-radius: 25px
+            >div
+                font-size: 1.5rem
+                >a
+                    color: inherit
+                @at-root .myapp-about-main-left-resume-wx
+                    font-size: 1rem
+                    color: white
+                    background-color: rgba(0, 0, 0, 0.800)
+                    height: 2rem
+                    line-height: 2rem
+                    padding: 0 4px
+                    margin: 0 4px
+                    border-radius: 4px
+                    position: absolute
+    &-main-center
+        grid-column: 3 / 10
+        grid-row: 2
+        min-height: calc(94vh - 1.5rem)// 1.5rem是gap
+        padding: 0 1.5rem
+        &-headline
+            font-size: 1.2rem
+            border-bottom: 2px solid gray
+        &-project
+            display: flex
+            flex-direction: column
+            margin: 1.5rem 0
+            padding-bottom: 1.5rem
+            border-bottom: 1px solid gray
+            &-title
+                font-size: 1.2rem
+            &-subtitle
+                display: flex
+                &-code
+                    margin: 0 2rem
+            &-content
+                margin-top: 0.3rem
+                &-libraries
+                    margin: 0.5rem 0
+                    &-tag
+                        border: 1px dashed gray
+                        border-radius: 5px
+                        padding: 0.1rem 0.2rem
+                        margin-right: 0.5rem
+                &-more
+                    margin-top: 0.8rem

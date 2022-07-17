@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../store/files'
 import Category from './Category'
 import './index.sass'
-import Resume from './Resume'
 
 export default function Home() {
     const dispatch = useDispatch()
@@ -17,9 +16,6 @@ export default function Home() {
 
     return (
         <div className='myapp-home'>
-            <div className='myapp-home-main-left'>
-                <Resume />
-            </div>
             <div className='myapp-home-main-center'>
                 <ReactMarkdown>
                     {title}
@@ -31,6 +27,7 @@ export default function Home() {
                     {content}
                 </ReactMarkdown>
             </div>
+
             <div className='myapp-home-main-right'>
                 <Category />
             </div>

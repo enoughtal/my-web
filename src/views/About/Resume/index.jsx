@@ -6,13 +6,13 @@ import '../index.sass'
 export default function Resume() {
     const [showWx, setShowWx] = useState(false)
     return (
-        <div className='myapp-home-main-left-resume'>
+        <div className='myapp-about-main-left-resume'>
             <img src={avatar}
                 alt='avatar'
             />
 
             <div>
-                <a href='https://github.com/enoughtal'
+                <a href='https://github.com/enoughtallisymcrift'
                     target='_blank'
                     rel='noreferrer'
                 >
@@ -25,7 +25,7 @@ export default function Resume() {
                     <WechatOutlined />
                 </span>
                 {showWx &&
-                <span className='myapp-home-main-left-resume-wx'>
+                <span className='myapp-about-main-left-resume-wx'>
                     yzchendan86
                 </span>
                 }

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "my-web",
+        "description": "个人主页",
+        "code": "https://github.com/enoughtallisymcrift/my-web",
+        "libraries": [
+            "react",
+            "redux",
+            "react router",
+            "node",
+            "express",
+            "mongodb",
+            "vite",
+            "antd"
+        ],
+        "details": "这个项目就是本网站，一个使用“MERN”的全栈开发。前端框架使用react，状态管理使用redux toolkit，页面路由使用react router，组件使用了ant design。后端使用node的express框架，数据库使用mongodb官方的node库，云服务器为1核2G windows系统。开发环境使用vite搭建，打包也使用vite。本网站的应用app和数据库部署在同一个服务器上，页面路由使用了ssr，网络协议使用了https，具有简单的用户系统，能够保存cookie。"
+    },
+    {
+        "name": "anArduinoProject",
+        "description": "体育中考50米跑测试仪硬件程序",
+        "code": "https://github.com/enoughtallisymcrift/anArduinoProject",
+        "libraries": [
+            "arduino",
+            "atmega8L",
+            "esp8266",
+            "nrf24l01"
+        ],
+        "details": "这是一个嵌入式软件"
+    }
+]
