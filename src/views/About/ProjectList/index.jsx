@@ -31,7 +31,7 @@ export default function ProjectList({ list }) {
                             target='_blank'
                             rel='noreferrer'
                         >
-                            源码地址
+                            仓库
                         </a>
                     </div>
                 </div>

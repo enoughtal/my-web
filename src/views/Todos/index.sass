@@ -4,21 +4,21 @@
     top: 6vh
     z-index: 1
     background-color: white
+    min-width: 70rem
     @at-root .myapp-todos-form
         display: flex
         align-items: baseline
-        justify-content: center
         height: 6vh
         &-element
             width: 3rem
             font-size: 2rem
-            margin: 0 2vw
+            margin: 0 2rem
             text-align: center
             cursor: pointer
         &-text
             width: 9rem
             font-size: 2rem
-            margin-right: 8vw
+            margin-right: 6rem
             color: tan
             font-weight: bold
             text-align: center
@@ -26,16 +26,15 @@
             span
                 font-size: 1.2rem
         &-input
-            width: 80vw
-            display: flex
-            justify-content: left
             &-content
-                width: 30vw
+                width: 30rem
             &-rank
-                width: 12vw
+                width: 10rem
             &-submit
-                width: 4vw
-                margin: 0 2vw
+                text-align: center
+                width: 5rem
+.myapp-todos-table-container
+    min-width: 70rem
 #myapp-todos-table
     &-header-cell
         font-size: 1.2rem

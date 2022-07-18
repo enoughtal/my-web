@@ -12,7 +12,7 @@ export default function Todos() {
             <div className={themeClass(theme, 'myapp-todos-form-container')}>
                 <TodosForm />
             </div>
-            <div className={themeClass(theme)}>
+            <div className={themeClass(theme, 'myapp-todos-table-container')}>
                 <TodosTable />
             </div>
         </>

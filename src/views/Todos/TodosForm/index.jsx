@@ -88,7 +88,7 @@ export default function TodosForm() {
                     name='content'
                     className='myapp-todos-form-input-content'
                 >
-                    <Input placeholder='请输入要做的事（最多24个字）' autoFocus/>
+                    <Input placeholder='请输入要做的事' autoFocus/>
                 </Form.Item>
 
                 <Form.Item label={<span className={themeClass(theme)}>优先级</span>}
@@ -99,10 +99,8 @@ export default function TodosForm() {
                     {rankSelect}
                 </Form.Item>
 
-                <Form.Item>
-                    <button type='submit'
-                        className='myapp-todos-form-input-submit'
-                    >
+                <Form.Item className='myapp-todos-form-input-submit'>
+                    <button type='submit'>
                         新建
                     </button>
                 </Form.Item>

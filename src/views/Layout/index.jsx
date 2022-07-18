@@ -9,6 +9,11 @@ import { useDebounce, useLock } from '../../tools/hooks'
 import { DELAY_TIME, GUEST_ID } from '../../tools/variables'
 import './index.sass'
 
+message.config({
+    top: 100,
+    duration: 1
+})
+
 export default function Layout() {
     const theme = useSelector(state => state.user.preference.theme)
     const title = useSelector(selectTitle)
@@ -133,17 +138,19 @@ export default function Layout() {
                     </span>
                 </nav>
 
+                <div className='myapp-layout-header-theme'>
+                    {themeButton}
+                </div>
+
                 <div className='myapp-layout-header-user'>
                     {user}
                 </div>
+
 
                 <div className='myapp-layout-header-sign'>
                     {signButton}
                 </div>
 
-                <div className='myapp-layout-header-theme'>
-                    {themeButton}
-                </div>
             </header>
 
             <main className={themeClass(theme, 'myapp-layout-main')}>

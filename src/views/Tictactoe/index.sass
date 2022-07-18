@@ -8,8 +8,11 @@
     &-main
         display: flex
         margin-top: 3rem
+        @media screen and (max-width: 750px), screen and (orientation: portrait)
+            flex-direction: column
         &-left-container
             flex: 1
+            margin-bottom: 4rem
             @at-root .myapp-tic-main-left
                 display: flex
                 flex-direction: column
@@ -115,6 +118,9 @@
         &-right-container
             flex: 1
             text-align: center
+            margin-top: 2rem
+            @media screen and (max-width: 1000px) and (min-width: 750px)
+                display: none
             @at-root .myapp-tic-main-right
                 display: flex
                 justify-content: center
