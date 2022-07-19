@@ -88,7 +88,7 @@ export default function TodosForm() {
                     name='content'
                     className='myapp-todos-form-input-content'
                 >
-                    <Input placeholder='请输入要做的事' autoFocus/>
+                    <Input placeholder='请输入要做的事'/>
                 </Form.Item>
 
                 <Form.Item label={<span className={themeClass(theme)}>优先级</span>}
