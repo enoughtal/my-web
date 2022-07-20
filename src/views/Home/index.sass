@@ -1,3 +1,4 @@
+@use '../../index.sass' as *
 .myapp-home
     display: grid
     grid-template-columns: repeat(10, 1fr)
@@ -17,7 +18,7 @@
     &-main-right
         grid-column: 9 / 11
         grid-row: 2
-        @media screen and (max-width: 750px)
+        @media screen and (max-width: $breakpoint-small)
             display: none
         &-category-subject
             font-size: 1.2rem

@@ -1,3 +1,4 @@
+@use '../../index.sass' as *
 .myapp-tic
     &-header
         text-align: center
@@ -8,7 +9,7 @@
     &-main
         display: flex
         margin-top: 3rem
-        @media screen and (max-width: 750px), screen and (orientation: portrait)
+        @media screen and (max-width: $breakpoint-small), screen and (orientation: portrait)
             flex-direction: column
         &-left-container
             flex: 1

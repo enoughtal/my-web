@@ -1,5 +1,5 @@
 import { message } from 'antd'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
@@ -22,6 +22,7 @@ export default function Layout() {
     const username = useSelector(state => state.user.username)
     const dirtyTodos = useSelector(selectDirtyTodos)
     const notice = useSelector(state => state.notice)
+    const [dropdown, setDropdown] = useState(false)
 
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -98,44 +99,108 @@ export default function Layout() {
     return (
         <div className='myapp-layout'>
             <header className='myapp-layout-header'>
-                <div className='myapp-layout-header-logo' />
+                <div className='myapp-layout-header-logo'
+                    onClick={() => navigate('/')}
+                />
 
-                <div className='myapp-layout-header-text'>
+                {/*<div className='myapp-layout-header-text'>
                     <span onClick={() => navigate('/')}>
                         &lt;<code>he</code>苏安<code>guo</code>土著<code>de</code>部落<code>ge</code> /&gt;
                     </span>
-                </div>
+                </div>*/}
 
                 <nav className='myapp-layout-header-nav'>
-                    <span>
-                        <NavLink to='/todos'
-                            className={({ isActive }) =>
-                                isActive ? 'myapp-layout-header-nav-link-active' : undefined
-                            }
+                    <div className='myapp-layout-header-nav-dropdown'
+                        onMouseLeave={() => setDropdown(false)}
+                    >
+                        {/*<UnorderedListOutlined onClick={() => setDropdown(true)}
+                            className='myapp-layout-header-nav-dropdown-button'
+                        />*/}
+                        <div onClick={() => setDropdown(true)}
+                            className='myapp-layout-header-nav-dropdown-button'
                         >
-                            TO DO
-                        </NavLink>
-                    </span>
-                    {' | '}
-                    <span>
-                        <NavLink to='/tictactoe'
-                            className={({ isActive }) =>
-                                isActive ? 'myapp-layout-header-nav-link-active' : undefined
-                            }
-                        >
-                            Tic Tac Toe
-                        </NavLink>
-                    </span>
-                    {' | '}
-                    <span>
-                        <NavLink to='/about'
-                            className={({ isActive }) =>
-                                isActive ? 'myapp-layout-header-nav-link-active' : undefined
-                            }
-                        >
-                            About
-                        </NavLink>
-                    </span>
+                            菜单
+                        </div>
+                        {dropdown &&
+                        <div className='myapp-layout-header-nav-dropdown-vertical'>
+                            <div>
+                                <NavLink to='/todos'
+                                    className={({ isActive }) =>
+                                        isActive
+                                        ? 'myapp-layout-header-nav-dropdown-vertical-active'
+                                        : undefined}
+                                >
+                                    TO DO
+                                </NavLink>
+                            </div>
+                            <div>
+                                <NavLink to='/tictactoe'
+                                    className={({ isActive }) =>
+                                        isActive
+                                        ? 'myapp-layout-header-nav-dropdown-vertical-active'
+                                        : undefined}
+                                >
+                                    Tic Tac Toe
+                                </NavLink>
+                            </div>
+                            <div>
+                                <NavLink to='/about'
+                                    className={({ isActive }) =>
+                                        isActive
+                                        ? 'myapp-layout-header-nav-dropdown-vertical-active'
+                                        : undefined}
+                                >
+                                    About
+                                </NavLink>
+                            </div>
+                        </div>}
+                    </div>
+
+                    <div className='myapp-layout-header-nav-horizontal'>
+                        <span>
+                            <NavLink to='/'
+                                className={({ isActive }) =>
+                                    isActive
+                                    ? 'myapp-layout-header-nav-horizontal-active'
+                                    : undefined}
+                            >
+                                Blog
+                            </NavLink>
+                        </span>
+                        {' | '}
+                        <span>
+                            <NavLink to='/todos'
+                                className={({ isActive }) =>
+                                    isActive
+                                    ? 'myapp-layout-header-nav-horizontal-active'
+                                    : undefined}
+                            >
+                                TO DO
+                            </NavLink>
+                        </span>
+                        {' | '}
+                        <span>
+                            <NavLink to='/tictactoe'
+                                className={({ isActive }) =>
+                                    isActive
+                                    ? 'myapp-layout-header-nav-horizontal-active'
+                                    : undefined}
+                            >
+                                Tic Tac Toe
+                            </NavLink>
+                        </span>
+                        {' | '}
+                        <span>
+                            <NavLink to='/about'
+                                className={({ isActive }) =>
+                                    isActive
+                                    ? 'myapp-layout-header-nav-horizontal-active'
+                                    : undefined}
+                            >
+                                About
+                            </NavLink>
+                        </span>
+                    </div>
                 </nav>
 
                 <div className='myapp-layout-header-theme'>

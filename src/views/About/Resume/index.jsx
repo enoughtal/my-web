@@ -5,6 +5,7 @@ import '../index.sass'
 
 export default function Resume() {
     const [showWx, setShowWx] = useState(false)
+    let timer
     return (
         <div className='myapp-about-main-left-resume'>
             <img src={avatar}
@@ -19,16 +20,15 @@ export default function Resume() {
                     <GithubOutlined />
                 </a>
                 &nbsp;&nbsp;
-                <span onMouseOver={() => setShowWx(true)}
-                    onMouseOut={() => setShowWx(false)}
+                <span onMouseOver={() => { clearTimeout(timer); setShowWx(true) }}
+                    onMouseOut={() => timer = setTimeout(() => setShowWx(false), 1000)}
                 >
                     <WechatOutlined />
+                    {showWx &&
+                    <span className='myapp-about-main-left-resume-wx'>
+                        yzchendan86
+                    </span>}
                 </span>
-                {showWx &&
-                <span className='myapp-about-main-left-resume-wx'>
-                    yzchendan86
-                </span>
-                }
             </div>
         </div>
     )
