@@ -95,7 +95,7 @@ export default function Layout() {
         >
             {theme === 'dark'
                 ? '☀️'
-                : '🌙'}
+                : '🌑'}
         </span>
 
     return (

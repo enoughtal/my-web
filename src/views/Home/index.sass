@@ -2,25 +2,35 @@
 .myapp-home
     font-size: calc(0.5rem + 1vw)
     display: grid
-    grid-template-columns: 1fr 6fr 2fr
-    @media screen and (max-width: $breakpoint-small)
-        grid-template-columns: 1fr 8fr 1fr
+    grid-template-columns: 1fr 6fr minmax(20ch, 2fr)
     gap: 1.5rem
+    @media screen and (max-width: $breakpoint-small)
+        grid-template-columns: 1fr 1fr 1fr
+        gap: 0.5rem
     &-main-center
         grid-column: 2
-        & *
-            font-size: inherit
-        &-title
-            font-size: 1.5em
-        &-time
-            font-size: 0.8em
-            margin: 1rem 0
+        &-catalog
+            @media screen and (min-width: $breakpoint-small)
+                display: none
+            padding: 1rem 0
+            width: fit-content
+            &-button
+                font-size: 1.2rem
+                text-decoration: underline
+            &-files
+                padding: 0.2rem 1rem
+                background-color: #9999996f
+        &-content
+            & *
+                font-size: inherit
+            &-title
+                font-size: 1.5em
+            &-time
+                font-size: 0.8em
+                margin: 1rem 0
     &-main-right
-        @media screen and (min-width: $breakpoint-small)
-            grid-column: 3
         @media screen and (max-width: $breakpoint-small)
-            grid-column: 2
-            grid-row-start: -1
+            display: none
         &-category-subject
             font-size: 1.2rem
             margin: 0.8rem 0
