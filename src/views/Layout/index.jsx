@@ -3,6 +3,7 @@ import { message } from 'antd'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import logo from '../../img/logo.png'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import userSlice, { getUserFromSession, logout, savePreference, saveTic, selectTitle } from '../../store/user'
 import { themeClass } from '../../tools/helper'
@@ -103,6 +104,10 @@ export default function Layout() {
                 <div className='myapp-layout-header-logo'
                     onClick={() => navigate('/')}
                 >
+                    <img src={logo}
+                        alt='logo'
+                        width={100}
+                    />
                 </div>
 
                 <nav className='myapp-layout-header-nav'>
