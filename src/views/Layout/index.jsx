@@ -106,7 +106,6 @@ export default function Layout() {
                 >
                     <img src={logo}
                         alt='logo'
-                        width={100}
                     />
                 </div>
 

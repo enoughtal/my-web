@@ -2,7 +2,9 @@
 .myapp-home
     font-size: calc(0.5rem + 1vw)
     display: grid
-    grid-template-columns: 1fr minmax(60ch, 6fr) 2fr
+    grid-template-columns: 1fr 6fr 2fr
+    @media screen and (max-width: $breakpoint-small)
+        grid-template-columns: 1fr 8fr 1fr
     gap: 1.5rem
     &-main-center
         grid-column: 2
