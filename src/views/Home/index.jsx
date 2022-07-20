@@ -17,12 +17,14 @@ export default function Home() {
     return (
         <div className='myapp-home'>
             <div className='myapp-home-main-center'>
-                <ReactMarkdown>
+                <div className='myapp-home-main-center-title'>
                     {title}
-                </ReactMarkdown>
+                </div>
+
                 <div className='myapp-home-main-center-time'>
                     {time}
                 </div>
+
                 <ReactMarkdown>
                     {content}
                 </ReactMarkdown>

@@ -1,3 +1,4 @@
+import { UnorderedListOutlined } from '@ant-design/icons'
 import { message } from 'antd'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -81,7 +82,7 @@ export default function Layout() {
 
     const user = !isAuth
         ? <span>{username}</span>
-        : <span className='myapp-layout-header-user-registered'>{`${title[0]} ${username}`}</span>
+        : <span className='myapp-layout-header-user-registered'>{`${username} ${title[0]}`}</span>
 
     const signButton = !isAuth
         ? <span onClick={navLogin}>登录</span>
@@ -93,7 +94,7 @@ export default function Layout() {
         >
             {theme === 'dark'
                 ? '☀️'
-                : '🌑'}
+                : '🌙'}
         </span>
 
     return (
@@ -103,26 +104,25 @@ export default function Layout() {
                     onClick={() => navigate('/')}
                 />
 
-                {/*<div className='myapp-layout-header-text'>
-                    <span onClick={() => navigate('/')}>
-                        &lt;<code>he</code>苏安<code>guo</code>土著<code>de</code>部落<code>ge</code> /&gt;
-                    </span>
-                </div>*/}
-
                 <nav className='myapp-layout-header-nav'>
                     <div className='myapp-layout-header-nav-dropdown'
                         onMouseLeave={() => setDropdown(false)}
                     >
-                        {/*<UnorderedListOutlined onClick={() => setDropdown(true)}
-                            className='myapp-layout-header-nav-dropdown-button'
-                        />*/}
-                        <div onClick={() => setDropdown(true)}
-                            className='myapp-layout-header-nav-dropdown-button'
-                        >
-                            菜单
+                        <div className='myapp-layout-header-nav-dropdown-button'>
+                            <UnorderedListOutlined onClick={() => setDropdown(true)} />
                         </div>
                         {dropdown &&
                         <div className='myapp-layout-header-nav-dropdown-vertical'>
+                            <div>
+                                <NavLink to='/'
+                                    className={({ isActive }) =>
+                                        isActive
+                                        ? 'myapp-layout-header-nav-horizontal-active'
+                                        : undefined}
+                                >
+                                    Blog
+                                </NavLink>
+                            </div>
                             <div>
                                 <NavLink to='/todos'
                                     className={({ isActive }) =>
