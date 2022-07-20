@@ -102,7 +102,8 @@ export default function Layout() {
             <header className='myapp-layout-header'>
                 <div className='myapp-layout-header-logo'
                     onClick={() => navigate('/')}
-                />
+                >
+                </div>
 
                 <nav className='myapp-layout-header-nav'>
                     <div className='myapp-layout-header-nav-dropdown'

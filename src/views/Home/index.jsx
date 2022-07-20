@@ -18,7 +18,7 @@ export default function Home() {
         <div className='myapp-home'>
             <div className='myapp-home-main-center'>
                 <div className='myapp-home-main-center-title'>
-                    {title}
+                    {title.slice(title.indexOf(' '))}
                 </div>
 
                 <div className='myapp-home-main-center-time'>
