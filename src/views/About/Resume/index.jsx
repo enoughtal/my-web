@@ -10,25 +10,26 @@ export default function Resume() {
         <div className='myapp-about-main-left-resume'>
             <img src={avatar}
                 alt='avatar'
+                width={60}
             />
 
-            <div>
+            <div className='myapp-about-main-left-resume-github'>
                 <a href='https://github.com/enoughtallisymcrift'
                     target='_blank'
                     rel='noreferrer'
                 >
                     <GithubOutlined />
                 </a>
-                &nbsp;&nbsp;
-                <span onMouseOver={() => { clearTimeout(timer); setShowWx(true) }}
-                    onMouseOut={() => timer = setTimeout(() => setShowWx(false), 1000)}
-                >
-                    <WechatOutlined />
-                    {showWx &&
-                    <span className='myapp-about-main-left-resume-wx'>
-                        yzchendan86
-                    </span>}
-                </span>
+            </div>
+
+            <div onMouseOver={() => { clearTimeout(timer); setShowWx(true) }}
+                onMouseOut={() => timer = setTimeout(() => setShowWx(false), 1000)}
+            >
+                <WechatOutlined />
+                {showWx &&
+                <span className='myapp-about-main-left-resume-wx'>
+                    yzchendan86
+                </span>}
             </div>
         </div>
     )

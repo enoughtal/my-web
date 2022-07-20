@@ -12,8 +12,9 @@ export default function About() {
 
             <div className="myapp-about-main-center">
                 <div className="myapp-about-main-center-headline">
-                    个人项目：
+                    个人项目
                 </div>
+                <hr />
                 <ProjectList list={list}/>
             </div>
         </div>
