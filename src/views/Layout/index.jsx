@@ -1,4 +1,3 @@
-import { UnorderedListOutlined } from '@ant-design/icons'
 import { message } from 'antd'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -113,8 +112,10 @@ export default function Layout() {
                     <div className='myapp-layout-header-nav-dropdown'
                         onMouseLeave={() => setDropdown(false)}
                     >
-                        <div className='myapp-layout-header-nav-dropdown-button'>
-                            <UnorderedListOutlined onClick={() => setDropdown(true)} />
+                        <div className='myapp-layout-header-nav-dropdown-button'
+                            onClick={() => setDropdown(true)}
+                        >
+                            Menu
                         </div>
                         {dropdown &&
                         <div className='myapp-layout-header-nav-dropdown-vertical'>

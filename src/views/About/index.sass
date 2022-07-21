@@ -1,17 +1,20 @@
 .myapp-about
     font-size: calc(0.5rem + 1vw)
     display: flex
-    gap: 2rem
+    gap: 1rem
     background-color: inherit
     &-main-left
-        flex: 1
-        text-align: center
+        flex: 1 1
         margin-left: 2rem
         &-resume
             position: sticky
             top: 20vh
+            margin: 0 auto
+            text-align: center
             font-size: 1.5rem
+            width: 80px
             >img
+                max-width: 100%
                 border-radius: 20px
                 margin-bottom: 2rem
             &-github
