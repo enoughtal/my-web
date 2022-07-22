@@ -2,10 +2,13 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { themeClass } from '../../../tools/helper'
 import '../index.sass'
+import GameScore from './GameScore'
+import ScoreText from './ScoreText'
 
 export default function LeftPanel({ mode, setMode, level, setLevel, end, start }) {
     const theme = useSelector(state => state.user.preference.theme)
     const [isPractice, setIsPractice] = useState(false)
+    const [dropDown, setDropDown] = useState(false)
 
     /* 提交mode */
     const inputMode = (e) => {
@@ -27,23 +30,32 @@ export default function LeftPanel({ mode, setMode, level, setLevel, end, start }
     }
 
     const levelRadioClassName =
-        'myapp-tic-main-left-radio'
+        'myapp-tic-main-left-item'
         + (isPractice ? ' myapp-hidden' : '')
 
     return (
         <div className='myapp-tic-main-left'>
-            <div className='myapp-tic-main-left-radio'>
+            <div className='myapp-tic-main-right-container'>
+                <GameScore />
+            </div>
+
+            <div className='myapp-tic-main-left-item'>
                 <span>
                     -游戏说明-
                 </span>
-                <div>
-                    <span className='myapp-tic-main-left-radio-text'>
-                        俗称&#39;井字棋&#39;<br />先手执⚔️,&nbsp;后手执🛡️<br />三子连成一线(直或斜)即获胜
+                <div className='myapp-tic-main-left-item-explain'>
+                    俗称&#39;井字棋&#39;,&nbsp;&nbsp;三子连成一线(直或斜)即获胜.<br />先手执⚔️,&nbsp;后手执🛡️.&nbsp;&nbsp;
+                    <span onClick={() => setDropDown(state => !state)}>
+                        得分说明
                     </span>
+                    {dropDown &&
+                    <div className='myapp-tic-main-left-item-explain-score'>
+                        <ScoreText/>
+                    </div>}
                 </div>
             </div>
 
-            <div className='myapp-tic-main-left-radio'>
+            <div className='myapp-tic-main-left-item'>
                 <span>-选择棋子-</span>
                 <div>
                     <label>

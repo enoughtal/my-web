@@ -8,7 +8,6 @@ import { GUEST_ID } from '../../tools/variables'
 import GameBoard from './GameBoard'
 import './index.sass'
 import LeftPanel from './LeftPanel'
-import RightPanel from './RightPanel'
 
 const cheatPattern = [
     [1, 2, 2],
@@ -135,11 +134,9 @@ export default function Tictactoe() {
     }, [level, mode])
 
     return (
-        <div>
+        <div className='myapp-tic'>
             <div className='myapp-tic-header'>
-                <span>
-                    ⚔️tic-tac-toe🛡️
-                </span>
+                ⚔️tic-tac-toe🛡️
             </div>
 
             <div className='myapp-tic-main'>
@@ -161,10 +158,6 @@ export default function Tictactoe() {
                         goToStep={goToStep}
                         winCoordinates={winCoordinates}
                     />
-                </div>
-
-                <div className='myapp-tic-main-right-container'>
-                    <RightPanel />
                 </div>
             </div>
         </div>

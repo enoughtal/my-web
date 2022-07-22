@@ -5,9 +5,8 @@ import { saveTic, selectNotLoseRate, selectPower, selectTitle } from '../../../s
 import { useBlocker, useChanged } from '../../../tools/hooks'
 import { GUEST_ID } from '../../../tools/variables'
 import '../index.sass'
-import ExplainText from './ExplainText.jsx'
 
-export default function RightPanel() {
+export default function GameScore() {
     const tic = useSelector(state => state.user.tic)
     const userId = useSelector(state => state.user.userId)
     const power = useSelector(selectPower)
@@ -49,10 +48,8 @@ export default function RightPanel() {
     }, [save, whenSave])
 
     const login =
-        <p>
-            <span className='myapp-tic-main-right-login'
-                onClick={() => navigate('/login', { state: { from: location } })}
-            >
+        <p className='myapp-tic-main-right-login'>
+            <span onClick={() => navigate('/login', { state: { from: location } })}>
                 登录
             </span>
             以显示更多
@@ -62,9 +59,9 @@ export default function RightPanel() {
         <div className='myapp-tic-main-right'>
             <div className='myapp-tic-main-right-score'>
                 <div>
-                    <div>战力：</div>
-                    <div>称号：</div>
-                    <div>不败率：</div>
+                    <div>战力：&nbsp;&nbsp;&nbsp;</div>
+                    <div>称号：&nbsp;&nbsp;&nbsp;</div>
+                    <div>不败率：&nbsp;&nbsp;&nbsp;</div>
                 </div>
                 <div>
                     <div>{power}</div>
@@ -72,9 +69,9 @@ export default function RightPanel() {
                     <div>{notLoseRate}</div>
                 </div>
             </div>
-            <div>
+            {/*<div>
                 <ExplainText />
-            </div>
+            </div>*/}
         </div>
 
     return userId !== GUEST_ID ? score : login
