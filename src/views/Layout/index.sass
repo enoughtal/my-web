@@ -1,10 +1,9 @@
 @use '../../index.sass' as *
 .myapp-layout
-    height: 100vh
+    min-height: 100vh
     display: grid
     grid-template-rows: auto 1fr
     &-header
-        box-sizing: border-box
         position: sticky
         top: 0
         z-index: 1
@@ -64,5 +63,5 @@
                 &:hover
                     font-weight: bold
     &-main
-        padding-top: 1rem
+        //padding-top: 1rem
         background-color: #ffffff

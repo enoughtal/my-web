@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { themeClass } from '../../../tools/helper'
-import '../index.sass'
+import { themeClass } from '../../../../tools/helper'
+import './index.sass'
 
-export default function History({ currentStep, goToStep }) {
+export default function GameHistory({ currentStep, goToStep }) {
     const theme = useSelector(state => state.user.preference.theme)
     const [historyStep, setHistoryStep] = useState(0)//用来改变历史按钮的css类名
 
@@ -17,7 +17,7 @@ export default function History({ currentStep, goToStep }) {
     }
     const reset =
         <button type='button'
-            className={themeClass(theme, 'myapp-tic-main-center-history-reset')}
+            className={themeClass(theme, 'myapp-comp-gamehistory-reset')}
             onClick={() => handleClick(0)}
         >
             重新开始
@@ -26,14 +26,14 @@ export default function History({ currentStep, goToStep }) {
     const history =
         Array(9).fill().map((_, index) => {
             const step = index + 1
-            let className = themeClass(theme, 'myapp-tic-main-center-history-button')
+            let className = themeClass(theme, 'myapp-comp-gamehistory-button')
             className +=
                 step > currentStep
-                    ? ' myapp-tic-main-center-history-button-hidden'
-                    : ' myapp-tic-main-center-history-button-visible'
+                    ? ' myapp-comp-gamehistory-button-hidden'
+                    : ' myapp-comp-gamehistory-button-visible'
             className +=
                 step === historyStep
-                    ? ' myapp-tic-main-center-history-button-select'
+                    ? ' myapp-comp-gamehistory-button-select'
                     : ''
 
             return (
@@ -48,7 +48,7 @@ export default function History({ currentStep, goToStep }) {
         })
 
     return (
-        <div className='myapp-tic-main-center-history'>
+        <div className='myapp-comp-gamehistory'>
             {reset}
             <div>
                 {history}

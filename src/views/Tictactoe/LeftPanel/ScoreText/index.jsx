@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { powerValues, scoreValues } from '../../../tools/variables'
-import './_scoreText.sass'
+import { powerValues, scoreValues } from '../../../../tools/variables'
+import './index.sass'
 
 export default function ScoreText() {
     const [cheat, setCheat] = useState(false)

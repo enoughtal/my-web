@@ -1,27 +1,42 @@
-import { Form, Input, message } from 'antd'
-import { useEffect, useState } from 'react'
+import { message } from 'antd'
+import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import { login, register } from '../../store/user'
-import { themeClass } from '../../tools/helper'
 import { useLock } from '../../tools/hooks'
 import { GUEST_ID } from '../../tools/variables'
 import './index.sass'
 
 export default function Login() {
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPass, setConfirmPass] = useState('')
     const [isRegister, setIsRegister] = useState(false)
+
+    const usernameRef = useRef()
+    const passwordRef = useRef()
+    const confirmPassRef = useRef()
+
     const userId = useSelector(state => state.user.userId)
     const currentUsername = useSelector(state => state.user.username)
-    const theme = useSelector(state => state.user.preference.theme)
     const preference = useSelector(state => state.user.preference)
     const dirtyTodos = useSelector(selectDirtyTodos)
 
     const dispatch = useDispatch()
     const location = useLocation()
     const navigate = useNavigate()
-    const [form] = Form.useForm()
     const [locked, lock] = useLock(1000)
+
+    const handleUsernameChange = (e) => {
+        setUsername(e.target.value)
+        usernameRef.current.checkValidity()
+    }
+
+    const handlePasswordChange = (e) => {
+        setPassword(e.target.value)
+        passwordRef.current.checkValidity()
+    }
 
     /* 登录之后保存一次todos，并且自动跳转到上一个页面 */
     useEffect(() => {
@@ -39,11 +54,10 @@ export default function Login() {
     }, [dirtyTodos, dispatch, location.state?.from?.pathname, navigate, userId])
 
     /* 提交表单 */
-    const handleFinish = (inputs) => {
+    const handleSubmit = (e) => {
+        e.preventDefault()
         if (!locked) {
             lock()
-
-            const { username, password, confirmPass } = inputs
             const user = { username, password, preference }
 
             if (username === currentUsername) {
@@ -65,12 +79,16 @@ export default function Login() {
 
     /* 成功之后重置表单 */
     useEffect(() => {
-        form.resetFields()
-    }, [form, userId])
+        setUsername('')
+        setPassword('')
+        setConfirmPass('')
+    }, [userId])
 
     /* 观察confirmPass的值，让按钮在登录和注册之间切换 */
-    const handleValuesChange = (val) => {
-        if (val.confirmPass) {
+    const handleConfirmPassChange = (e) => {
+        setConfirmPass(e.target.value)
+
+        if (e.target.value !== '') {
             setIsRegister(true)
         }
         else {
@@ -80,57 +98,63 @@ export default function Login() {
 
     return (
         <div className='myapp-login'>
-            <Form labelCol={{ span: 3, offset: 7 }}
-                wrapperCol={{ span: 3 }}
-                colon={false}
-                form={form}
-                onFinish={handleFinish}
-                onValuesChange={handleValuesChange}
-            >
-                <Form.Item wrapperCol={{ offset: 10 }}
-                    colon={false}
-                >
-                    <h3 className={themeClass(theme)}>登录或注册</h3>
-                </Form.Item>
+            <div className='myapp-login-header'>
+                登录或注册
+            </div>
 
-                <Form.Item label={<span className={themeClass(theme)}>用户名</span>}
-                    name='username'
-                    rules={[
-                        {
-                            pattern: /^[A-Za-z0-9]{1,3}$/,
-                            message: '不符合规则'
-                        }
-                    ]}
-                >
-                    <Input placeholder='1到3位字母或数字' autoFocus/>
-                </Form.Item>
+            <form className='myapp-login-form'>
+                <div className='myapp-login-form-item'>
+                    <label htmlFor="username">用户名</label>
+                    <input type='text'
+                        id="username"
+                        className='myapp-login-form-item-input'
+                        placeholder='1到3位字母或数字'
+                        maxLength={3}
+                        name='username'
+                        value={username}
+                        onChange={handleUsernameChange}
+                        pattern='^[A-Za-z0-9]{1,3}$'
+                        ref={usernameRef}
+                    />
+                </div>
 
-                <Form.Item label={<span className={themeClass(theme)}>密码</span>}
-                    name='password'
-                    rules={[
-                        {
-                            pattern: /^[A-Za-z0-9]{2,6}$/,
-                            message: '不符合规则'
-                        }
-                    ]}
-                >
-                    <Input placeholder='2到6位字母或数字' />
-                </Form.Item>
+                <div className='myapp-login-form-item'>
+                    <label htmlFor="password">密码</label>
+                    <input type='text'
+                        id="password"
+                        className='myapp-login-form-item-input'
+                        placeholder='2到6位字母或数字'
+                        maxLength={6}
+                        name='password'
+                        value={password}
+                        onChange={handlePasswordChange}
+                        pattern='^[A-Za-z0-9]{2,6}$'
+                        ref={passwordRef}
+                    />
+                </div>
 
-                <Form.Item label={<span className={themeClass(theme)}>确认密码</span>}
-                    name='confirmPass'
-                >
-                    <Input placeholder='注册时输入' />
-                </Form.Item>
+                <div className='myapp-login-form-item'>
+                    <label htmlFor="confirmPass">确认密码</label>
+                    <input type='text'
+                        id="confirmPass"
+                        className='myapp-login-form-item-input myapp-login-form-item-input-confirm'
+                        placeholder='只在注册时输入'
+                        maxLength={6}
+                        name='confirmPass'
+                        value={confirmPass}
+                        onChange={handleConfirmPassChange}
+                        ref={confirmPassRef}
+                    />
+                </div>
 
-                <Form.Item wrapperCol={{ offset: 10 }}
-                    colon={false}
-                >
-                    <button type='submit'>
-                        {isRegister ? '注册' : '登录'}
+                <div className='myapp-login-form-submit'>
+                    <button type='submit'
+                        onClick={handleSubmit}
+                    >
+                        {isRegister ? '注 册' : '登 录'}
                     </button>
-                </Form.Item>
-            </Form>
+                </div>
+            </form>
         </div>
     )
 }

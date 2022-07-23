@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { saveTic, selectNotLoseRate, selectPower, selectTitle } from '../../../store/user'
-import { useBlocker, useChanged } from '../../../tools/hooks'
-import { GUEST_ID } from '../../../tools/variables'
-import '../index.sass'
+import { saveTic, selectNotLoseRate, selectPower, selectTitle } from '../../../../store/user'
+import { useBlocker, useChanged } from '../../../../tools/hooks'
+import { GUEST_ID } from '../../../../tools/variables'
+import './index.sass'
 
-export default function GameScore() {
+export default function UserScore() {
     const tic = useSelector(state => state.user.tic)
     const userId = useSelector(state => state.user.userId)
     const power = useSelector(selectPower)
@@ -48,7 +48,7 @@ export default function GameScore() {
     }, [save, whenSave])
 
     const login =
-        <p className='myapp-tic-main-right-login'>
+        <p className='myapp-comp-userscore-login'>
             <span onClick={() => navigate('/login', { state: { from: location } })}>
                 登录
             </span>
@@ -56,22 +56,17 @@ export default function GameScore() {
         </p>
 
     const score =
-        <div className='myapp-tic-main-right'>
-            <div className='myapp-tic-main-right-score'>
-                <div>
-                    <div>战力：&nbsp;&nbsp;&nbsp;</div>
-                    <div>称号：&nbsp;&nbsp;&nbsp;</div>
-                    <div>不败率：&nbsp;&nbsp;&nbsp;</div>
-                </div>
-                <div>
-                    <div>{power}</div>
-                    <div>{title[1]}</div>
-                    <div>{notLoseRate}</div>
-                </div>
+        <div className='myapp-comp-userscore-score'>
+            <div>
+                <div>战力：&nbsp;&nbsp;&nbsp;</div>
+                <div>称号：&nbsp;&nbsp;&nbsp;</div>
+                <div>不败率：&nbsp;&nbsp;&nbsp;</div>
             </div>
-            {/*<div>
-                <ExplainText />
-            </div>*/}
+            <div>
+                <div>{power}</div>
+                <div>{title[1]}</div>
+                <div>{notLoseRate}</div>
+            </div>
         </div>
 
     return userId !== GUEST_ID ? score : login

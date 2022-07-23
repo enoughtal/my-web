@@ -140,7 +140,7 @@ export default function Tictactoe() {
             </div>
 
             <div className='myapp-tic-main'>
-                <div className='myapp-tic-main-left-container'>
+                <div className='myapp-tic-main-left'>
                     <LeftPanel mode={mode}
                         setMode={setMode}
                         level={level}
@@ -150,7 +150,7 @@ export default function Tictactoe() {
                     />
                 </div>
 
-                <div className='myapp-tic-main-center-container'>
+                <div className='myapp-tic-main-right'>
                     <GameBoard active={active}
                         snapshot={snapshot}
                         dropPiece={dropPiece}

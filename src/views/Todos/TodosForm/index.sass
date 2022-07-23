@@ -1,0 +1,19 @@
+.myapp-comp-todosform
+    display: flex
+    &-title
+    &-input
+        display: grid
+        grid-template-columns: repeat(4, 10rem)
+        grid-template-rows: repeat(2, 3rem)
+        &-content
+            //width: 44rem
+            border: 3px solid gray
+            grid-column: 1 / 5
+            grid-row: 1
+        &-rank
+            border: 3px solid gray
+            grid-column: 1 / 4
+            grid-row: 2
+        &-button
+            grid-column: 4
+            grid-row: 2

@@ -1,0 +1,29 @@
+.myapp-comp-tictactoe
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &-board
+        &-square
+            float: left
+            width: 6rem
+            height: 6rem
+            line-height: 6rem
+            font-size: 4rem
+            text-align: center
+            margin-top: -2px
+            margin-right: -2px
+            padding: 0
+            border: 2px solid black
+            background-color: darkseagreen
+            &-win
+                @extend .myapp-comp-tictactoe-board-square
+                background-color: goldenrod
+            &-inactive
+                @extend .myapp-comp-tictactoe-board-square
+                border: 2px dotted black
+                background-color: gray
+        &-row::after
+            content: ''
+            clear: both
+            display: table

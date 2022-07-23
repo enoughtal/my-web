@@ -1,0 +1,49 @@
+@use '../../../index.sass' as *
+.myapp-comp-gamepanel
+    display: flex
+    flex-direction: column
+    &-item
+        margin-bottom: 1rem
+        display: flex
+        flex-direction: column
+        width: var(--width)
+        >span
+            align-self: center
+            margin-bottom: 0.5rem
+            font-size: 0.8rem
+        &-explain
+            padding-left: 1.2rem
+            >span
+                text-decoration: underline
+                cursor: pointer
+        >div
+            >label
+                font-size: 1.2rem
+                margin: 0 0.8rem
+                >input
+                    margin: 0 0.4rem
+                    -webkit-appearance: none
+                    -moz-appearance: none
+                    appearance: none
+                    width: 16px
+                    height: 16px
+                    border-radius: 50%
+                    border: 2px solid darkseagreen
+                    transition: 0.2s all linear
+                    &:checked
+                        border: 8px solid seagreen
+        &-hidden
+            visibility: hidden
+    &-start
+        margin-top: 1rem
+        align-self: center
+        button
+            padding: 0.2rem 0.5rem
+            font-size: 1rem
+            border-radius: 6px
+            border: 2px solid gray
+            box-shadow: 1px 1px black
+            &:hover
+                background-color: $button-hover-bgcolor
+            &:active
+                background-color: $button-active-bgcolor

@@ -1,8 +1,9 @@
-import '../index.sass'
-import History from './History'
+import GameHistory from './GameHistory'
+import './index.sass'
 
-function GameBoard({ active, snapshot, dropPiece, currentStep, goToStep, winCoordinates }) {
-
+export default function GameBoard({
+    active, snapshot, dropPiece, currentStep, goToStep, winCoordinates
+}) {
     const drawPiece = (order) => {
         switch (order) {
             case 1: return '⚔️'
@@ -15,7 +16,7 @@ function GameBoard({ active, snapshot, dropPiece, currentStep, goToStep, winCoor
     const board =
         snapshot.map((row, x) => {
             return (
-                <div className='myapp-tic-main-center-board-row'
+                <div className='myapp-comp-tictactoe-board-row'
                     key={x}
                 >
                     {row.map((square, y) => {
@@ -29,13 +30,13 @@ function GameBoard({ active, snapshot, dropPiece, currentStep, goToStep, winCoor
                         }
 
                         if (!active) {
-                            className += ' myapp-tic-main-center-board-square-inactive'
+                            className += ' myapp-comp-tictactoe-board-square-inactive'
                         }
                         else if (isWinSquare){
-                            className += ' myapp-tic-main-center-board-square-win'
+                            className += ' myapp-comp-tictactoe-board-square-win'
                         }
                         else {
-                            className += ' myapp-tic-main-center-board-square'
+                            className += ' myapp-comp-tictactoe-board-square'
                         }
 
                         return (
@@ -53,14 +54,12 @@ function GameBoard({ active, snapshot, dropPiece, currentStep, goToStep, winCoor
         })
 
     return (
-        <div className='myapp-tic-main-center'>
+        <div className='myapp-comp-tictactoe'>
             {board}
             {active &&
-            <History currentStep={currentStep}
+            <GameHistory currentStep={currentStep}
                 goToStep={goToStep}
             />}
         </div>
     )
 }
-
-export default GameBoard
