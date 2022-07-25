@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux'
 import { themeClass } from '../../tools/helper'
 import './index.sass'
 import TodosForm from "./TodosForm"
-//import TodosTable from "./TodosTable"
+import TodosTable from "./TodosTable"
 
 export default function Todos() {
     const theme = useSelector(state => state.user.preference.theme)
@@ -13,8 +13,7 @@ export default function Todos() {
                 <TodosForm />
             </div>
             <div className={themeClass(theme, 'myapp-todos-table-container')}>
-                {/*<TodosTable />*/}
-                world
+                <TodosTable />
             </div>
         </>
     )

@@ -1,12 +1,13 @@
 @use '../../index.sass' as *
 .myapp-layout
+    $link-color: #40a9ff
     min-height: 100vh
     display: grid
     grid-template-rows: auto 1fr
     &-header
         position: sticky
         top: 0
-        z-index: 1
+        z-index: 6
         background-color: #dddddd
         border-bottom: 2px solid #dddddd
         display: flex
@@ -22,8 +23,11 @@
                 @media screen and (min-width: $breakpoint-small)
                     display: none
                 margin-left: 2rem
+                width: 4rem
+                text-align: center
+                cursor: pointer
                 &-button
-                    color: royalblue
+                    color: $link-color
                     font-size: 1.2rem
                     text-decoration: underline
                 &-vertical
@@ -31,18 +35,18 @@
                     border-radius: 3px
                     background-color: #dddddd
                     >div
-                        text-decoration: underline
+                        text-decoration: underline $link-color
                         padding: 0.4rem 0.4rem
-                    &-active
-                        font-weight: bold
             &-horizontal
                 @media screen and (max-width: $breakpoint-small)
                     display: none
-                >span
-                    text-decoration: underline
+                &-link
                     margin: 0 1rem
-                &-active
-                    font-weight: bold
+                    border-bottom: 1px solid $link-color
+                    &-active
+                        border-bottom: 2px solid $link-color
+                &-seperator
+                    font-weight: 300
         &-theme
             flex: 1 0
             &-button
@@ -57,11 +61,16 @@
             flex: 1 0 2rem
             >span
                 font-size: 1rem
-                text-decoration: underline
-                color: royalblue
+                border-bottom: 1px solid $link-color
+                color: $link-color
                 cursor: pointer
                 &:hover
                     font-weight: bold
     &-main
-        //padding-top: 1rem
         background-color: #ffffff
+        &-placeholder
+            position: sticky
+            top: 34px
+            z-index: 4
+            height: 1rem
+            background-color: inherit

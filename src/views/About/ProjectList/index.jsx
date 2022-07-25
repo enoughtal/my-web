@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../index.sass'
+import './index.sass'
 
 export default function ProjectList({ list }) {
     const [folded, setFolded] = useState(list.map(() => true))
@@ -14,19 +14,19 @@ export default function ProjectList({ list }) {
 
     return (
         list.map((project, index) => (
-            <div className='myapp-about-main-center-project'
+            <div className='myapp-comp-project'
                 key={project.name}
             >
-                <div className='myapp-about-main-center-project-title'>
+                <div className='myapp-comp-project-title'>
                     {project.name}
                 </div>
 
-                <div className='myapp-about-main-center-project-subtitle'>
-                    <div className='myapp-about-main-center-project-subtitle-description'>
+                <div className='myapp-comp-project-subtitle'>
+                    <div className='myapp-comp-project-subtitle-description'>
                         {project.description}
                     </div>
 
-                    <div className='myapp-about-main-center-project-subtitle-code'>
+                    <div className='myapp-comp-project-subtitle-code'>
                         <a href={project.code}
                             target='_blank'
                             rel='noreferrer'
@@ -36,18 +36,18 @@ export default function ProjectList({ list }) {
                     </div>
                 </div>
 
-                <div className='myapp-about-main-center-project-content'>
-                    <div className='myapp-about-main-center-project-content-libraries'>
+                <div className='myapp-comp-project-content'>
+                    <div className='myapp-comp-project-content-libraries'>
                         {project.libraries.map((lib) => (
                             <span key={lib}
-                                className='myapp-about-main-center-project-content-libraries-tag'
+                                className='myapp-comp-project-content-libraries-tag'
                             >
                                 {lib}
                             </span>
                         ))}
                     </div>
 
-                    <div className='myapp-about-main-center-project-content-more'>
+                    <div className='myapp-comp-project-content-more'>
                         {folded[index]
                         ? (
                             <a onClick={() => handleFold(index)}>

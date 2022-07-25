@@ -12,9 +12,7 @@ dist
 dist-ssr
 *.local
 .VSCodeCounter
-global.js
 private
-variables
 
 # Editor directories and files
 .vscode/*

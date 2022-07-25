@@ -1,7 +1,7 @@
 import { CaretRightOutlined, DownOutlined, UpOutlined } from '@ant-design/icons'
 import { useDispatch, useSelector } from 'react-redux'
 import filesSlice, { getFile } from '../../../store/files'
-import '../index.sass'
+import './index.sass'
 
 export default function Category() {
     const selectedSubjects = useSelector(state => state.files.selectedSubjects)
@@ -28,7 +28,7 @@ export default function Category() {
         Object.entries(category).map(([subject, files], i) => {
             return (
                 <div key={i}
-                    className='myapp-home-main-right-category-subject'
+                    className='myapp-comp-category-subject'
                 >
                     <span onClick={() => clickSubject(subject)}>
                         {subject}
@@ -40,7 +40,7 @@ export default function Category() {
                     ? files.map((file, j) => {
                         return (
                             <div key={j}
-                                className='myapp-home-main-right-category-file'
+                                className='myapp-comp-category-file'
                             >
                                 <span>
                                     {file === selectedFile ? <CaretRightOutlined /> : ''}

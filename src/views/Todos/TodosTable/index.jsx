@@ -7,7 +7,7 @@ import { savePreference } from "../../../store/user"
 import { themeClass, themeId } from "../../../tools/helper"
 import { useBlocker, useLock } from "../../../tools/hooks"
 import { GUEST_ID, LOGIN_PATH } from '../../../tools/variables'
-import '../index.sass'
+import './index.sass'
 
 const locale = {
     filterReset: '重置',
@@ -128,12 +128,12 @@ export default function TodosTable() {
         {
             title: '🎯要做的事',
             dataIndex: 'content',
-            width: '50%',
+            width: '45%',
         },
         {
             title: `${el}优先级`,
             dataIndex: 'rank',
-            width: '15%',
+            width: '20%',
             render: (rank) => rankFire(rank),
             filters: [3, 2, 1].map(rank => ({
                 text: rankFire(rank),
@@ -166,7 +166,7 @@ export default function TodosTable() {
                         <span onClick={complete}
                             className='none-user-select'
                         >
-                            ✔️
+                            ⭕
                         </span>
                     </div>
                 )
@@ -193,15 +193,17 @@ export default function TodosTable() {
     }
 
     return (
-        <Table dataSource={showedTodos}
-            columns={columns}
-            rowKey='id'
-            components={components}
-            locale={locale}
-            pagination={false}
-            sticky={{ offsetHeader: 'calc(6vh + 1.5rem + 6vh + 1.5rem)' }}
-            rowClassName={themeClass(theme, 'myapp-todos-table-row')}
-            ref={tableRef}
-        />
+        <div className="myapp-todos-table">
+            <Table dataSource={showedTodos}
+                columns={columns}
+                rowKey='id'
+                components={components}
+                locale={locale}
+                pagination={false}
+                sticky={{ offsetHeader: 'calc(34px + 96px + 1rem)' }}
+                rowClassName={themeClass(theme, 'myapp-todos-table-row')}
+                ref={tableRef}
+            />
+        </div>
     )
 }

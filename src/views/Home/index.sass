@@ -1,46 +1,41 @@
-@use '../../index.sass' as *
 .myapp-home
-    font-size: calc(0.5rem + 1vw)
-    display: grid
-    grid-template-columns: 1fr 6fr minmax(20ch, 2fr)
-    gap: 1.5rem
-    @media screen and (max-width: $breakpoint-small)
-        grid-template-columns: auto 1fr auto
-        gap: 0.5rem
-    &-main-center
-        grid-column: 2
-        &-catalog
-            @media screen and (min-width: $breakpoint-small)
-                display: none
-            padding: 1rem 0
-            width: fit-content
-            &-button
-                font-size: 1.2rem
-                text-decoration: underline
-            &-files
-                padding: 0.2rem 1rem
-                background-color: #9999996f
-        &-content
-            & *
-                font-size: inherit
-            &-title
-                font-size: 1.5em
-            &-time
-                font-size: 0.8em
-                margin: 0.5rem 0
-    &-main-right
-        @media screen and (max-width: $breakpoint-small)
-            display: none
-        &-category-subject
-            font-size: 1.2rem
-            margin: 0.8rem 0
-            >span
-                cursor: pointer
-            @at-root .myapp-home-main-right-category-file
-                font-size: 1rem
-                margin: 0.4rem 0
-                >span:nth-child(1)
-                    display: inline-block
-                    width: 1.2rem
-                >span:nth-child(2)
-                    cursor: pointer
+    width: 100%
+    height: calc(100% - 34px)
+    position: absolute
+    top: 34px
+    z-index: 5
+    background-color: white
+    &-picture
+        img
+            width: 100%
+    &-poem
+        color: #184ae1
+        font-size: 2rem
+        position: relative
+        top: -12rem
+        text-align: center
+        >pre
+            margin: 0
+        >span
+            font-size: 1rem
+    &-navigation
+        display: grid
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr))
+        column-gap: 2rem
+        row-gap: 1rem
+        justify-items: center
+        position: relative
+        top: -8rem
+        &-entry
+            width: 12rem
+            font-size: 1.5rem
+            font-weight: 500
+            text-align: center
+            color: royalblue
+            border: 1px solid royalblue
+            border-radius: 5px
+            background-color: #dddddd
+            padding: 0.2rem 0
+            cursor: pointer
+            &:hover
+                color: blue

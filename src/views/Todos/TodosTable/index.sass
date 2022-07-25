@@ -1,0 +1,43 @@
+@use '../../../index.sass' as *
+#myapp-todos-table
+    &-header-cell
+        font-size: 1rem
+        border-top: 2px solid gray
+        border-bottom: 1px solid gray
+        &-dark-theme
+            @extend #myapp-todos-table-header-cell
+            color: #ffffff
+            background-color: #333333
+    &-body-cell
+        border-bottom: 1px dotted gray
+        background-color: inherit
+    &-placeholder
+        background-color: #ffffff
+        &-dark-theme
+            background-color: #333333
+.myapp-todos-table
+    &-row
+        font-size: 1rem
+        &:hover
+            color: #ffffff
+            background-color: #888888
+    &-header
+        &-save
+            width: 3rem
+            margin: 0 auto
+            text-align: center
+            cursor: pointer
+            font-size: 1.5rem
+            border-radius: 0.5rem
+            &:hover
+                background-color: $button-hover-bgcolor
+            &:active
+                background-color: $button-active-bgcolor
+        &-operate
+            display: flex
+            align-items: center
+            justify-content: space-around
+            >span
+                cursor: pointer
+    &-placeholder-text
+        color: #999999

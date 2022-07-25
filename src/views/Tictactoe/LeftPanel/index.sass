@@ -39,11 +39,4 @@
         align-self: center
         button
             padding: 0.2rem 0.5rem
-            font-size: 1rem
-            border-radius: 6px
-            border: 2px solid gray
-            box-shadow: 1px 1px black
-            &:hover
-                background-color: $button-hover-bgcolor
-            &:active
-                background-color: $button-active-bgcolor
+            @extend %button-style

@@ -1,53 +1,54 @@
-import { useEffect, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
-import { useDispatch, useSelector } from 'react-redux'
-import { getCategory } from '../../store/files'
-import Category from './Category'
+import { useNavigate } from 'react-router-dom'
+import universe from '../../img/universe-1000.png'
 import './index.sass'
 
 export default function Home() {
-    const [dropdown, setDropdown] = useState(false)
-
-    const dispatch = useDispatch()
-    const { title, createdAt, content } = useSelector(state => state.files.article)
-    const time = createdAt ? new Date(createdAt).toISOString().slice(0, 10) : ''
-
-    useEffect(() => {
-        dispatch(getCategory())
-    }, [dispatch])
+    const navigate = useNavigate()
 
     return (
         <div className='myapp-home'>
-            <div className='myapp-home-main-center'>
-                <div className='myapp-home-main-center-catalog'
-                    onMouseLeave={() => setDropdown(false)}
-                >
-                    <div onClick={() => setDropdown(true)}
-                        className='myapp-home-main-center-catalog-button'
-                    >
-                        Catalog&gt;&gt;
-                    </div>
-                    {dropdown &&
-                    <div className='myapp-home-main-center-catalog-files'>
-                        <Category />
-                    </div>}
-                </div>
-
-                <div className='myapp-home-main-center-content'>
-                    <div className='myapp-home-main-center-content-title'>
-                        {title}
-                    </div>
-                    <div className='myapp-home-main-center-content-time'>
-                        {time}
-                    </div>
-                    <ReactMarkdown>
-                        {content}
-                    </ReactMarkdown>
-                </div>
+            <div className='myapp-home-picture none-user-select'>
+                <img src={universe}
+                    alt='universe'
+                    height={300}
+                />
             </div>
 
-            <div className='myapp-home-main-right'>
-                <Category />
+            <div className='myapp-home-poem'>
+                <pre>
+{`I don't need anyone to keep me company
+When the Universe is with me at all times
+Paying attention
+Keeping me accountable
+Being present
+When I feel lonely inside.`}
+                </pre>
+                <span>
+                    Written by Jammit Janet
+                </span>
+            </div>
+
+            <div className='myapp-home-navigation'>
+                <div className='myapp-home-navigation-entry'
+                    onClick={() => navigate('/blog')}
+                >
+                    Blog
+                </div>
+                <div className='myapp-home-navigation-entry'
+                    onClick={() => navigate('/todos')}
+                >
+                    TO DO
+                </div>
+                <div className='myapp-home-navigation-entry'
+                    onClick={() => navigate('/tictactoe')}
+                >
+                    Tic Tac Toe
+                </div>
+                <div className='myapp-home-navigation-entry'
+                    onClick={() => navigate('/about')}
+                >
+                    About
+                </div>
             </div>
         </div>
     )

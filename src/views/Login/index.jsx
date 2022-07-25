@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import { login, register } from '../../store/user'
+import { themeClass } from '../../tools/helper'
 import { useLock } from '../../tools/hooks'
 import { GUEST_ID } from '../../tools/variables'
 import './index.sass'
@@ -21,6 +22,7 @@ export default function Login() {
     const userId = useSelector(state => state.user.userId)
     const currentUsername = useSelector(state => state.user.username)
     const preference = useSelector(state => state.user.preference)
+    const theme = useSelector(state => state.user.preference.theme)
     const dirtyTodos = useSelector(selectDirtyTodos)
 
     const dispatch = useDispatch()
@@ -150,6 +152,7 @@ export default function Login() {
                 <div className='myapp-login-form-submit'>
                     <button type='submit'
                         onClick={handleSubmit}
+                        className={themeClass(theme)}
                     >
                         {isRegister ? '注 册' : '登 录'}
                     </button>

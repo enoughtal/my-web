@@ -1,19 +1,19 @@
 import { GithubOutlined, WechatOutlined } from '@ant-design/icons'
 import { useState } from 'react'
 import avatar from '../../../img/avatar-transparent.png'
-import '../index.sass'
+import './index.sass'
 
 export default function Resume() {
     const [showWx, setShowWx] = useState(false)
     let timer
     return (
-        <div className='myapp-about-main-left-resume'>
+        <div className='myapp-comp-resume'>
             <img src={avatar}
                 alt='avatar'
                 width={60}
             />
 
-            <div className='myapp-about-main-left-resume-github'>
+            <div className='myapp-comp-resume-github'>
                 <a href='https://github.com/enoughtallisymcrift'
                     target='_blank'
                     rel='noreferrer'
@@ -27,7 +27,7 @@ export default function Resume() {
             >
                 <WechatOutlined />
                 {showWx &&
-                <span className='myapp-about-main-left-resume-wx'>
+                <span className='myapp-comp-resume-wx'>
                     yzchendan86
                 </span>}
             </div>

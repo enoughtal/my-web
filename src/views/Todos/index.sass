@@ -1,79 +1,8 @@
 .myapp-todos-form-container
     position: sticky
-    top: 34px
+    top: calc(34px + 1rem)
     z-index: 1
     background-color: inherit
-    @at-root .myapp-todos-form
-        display: flex
-        align-items: baseline
-        //height: 6vh
-        &-element
-            width: 3rem
-            font-size: 2rem
-            margin: 0 2rem
-            text-align: center
-            cursor: pointer
-        &-text
-            width: 9rem
-            font-size: 2rem
-            margin-right: 6rem
-            color: tan
-            font-weight: bold
-            text-align: center
-            cursor: pointer
-            span
-                font-size: 1.2rem
-        &-input
-            &-content
-                width: 30rem
-            &-rank
-                width: 10rem
-            &-submit
-                text-align: center
-                width: 5rem
 .myapp-todos-table-container
-    min-width: 70rem
-    //z-index: -10
-#myapp-todos-table
-    &-header-cell
-        font-size: 1.2rem
-        border-top: 2px solid gray
-        border-bottom: 1px solid gray
-        &-dark-theme
-            @extend #myapp-todos-table-header-cell
-            color: #ffffff
-            background-color: #333333
-    &-body-cell
-        border-bottom: 1px dotted gray
-        background-color: inherit
-    &-placeholder
-        background-color: #ffffff
-        &-dark-theme
-            background-color: #333333
-.myapp-todos-table
-    &-row
-        font-size: 1.5rem
-        &:hover
-            color: #ffffff
-            background-color: #888888
-            font-weight: bolder
-    &-header
-        &-save
-            width: 3rem
-            margin: 0 auto
-            text-align: center
-            cursor: pointer
-            font-size: 1.5rem
-            border-radius: 0.5rem
-            &:hover
-                background-color: gray
-            &:active
-                background-color: tan
-        &-operate
-            display: flex
-            align-items: center
-            justify-content: space-around
-            >span
-                cursor: pointer
-    &-placeholder-text
-        color: #999999
+    display: grid
+    grid-template-columns: minmax(50rem, 1fr)

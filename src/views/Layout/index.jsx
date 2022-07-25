@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import logo from '../../img/logo.png'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
-import userSlice, { getUserFromSession, logout, savePreference, saveTic, selectTitle } from '../../store/user'
+import userSlice, { getUserFromSession, logout, savePreference, saveTic } from '../../store/user'
 import { themeClass } from '../../tools/helper'
 import { useDebounce, useLock } from '../../tools/hooks'
 import { DELAY_TIME, GUEST_ID } from '../../tools/variables'
@@ -17,7 +17,6 @@ message.config({
 
 export default function Layout() {
     const theme = useSelector(state => state.user.preference.theme)
-    const title = useSelector(selectTitle)
     const tic = useSelector(state => state.user.tic)
     const userId = useSelector(state => state.user.userId)
     const username = useSelector(state => state.user.username)
@@ -82,7 +81,7 @@ export default function Layout() {
 
     const user = !isAuth
         ? <span>{username}</span>
-        : <span className='myapp-layout-header-user-registered'>{`${username} ${title[0]}`}</span>
+        : <span className='myapp-layout-header-user-registered'>{`Hi, ${username}`}</span>
 
     const signButton = !isAuth
         ? <span onClick={navLogin}>登录</span>
@@ -120,11 +119,11 @@ export default function Layout() {
                         {dropdown &&
                         <div className='myapp-layout-header-nav-dropdown-vertical'>
                             <div>
-                                <NavLink to='/'
+                                <NavLink to='/blog'
                                     className={({ isActive }) =>
                                         isActive
-                                        ? 'myapp-layout-header-nav-horizontal-active'
-                                        : undefined}
+                                        ? 'myapp-layout-header-nav-dropdown-vertical-active'
+                                        : ''}
                                 >
                                     Blog
                                 </NavLink>
@@ -134,7 +133,7 @@ export default function Layout() {
                                     className={({ isActive }) =>
                                         isActive
                                         ? 'myapp-layout-header-nav-dropdown-vertical-active'
-                                        : undefined}
+                                        : ''}
                                 >
                                     TO DO
                                 </NavLink>
@@ -144,7 +143,7 @@ export default function Layout() {
                                     className={({ isActive }) =>
                                         isActive
                                         ? 'myapp-layout-header-nav-dropdown-vertical-active'
-                                        : undefined}
+                                        : ''}
                                 >
                                     Tic Tac Toe
                                 </NavLink>
@@ -154,7 +153,7 @@ export default function Layout() {
                                     className={({ isActive }) =>
                                         isActive
                                         ? 'myapp-layout-header-nav-dropdown-vertical-active'
-                                        : undefined}
+                                        : ''}
                                 >
                                     About
                                 </NavLink>
@@ -163,45 +162,51 @@ export default function Layout() {
                     </div>
 
                     <div className='myapp-layout-header-nav-horizontal'>
-                        <span>
-                            <NavLink to='/'
+                        <span className='myapp-layout-header-nav-horizontal-link'>
+                            <NavLink to='/blog'
                                 className={({ isActive }) =>
                                     isActive
-                                    ? 'myapp-layout-header-nav-horizontal-active'
-                                    : undefined}
+                                    ? 'myapp-layout-header-nav-horizontal-link-active'
+                                    : ''}
                             >
                                 Blog
                             </NavLink>
                         </span>
-                        {' | '}
-                        <span>
+                        <span className='myapp-layout-header-nav-horizontal-seperator'>
+                            |
+                        </span>
+                        <span className='myapp-layout-header-nav-horizontal-link'>
                             <NavLink to='/todos'
                                 className={({ isActive }) =>
                                     isActive
-                                    ? 'myapp-layout-header-nav-horizontal-active'
-                                    : undefined}
+                                    ? 'myapp-layout-header-nav-horizontal-link-active'
+                                    : ''}
                             >
                                 TO DO
                             </NavLink>
                         </span>
-                        {' | '}
-                        <span>
+                        <span className='myapp-layout-header-nav-horizontal-seperator'>
+                            |
+                        </span>
+                        <span className='myapp-layout-header-nav-horizontal-link'>
                             <NavLink to='/tictactoe'
                                 className={({ isActive }) =>
                                     isActive
-                                    ? 'myapp-layout-header-nav-horizontal-active'
-                                    : undefined}
+                                    ? 'myapp-layout-header-nav-horizontal-link-active'
+                                    : ''}
                             >
                                 Tic Tac Toe
                             </NavLink>
                         </span>
-                        {' | '}
-                        <span>
+                        <span className='myapp-layout-header-nav-horizontal-seperator'>
+                            |
+                        </span>
+                        <span className='myapp-layout-header-nav-horizontal-link'>
                             <NavLink to='/about'
                                 className={({ isActive }) =>
                                     isActive
-                                    ? 'myapp-layout-header-nav-horizontal-active'
-                                    : undefined}
+                                    ? 'myapp-layout-header-nav-horizontal-link-active'
+                                    : ''}
                             >
                                 About
                             </NavLink>
@@ -225,6 +230,7 @@ export default function Layout() {
             </header>
 
             <main className={themeClass(theme, 'myapp-layout-main')}>
+                <div className='myapp-layout-main-placeholder'></div>
                 <Outlet />
             </main>
         </div>

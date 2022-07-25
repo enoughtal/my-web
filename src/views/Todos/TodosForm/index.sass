@@ -1,19 +1,62 @@
+@use '../../../index.sass' as *
 .myapp-comp-todosform
     display: flex
+    align-items: center
     &-title
-    &-input
+        display: flex
+        align-items: center
+        width: 20rem
+        &-element
+            width: 3rem
+            font-size: 1.5rem
+            margin: 0 2rem
+            text-align: center
+            cursor: pointer
+        &-text
+            width: 9rem
+            font-size: 2rem
+            margin-right: 6rem
+            color: tan
+            font-weight: bold
+            text-align: center
+            cursor: pointer
+            span
+                font-size: 1.2rem
+    &-form
         display: grid
-        grid-template-columns: repeat(4, 10rem)
+        grid-template-columns: repeat(3, 10rem)
         grid-template-rows: repeat(2, 3rem)
+        align-items: center
+        --lable-width: 4rem
         &-content
-            //width: 44rem
-            border: 3px solid gray
-            grid-column: 1 / 5
-            grid-row: 1
-        &-rank
-            border: 3px solid gray
             grid-column: 1 / 4
+            grid-row: 1
+            &-label
+                display: inline-block
+                width: var(--lable-width)
+            &-input
+                width: calc(100% - var(--lable-width))
+                background-color: inherit
+                font-size: 1.2rem
+                &::placeholder
+                    font-size: 0.8rem
+        &-rank
+            grid-column: 1 / 3
             grid-row: 2
+            &-label
+                display: inline-block
+                width: var(--lable-width)
+            &-select
+                width: 8rem
+                background-color: inherit
+                font-size: 1.2rem
+                &-option
+                    font-size: 1.5rem
+                    background-color: white
         &-button
-            grid-column: 4
+            grid-column: 3
             grid-row: 2
+            width: 5rem
+            font-size: 0.8rem
+            justify-self: right
+            @extend %button-style

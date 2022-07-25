@@ -64,7 +64,7 @@ export default function UserScore() {
             </div>
             <div>
                 <div>{power}</div>
-                <div>{title[1]}</div>
+                <div>{title[0]}{title[1]}</div>
                 <div>{notLoseRate}</div>
             </div>
         </div>
