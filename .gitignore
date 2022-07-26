@@ -11,7 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
-.VSCodeCounter
+.VSCodeCounter/*
+!.VSCodeCounter/202*
+.VSCodeCounter/202*/*
+!.VSCodeCounter/202*/results.md
 private
 
 # Editor directories and files

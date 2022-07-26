@@ -90,6 +90,7 @@ export default function TodosForm() {
                     <input type='text'
                         className='myapp-comp-todosform-form-content-input'
                         placeholder='请输入要做的事'
+                        maxLength={24}
                         value={content}
                         onChange={handleContentChange}
                     />
