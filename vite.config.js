@@ -10,6 +10,8 @@ export default defineConfig({
                 manualChunks: (id) => {
                     if (id.includes('views/Tictactoe')
                         || id.includes('views/Todos')
+                        || id.includes('views/Blog')
+                        || id.includes('views/About')
                         || id.includes('views/Login')
                         || id.includes('tools/game')
                         || id.includes('tools/todos')
