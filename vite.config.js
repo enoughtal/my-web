@@ -9,19 +9,15 @@ export default defineConfig({
                 format: 'es',
                 manualChunks: (id) => {
                     if (
-                        id.includes('views/Tictactoe')
-                        || id.includes('tools/game')
+                        id.includes('node_modules/react/')
+                        || id.includes('node_modules/react-dom/')
+                        || id.includes('redux')
+                        || id.includes('react-router')
                     ) {
-                        return 'a'
+                        return 'react'
                     }
-                    else if (
-                        id.includes('views/Blog')
-                        || id.includes('views/About')
-                        || id.includes('views/Login')
-                        || id.includes('views/Todos')
-                        || id.includes('tools/todos')
-                    ) {
-                        return 'b'
+                    else if (id.includes('antd')) {
+                        return 'antd'
                     }
                 },
                 inlineDynamicImports: false
