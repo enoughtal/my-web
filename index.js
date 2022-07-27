@@ -33,6 +33,7 @@ async function createServer() {
             cookie: {
                 maxAge: SESSION_TTL,
                 secure: true,
+                sameSite: 'strict'
             }
         }))
 

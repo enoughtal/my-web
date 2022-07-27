@@ -26,7 +26,7 @@ export default defineConfig({
                 //        return 'pages'
                 //    }
                 //},
-                inlineDynamicImports: false
+                //inlineDynamicImports: false
             },
         }
     }
