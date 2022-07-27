@@ -29,5 +29,5 @@ async function getPage(req, res, next) {
 }
 
 export default function pagesRoute(app) {
-    app.get(['/', '/todos', '/tictactoe', '/login', '/about'], getPage)
+    app.get(['/', '/blog', '/todos', '/tictactoe', '/about', '/login'], getPage)
 }
