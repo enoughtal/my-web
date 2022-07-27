@@ -8,15 +8,20 @@ export default defineConfig({
             output: {
                 format: 'es',
                 manualChunks: (id) => {
-                    if (id.includes('views/Tictactoe')
-                        || id.includes('views/Todos')
-                        || id.includes('views/Blog')
-                        || id.includes('views/About')
-                        || id.includes('views/Login')
+                    if (
+                        id.includes('views/Tictactoe')
                         || id.includes('tools/game')
-                        || id.includes('tools/todos')
                     ) {
                         return 'a'
+                    }
+                    else if (
+                        id.includes('views/Blog')
+                        || id.includes('views/About')
+                        || id.includes('views/Login')
+                        || id.includes('views/Todos')
+                        || id.includes('tools/todos')
+                    ) {
+                        return 'b'
                     }
                 },
                 inlineDynamicImports: false
