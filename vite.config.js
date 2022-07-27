@@ -16,8 +16,14 @@ export default defineConfig({
                     ) {
                         return 'react'
                     }
-                    else if (id.includes('antd')) {
-                        return 'antd'
+                    else if (
+                        id.includes('views/About')
+                        || id.includes('views/Blog')
+                        || id.includes('views/Login')
+                        || id.includes('views/Tictactoe')
+                        || id.includes('views/Todos')
+                    ) {
+                        return 'pages'
                     }
                 },
                 inlineDynamicImports: false
