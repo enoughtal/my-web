@@ -7,19 +7,19 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 format: 'es',
-                manualChunks: (id) => {
-                    if (
-                        id.includes('node_modules/react/')
-                        || id.includes('node_modules/react-dom/')
-                        || id.includes('redux')
-                        || id.includes('react-router')
-                    ) {
-                        return 'react'
-                    }
-                    else if (id.includes('antd')) {
-                        return 'antd'
-                    }
-                },
+                //manualChunks: (id) => {
+                //    if (
+                //        id.includes('node_modules/react/')
+                //        || id.includes('node_modules/react-dom/')
+                //        || id.includes('redux')
+                //        || id.includes('react-router')
+                //    ) {
+                //        return 'react'
+                //    }
+                //    else if (id.includes('antd')) {
+                //        return 'antd'
+                //    }
+                //},
                 inlineDynamicImports: false
             },
         }
