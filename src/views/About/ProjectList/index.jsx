@@ -57,6 +57,9 @@ export default function ProjectList({ list }) {
                         : (
                             <div>
                                 &nbsp;&nbsp;&nbsp;&nbsp;{project.details}
+                                {/*<pre>
+
+                                </pre>*/}
                                 <br />
                                 <a onClick={() => handleFold(index)}>
                                     收起。
