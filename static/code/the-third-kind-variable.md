@@ -1,5 +1,5 @@
 # plain variable can do something in React
-Normally, there are two kinds variables in React function component, the variable created by useState and the variable created by useRef. But a plain variable created by let can also do something valuable. See the following code.
+Normally, there are two kinds of variables in React function component, the variable created by useState and the variable created by useRef. But a plain variable created by let can also do something valuable. See the following code.
 ```
 function Component() {
     const [val, setVal] = useState(false)
@@ -11,4 +11,5 @@ function Component() {
     //omit some code
 }
 ```
-It's worked on my purpose! It's the third kind variable worked in React function component!
+It's worked on my purpose! It's the third kind of variable that worked in React function component!
+So, React is an unopinionated library, you have more than one path to reach the destination. For a beginner, it's harder to master than Vue.

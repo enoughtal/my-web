@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
-import universe from '../../img/universe-1000.png'
+import universe1000w from '../../img/universe-1000w.jpg'
+import universe600w from '../../img/universe-600w.jpg'
 import './index.sass'
 
 export default function Home() {
@@ -8,9 +9,11 @@ export default function Home() {
     return (
         <div className='myapp-home'>
             <div className='myapp-home-picture none-user-select'>
-                <img src={universe}
+                <img src={universe1000w}
                     alt='universe'
                     height={300}
+                    sizes='(max-width: 800px) 600px, 1000px'
+                    srcSet={`${universe1000w} 1000w, ${universe600w} 600w`}
                 />
             </div>
 

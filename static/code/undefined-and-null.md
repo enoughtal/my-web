@@ -1,6 +1,6 @@
 # the difference between undefined and null
 
-Most time, the primary types undefined and null are the same. For example, their truth is both false, reading their property will cause an error, and the new syntax ?., ??, ??= are treating them as the nullish value.
+Most time, the primary types undefined and null are the same. For example, their truth is both false, reading their property will cause an error, and the new syntax ?., ??, ??= are treating them as the `nullish` value.
 
 But there is an absolute difference between them. It is when using them as the argument of a function. See the following code.
 

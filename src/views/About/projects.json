@@ -36,7 +36,7 @@
             "element ui",
             "node"
         ],
-        "details": "这是一个桌面程序，使用electron + vue2 + element套餐构建。"
+        "details": "这是一个桌面程序，使用electron + vue2 + element构建。"
     },
     {
         "name": "anArduinoProject",
@@ -45,7 +45,7 @@
         "libraries": [
             "arduino"
         ],
-        "details": "这是一个嵌入式软件开发项目，使用的是一款流行的个人电子制作开发框架arduino。"
+        "details": "一个嵌入式软件开发项目，使用了流行的个人电子制作开发框架arduino。"
     },
     {
         "name": "monocraft",
@@ -54,6 +54,6 @@
         "libraries": [
             "VSCode"
         ],
-        "details": "一款VSCode的主题，灵感来源于魔兽世界的职业颜色，在内置主题Monokai的基础上改变。欢迎使用！"
+        "details": "一款自定义VSCode主题，在内置主题Monokai的基础上更改，欢迎使用！"
     }
 ]
