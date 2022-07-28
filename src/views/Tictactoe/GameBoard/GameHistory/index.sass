@@ -7,11 +7,11 @@
         margin: 3rem 0
         @extend %button-style
     &-button
-        width: 18rem
-        >button
-            box-sizing: border-box
-            width: 2rem
-            font-size: 1rem
+        width: 19rem
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr))
+        &-normal
+            font-size: 1.2rem
             border: 2px solid gray
             border-radius: 4px
         &-hidden
@@ -19,4 +19,4 @@
         &-visible
             visibility: visible
         &-select
-            transform: translateY(-1rem)
+            border-color: green
