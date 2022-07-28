@@ -1,17 +1,15 @@
 .myapp-tic
-    display: flex
-    flex-direction: column
+    display: grid
+    grid-auto-rows: auto
     row-gap: 2rem
+    justify-items: center
     &-header
         font-size: 1.2rem
-        align-self: center
+        border: 1px solid gray
     &-main
         --width: 19rem
-        display: flex
-        flex-wrap: wrap
+        width: clamp(var(--width), var(--width) * 2.5, 100%)
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr))
         gap: 4rem
-        justify-content: center
-        &-left
-            width: var(--width)
-        &-right
-            width: var(--width)
+        justify-items: center
