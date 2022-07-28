@@ -5,10 +5,9 @@
     justify-items: center
     &-header
         font-size: 1.2rem
-        border: 1px solid gray
     &-main
         --width: 19rem
-        width: clamp(var(--width), var(--width) * 2.5, 100%)
+        width: clamp(var(--width), calc(var(--width) * 2 + 6rem), 100%)
         display: grid
         grid-template-columns: repeat(auto-fit, minmax(var(--width), 1fr))
         gap: 4rem
