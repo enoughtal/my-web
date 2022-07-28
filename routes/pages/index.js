@@ -8,12 +8,12 @@ async function getPage(req, res, next) {
     try {
         let template, render
         if (!isProduction) {
-            template =await fsp.readFile(path.resolve(cwd, 'index.html'), 'utf8')
+            template = await fsp.readFile(path.resolve(cwd, 'index.html'), 'utf8')
             template = await vite.transformIndexHtml(url, template)
             render = (await vite.ssrLoadModule('src/server.jsx')).render
         }
         else {
-            template =await fsp.readFile(path.resolve(cwd, 'dist/client/index.html'), 'utf8')
+            template = await fsp.readFile(path.resolve(cwd, 'dist/client/index.html'), 'utf8')
             render = (await import('../../dist/server/server.js')).render
         }
 

@@ -26,7 +26,7 @@ export default function GameHistory({ currentStep, goToStep }) {
     const history =
         Array(9).fill().map((_, index) => {
             const step = index + 1
-            let className = themeClass(theme, 'myapp-comp-gamehistory-button')
+            let className = themeClass(theme)
             className +=
                 step > currentStep
                     ? ' myapp-comp-gamehistory-button-hidden'
@@ -50,7 +50,7 @@ export default function GameHistory({ currentStep, goToStep }) {
     return (
         <div className='myapp-comp-gamehistory'>
             {reset}
-            <div>
+            <div className='myapp-comp-gamehistory-button'>
                 {history}
             </div>
         </div>
