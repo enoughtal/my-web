@@ -2,13 +2,13 @@ import { message } from 'antd'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
-import logo from '../../img/logo.png'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import userSlice, { getUserFromSession, logout, savePreference, saveTic } from '../../store/user'
 import { themeClass } from '../../tools/helper'
 import { useDebounce, useLock } from '../../tools/hooks'
 import { DELAY_TIME, GUEST_ID } from '../../tools/variables'
 import './index.sass'
+import logo from './logo.png'
 
 message.config({
     top: 100,

@@ -1,6 +1,6 @@
 import { GithubOutlined, WechatOutlined } from '@ant-design/icons'
 import { useState } from 'react'
-import avatar from '../../../img/avatar-transparent.png'
+import avatar from './avatar-transparent.png'
 import './index.sass'
 
 export default function Resume() {
