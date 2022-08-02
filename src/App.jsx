@@ -1,12 +1,12 @@
 import 'antd/dist/antd.css'
 import { Route, Routes } from 'react-router-dom'
-import About from './views/About'
-import Blog from './views/Blog'
-import Home from './views/Home'
-import Layout from './views/Layout'
-import Login from './views/Login'
-import Tictactoe from './views/Tictactoe'
-import Todos from './views/Todos'
+import About from './views/About/index.jsx'
+import Blog from './views/Blog/index.jsx'
+import Home from './views/Home/index.jsx'
+import Layout from './views/Layout/index.jsx'
+import Login from './views/Login/index.jsx'
+import Tictactoe from './views/Tictactoe/index.jsx'
+import Todos from './views/Todos/index.jsx'
 
 function App() {
     return (

@@ -1,11 +1,9 @@
 /*
     this module includes preference and tictactoe
 */
-import * as reduxToolkit from '@reduxjs/toolkit'
+import { createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import { ELEMENT, powerValues, prizeEmojiArr, prizeTextArr, scoreValues } from '../../tools/variables'
 import fetch from './fetch'
-
-const { createAsyncThunk, createSelector } = reduxToolkit.default ?? reduxToolkit
 
 //tic游戏加分
 const gain = (result) => {
@@ -85,4 +83,3 @@ const preferenceReducers = {
 }
 export default preferenceReducers
 export { savePreference, saveTic, selectPower, selectNotLoseRate, selectTitle }
-

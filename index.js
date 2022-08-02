@@ -3,7 +3,7 @@ import express from 'express'
 import session from 'express-session'
 import https from 'https'
 import path from 'path'
-import { cwd, GUEST_ID, isProduction, PORT, secret, SESSION_TTL, tls, token, vite } from './global.js'
+import { cwd, GUEST_ID, isProduction, PORT, secret, SESSION_TTL, tls, token } from './global.js'
 import initDb from './mongodb/index.js'
 import connectDb from './mongodb/session.js'
 import filesRoute from './routes/files/index.js'
@@ -20,8 +20,8 @@ async function createServer() {
     await initDb()
 
     if (!isProduction) {
-        /* vite middlewareMode */
-        app.use(vite.middlewares)
+        ///* vite middlewareMode */
+        //app.use(vite.middlewares)
     }
     else {
         /* session middleware */

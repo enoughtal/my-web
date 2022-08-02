@@ -28,17 +28,16 @@ else {
     }
 }
 
-/* vite */
-let vite
-if (!isProduction) {
-    vite = await (await import('vite'))
-        .createServer({
-            server: {
-                middlewareMode: 'ssr',
-                https: tls//https://vitejs.dev/config/#server-https
-            },
-        })
-}
+///* vite */
+//let vite
+//if (!isProduction) {
+//    vite = await (await import('vite'))
+//        .createServer({
+//            server: {
+//                middlewareMode: 'ssr',
+//                https: tls//https://vitejs.dev/config/#server-https
+//            },
+//        })
+//}
 
-export { tls, vite }
-
+export { tls }

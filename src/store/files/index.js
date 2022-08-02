@@ -1,7 +1,5 @@
-import * as reduxToolkit from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import fetch from "./fetch";
-
-const { createAsyncThunk, createSlice } = reduxToolkit.default ?? reduxToolkit
 
 /* 获取文章内容 */
 export const getFile = createAsyncThunk(

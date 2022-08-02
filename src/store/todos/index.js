@@ -1,9 +1,7 @@
-import * as reduxToolkit from "@reduxjs/toolkit"
+import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit"
 import { nanoid } from 'nanoid'
 import { logout } from "../user/index.js"
 import fetch from "./fetch.js"
-
-const { createAsyncThunk, createSlice, createSelector } = reduxToolkit.default ?? reduxToolkit
 
 /*
     从服务器获取todos
@@ -157,4 +155,3 @@ const selectShowedTodos = createSelector(
 
 export default todosSlice
 export { selectDirtyTodos, selectShowedTodos }
-

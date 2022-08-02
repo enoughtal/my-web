@@ -1,9 +1,8 @@
-import * as reduxToolkit from '@reduxjs/toolkit'
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { GUEST_ID } from '../../tools/variables'
 import noticeSlice from '../notice'
 import fetch from './fetch'
 import preferenceReducers from './preference.js'
-const { createAsyncThunk, createSlice } = reduxToolkit.default ?? reduxToolkit
 
 const initialState = {
     userId: GUEST_ID,
@@ -120,4 +119,3 @@ const userSlice = createSlice({
 
 export default userSlice
 export { savePreference, saveTic, selectNotLoseRate, selectPower, selectTitle } from './preference.js'
-

@@ -5,9 +5,9 @@ import userSlice from '../../store/user'
 import Ai from '../../tools/game/Ai'
 import Game from '../../tools/game/Game'
 import { GUEST_ID } from '../../tools/variables'
-import GameBoard from './GameBoard'
+import GameBoard from './GameBoard/index.jsx'
 import './index.sass'
-import LeftPanel from './LeftPanel'
+import LeftPanel from './LeftPanel/index.jsx'
 
 const cheatPattern = [
     [1, 2, 2],

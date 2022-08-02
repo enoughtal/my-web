@@ -1,11 +1,8 @@
-import * as reduxToolkit from "@reduxjs/toolkit"
+import { configureStore } from "@reduxjs/toolkit"
 import filesSlice from "./files"
 import noticeSlice from "./notice"
 import todosSlice from './todos'
 import userSlice from './user'
-
-//https://github.com/reduxjs/redux-toolkit/issues/1960
-const { configureStore } = reduxToolkit.default ?? reduxToolkit
 
 const store = configureStore({
     reducer: {

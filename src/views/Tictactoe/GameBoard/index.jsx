@@ -1,4 +1,4 @@
-import GameHistory from './GameHistory'
+import GameHistory from './GameHistory/index.jsx'
 import './index.sass'
 
 export default function GameBoard({

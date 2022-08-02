@@ -1,7 +1,7 @@
 import './index.sass'
-import ProjectList from './ProjectList'
+import ProjectList from './ProjectList/index.jsx'
 import list from './projects.json'
-import Resume from './Resume'
+import Resume from './Resume/index.jsx'
 
 export default function About() {
     return (

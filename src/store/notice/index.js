@@ -1,5 +1,4 @@
-import * as reduxToolkit from '@reduxjs/toolkit'
-const { createSlice } = reduxToolkit.default ?? reduxToolkit
+import { createSlice } from '@reduxjs/toolkit'
 
 const noticeSlice = createSlice({
     name: 'notice',
