@@ -9,8 +9,8 @@ module.exports = {
     entry: './src/server.jsx',
     output: {
         path: path.resolve(__dirname, './dist/server'),
-        filename: 'server.js',
-        clean: true
+        filename: 'server.cjs',
+        clean: true,
     },
     module: {
         rules: [

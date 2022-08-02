@@ -8,8 +8,8 @@ module.exports = {
     entry: './src/client.jsx',
     output: {
         path: path.resolve(__dirname, './dist/client'),
-        filename: 'client.js',
-        clean: true
+        filename: 'client.cjs',
+        clean: true,
     },
     module: {
         rules: [
