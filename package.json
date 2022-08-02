@@ -8,8 +8,8 @@
         "dev": "nodemon index.js",
         "start": "cross-env NODE_ENV=production nodemon index.js",
         "build": "npm run build:client && npm run build:server",
-        "build:client": "webpack --config webpack.client.config.js",
-        "build:server": "webpack --config webpack.server.config.js"
+        "build:client": "webpack --config webpack.client.config.cjs",
+        "build:server": "webpack --config webpack.server.config.cjs"
     },
     "keywords": [],
     "author": "",
