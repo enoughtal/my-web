@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist/server'),
         filename: 'server.js',
         clean: true,
-        chunkFormat: 'module'
+        chunkFormat: 'commonjs'
         //library: {
         //    type: 'module'
         //}
