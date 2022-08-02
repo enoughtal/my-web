@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit"
-import filesSlice from "./files"
-import noticeSlice from "./notice"
-import todosSlice from './todos'
-import userSlice from './user'
+import filesSlice from "./files/index.js"
+import noticeSlice from "./notice/index.js"
+import todosSlice from './todos/index.js'
+import userSlice from './user/index.js'
 
 const store = configureStore({
     reducer: {

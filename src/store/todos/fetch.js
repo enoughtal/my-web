@@ -1,5 +1,5 @@
-import { postData } from "../../tools/helper"
-import { dataHost, dataPort } from '../../tools/variables'
+import { postData } from "../../tools/helper/index.js"
+import { dataHost, dataPort } from '../../tools/variables/index.js'
 
 const readTodos = async (query) => {
     const res = await postData(`https://${dataHost}:${dataPort}/api/readTodos`, query)

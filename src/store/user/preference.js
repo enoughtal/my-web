@@ -2,8 +2,8 @@
     this module includes preference and tictactoe
 */
 import { createAsyncThunk, createSelector } from '@reduxjs/toolkit'
-import { ELEMENT, powerValues, prizeEmojiArr, prizeTextArr, scoreValues } from '../../tools/variables'
-import fetch from './fetch'
+import { ELEMENT, powerValues, prizeEmojiArr, prizeTextArr, scoreValues } from '../../tools/variables/index.js'
+import fetch from './fetch.js'
 
 //tic游戏加分
 const gain = (result) => {

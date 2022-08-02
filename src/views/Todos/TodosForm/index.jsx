@@ -1,12 +1,12 @@
 import { message } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import todosSlice from '../../../store/todos'
-import userSlice, { savePreference } from '../../../store/user'
-import { themeClass } from '../../../tools/helper'
-import { useDebounce } from '../../../tools/hooks'
+import todosSlice from '../../../store/todos/index.js'
+import userSlice, { savePreference } from '../../../store/user/index.js'
+import { themeClass } from '../../../tools/helper/index.js'
+import { useDebounce } from '../../../tools/hooks/index.js'
 import RandomTodo from '../../../tools/todos/RandomTodo.js'
-import { DELAY_TIME, GUEST_ID } from '../../../tools/variables'
+import { DELAY_TIME, GUEST_ID } from '../../../tools/variables/index.js'
 import './index.sass'
 
 export default function TodosForm() {

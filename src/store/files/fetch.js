@@ -1,5 +1,5 @@
-import { getData, postData } from '../../tools/helper'
-import { dataHost, dataPort } from '../../tools/variables'
+import { getData, postData } from '../../tools/helper/index.js'
+import { dataHost, dataPort } from '../../tools/variables/index.js'
 
 const fetch = {
     async getFile(data) {

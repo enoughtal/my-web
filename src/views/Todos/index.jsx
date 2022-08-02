@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { themeClass } from '../../tools/helper'
+import { themeClass } from '../../tools/helper/index.js'
 import './index.sass'
 import TodosForm from "./TodosForm/index.jsx"
 import TodosTable from "./TodosTable/index.jsx"
