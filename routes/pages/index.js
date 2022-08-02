@@ -14,7 +14,7 @@ async function getPage(req, res, next) {
         }
         else {
             template = await fsp.readFile(path.resolve(cwd, 'dist/client/index.html'), 'utf8')
-            render = (await import('../../dist/server/server.js')).render
+            render = (await import('../../dist/server/server.cjs')).render
         }
 
         const html = template.replace('<!--app-->', render(url))
