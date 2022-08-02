@@ -4,7 +4,7 @@ const nodeExternals = require('webpack-node-externals')
 
 module.exports = {
     mode: 'production',
-    target: 'node',
+    //target: 'node',
     externals: [nodeExternals()],
     experiments: {
         outputModule: true
@@ -14,7 +14,7 @@ module.exports = {
         path: path.resolve(__dirname, './dist/server'),
         filename: 'server.js',
         clean: true,
-        //chunkFormat: 'commonjs'
+        //chunkFormat: 'commonjs',
         module: true
         //library: {
         //    type: 'module'
