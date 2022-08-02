@@ -6,15 +6,16 @@ module.exports = {
     mode: 'production',
     target: 'node',
     externals: [nodeExternals()],
-    //experiments: {
-    //    outputModule: true
-    //},
+    experiments: {
+        outputModule: true
+    },
     entry: './src/server.jsx',
     output: {
         path: path.resolve(__dirname, './dist/server'),
         filename: 'server.js',
         clean: true,
-        chunkFormat: 'commonjs'
+        //chunkFormat: 'commonjs'
+        module: true
         //library: {
         //    type: 'module'
         //}
