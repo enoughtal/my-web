@@ -2,10 +2,10 @@
     "name": "my-web",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "index.mjs",
     "scripts": {
-        "dev": "nodemon index",
-        "start": "cross-env NODE_ENV=production nodemon index",
+        "dev": "nodemon index.mjs",
+        "start": "cross-env NODE_ENV=production nodemon index.mjs",
         "build": "npm run build:client && npm run build:server",
         "build:client": "webpack --config webpack.client.config.js",
         "build:server": "webpack --config webpack.server.config.js"
