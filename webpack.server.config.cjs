@@ -6,11 +6,18 @@ module.exports = {
     mode: 'production',
     target: 'node',
     externals: [nodeExternals()],
+    //experiments: {
+    //    outputModule: true
+    //},
     entry: './src/server.jsx',
     output: {
         path: path.resolve(__dirname, './dist/server'),
-        filename: 'server.cjs',
+        filename: 'server.js',
         clean: true,
+        chunkFormat: 'module'
+        //library: {
+        //    type: 'module'
+        //}
     },
     module: {
         rules: [

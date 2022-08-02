@@ -5,11 +5,18 @@ const { defaultMinimizerOptions } = require('html-loader')
 
 module.exports = {
     mode: 'production',
+    //experiments: {
+    //    outputModule: true
+    //},
     entry: './src/client.jsx',
     output: {
         path: path.resolve(__dirname, './dist/client'),
-        filename: 'client.cjs',
+        filename: 'client.js',
         clean: true,
+        chunkFormat: 'module'
+        //library: {
+        //    type: 'module'
+        //}
     },
     module: {
         rules: [
