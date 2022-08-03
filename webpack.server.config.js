@@ -20,10 +20,10 @@ module.exports = {
         filename: 'server.js',
         clean: true,
         chunkFormat: 'module',
-        module: true
-        //library: {
-        //    type: 'module'
-        //}
+        module: true,
+        library: {
+            type: 'module'
+        }
     },
     module: {
         rules: [
