@@ -7,9 +7,9 @@ module.exports = {
     target: false,
     //target: 'node',
     externals: [nodeExternals()],
-    //experiments: {
-    //    outputModule: true
-    //},
+    experiments: {
+        outputModule: true
+    },
     resolve: {
         extensions: ['.jsx', '...']
     },
