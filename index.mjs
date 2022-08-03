@@ -4,12 +4,12 @@ import session from 'express-session'
 import https from 'https'
 import path from 'path'
 import { cwd, GUEST_ID, isProduction, PORT, secret, SESSION_TTL, tls, token } from './global.mjs'
-import initDb from './mongodb/index.js'
-import connectDb from './mongodb/session.js'
-import filesRoute from './routes/files/index.js'
-import pagesRoute from './routes/pages/index.js'
-import todosRoute from './routes/todos/index.js'
-import usersRoute from './routes/users/index.js'
+import initDb from './mongodb/index.mjs'
+import connectDb from './mongodb/session.mjs'
+import filesRoute from './routes/files/index.mjs'
+import pagesRoute from './routes/pages/index.mjs'
+import todosRoute from './routes/todos/index.mjs'
+import usersRoute from './routes/users/index.mjs'
 
 async function createServer() {
     const app = express()

@@ -5,7 +5,7 @@ import {
     operateFindAndToArray,
     operateInCollection,
     operateUpdateOne
-} from "./index.js"
+} from "./index.mjs"
 
 export default function connectDb(session) {
     const Store = session.Store

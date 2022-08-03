@@ -4,7 +4,7 @@ import {
     operateFindAndToArray,
     operateInCollection,
     operateUpsertMany
-} from '../../mongodb/index.js'
+} from '../../mongodb/index.mjs'
 
 const COLL_NAME = 'todos'
 
