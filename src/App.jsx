@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css'
+//import 'antd/dist/antd.css'
 import { Route, Routes } from 'react-router-dom'
 import About from './views/About/index.jsx'
 import Blog from './views/Blog/index.jsx'
