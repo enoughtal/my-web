@@ -4,8 +4,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
     //mode: 'production',
-    //target: false,
-    target: 'node',
+    target: false,
+    //target: 'node',
     externals: [nodeExternals()],
     //experiments: {
     //    outputModule: true
@@ -19,7 +19,7 @@ module.exports = {
         //publicPath: '',
         filename: 'server.js',
         clean: true,
-        //chunkFormat: 'module',
+        chunkFormat: 'module',
         //module: true
         //library: {
         //    type: 'module'
