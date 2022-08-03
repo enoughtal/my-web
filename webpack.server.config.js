@@ -15,6 +15,7 @@ module.exports = {
     entry: './src/server.jsx',
     output: {
         path: path.resolve(__dirname, './dist/server'),
+        publicPath: '',
         filename: 'server.js',
         clean: true,
         chunkFormat: 'module',
