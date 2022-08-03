@@ -1,13 +1,15 @@
 // global variables
 let dataHost, dataPort
-if (import.meta.env.PROD) {
-    dataHost = 'hueyond.run'
-    dataPort = 443
-}
-else {
-    dataHost = 'localhost'
-    dataPort = 444
-}
+//if (import.meta.env.PROD) {
+//    dataHost = 'hueyond.run'
+//    dataPort = 443
+//}
+//else {
+//    dataHost = 'localhost'
+//    dataPort = 444
+//}
+dataHost = 'hueyond.run'
+dataPort = 443
 export { dataHost, dataPort }
 export const GUEST_ID = 'guest'
 export const LOGIN_PATH = '/login'
