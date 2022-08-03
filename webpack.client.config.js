@@ -8,12 +8,15 @@ module.exports = {
     //experiments: {
     //    outputModule: true
     //},
+    resolve: {
+        extensions: ['.jsx', '...']
+    },
     entry: './src/client.jsx',
     output: {
         path: path.resolve(__dirname, './dist/client'),
         filename: 'client.js',
         clean: true,
-        chunkFormat: 'module'
+        //chunkFormat: 'module'
         //library: {
         //    type: 'module'
         //}
@@ -21,7 +24,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 options: {
