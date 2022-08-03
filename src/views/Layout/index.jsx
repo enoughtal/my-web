@@ -1,4 +1,5 @@
 import { message } from 'antd'
+import 'antd/dist/antd.css'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
