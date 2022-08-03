@@ -15,6 +15,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './dist/client'),
         filename: 'client.js',
+        publicPath: '/dist/client/',
         clean: true,
         //chunkFormat: 'module'
         //library: {

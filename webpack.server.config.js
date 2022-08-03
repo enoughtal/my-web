@@ -16,11 +16,11 @@ module.exports = {
     entry: './src/server.jsx',
     output: {
         path: path.resolve(__dirname, './dist/server'),
-        publicPath: '/',
+        //publicPath: '/',
         filename: 'server.js',
         clean: true,
-        chunkFormat: 'module',
-        //module: true
+        //chunkFormat: 'module',
+        module: true
         //library: {
         //    type: 'module'
         //}
