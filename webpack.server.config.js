@@ -3,8 +3,8 @@ const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    mode: 'production',
-    target: 'node',
+    //mode: 'production',
+    target: false,
     externals: [nodeExternals()],
     //experiments: {
     //    outputModule: true
