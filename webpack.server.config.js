@@ -3,7 +3,7 @@ const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    //mode: 'production',
+    mode: 'production',
     target: 'node',
     externals: [nodeExternals()],
     //experiments: {
@@ -38,25 +38,37 @@ module.exports = {
             },
             {
                 test: /\.(sass|css)$/,
-                //loader: 'css-loader',
-                //options: {
-                //    modules: {
-                //        exportOnlyLocals: true
-                //    }
-                //}
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            emit: false
+                        }
+                    },
+                    {
+                        loader: 'css-loader',
+                        //options: {
+                        //    modules: {
+                        //        exportOnlyLocals: true
+                        //    }
+                        //}
+                    },
                     'sass-loader'
                 ]
             },
             {
                 test: /\.(png|jpg)$/,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    emit: false
+                }
             },
             {
                 test: /\.woff$/,
-                type: 'asset/resource'
+                type: 'asset/resource',
+                generator: {
+                    emit: false
+                }
             },
         ]
     },
