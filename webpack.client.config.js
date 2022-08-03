@@ -17,7 +17,7 @@ module.exports = {
         filename: 'client.js',
         publicPath: '/dist/client/',
         clean: true,
-        //chunkFormat: 'module'
+        chunkFormat: 'module'
         //library: {
         //    type: 'module'
         //}
