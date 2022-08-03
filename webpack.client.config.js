@@ -44,6 +44,9 @@ module.exports = {
             },
             {
                 test: /\.css$/,
+                include: [
+                    path.resolve(__dirname, './node_modules/antd/dist/antd.css')
+                ],
                 use: [
                     MiniCssExtractPlugin.loader,
                     'css-loader',
