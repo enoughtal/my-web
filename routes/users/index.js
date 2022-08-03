@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import debug from 'debug'
 import { nanoid } from 'nanoid'
-import { GUEST_ID } from '../../global.js'
+import { GUEST_ID } from '../../global.mjs'
 import {
     operateFindAndToArray,
     operateFindOne,

@@ -1,6 +1,6 @@
 import fsp from 'fs/promises'
 import path from 'path'
-import { cwd, isProduction } from '../../global.js'
+import { cwd, isProduction } from '../../global.mjs'
 
 async function getPage(req, res, next) {
     const url = req.originalUrl

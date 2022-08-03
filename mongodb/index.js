@@ -1,6 +1,6 @@
 import debug from 'debug'
 import { MongoClient } from "mongodb"
-import { isProduction } from '../global.js'
+import { isProduction } from '../global.mjs'
 
 const DB_URL = 'mongodb://localhost:27017'
 const DB_NAME = isProduction ? 'myweb' : 'test'
