@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
 import debug from 'debug'
-import { nanoid } from 'nanoid'
 import { GUEST_ID } from '../../global.mjs'
 import {
     operateFindAndToArray,
@@ -30,7 +29,8 @@ async function readUsers(req, res, next) {
 
 /* 注册 */
 async function register(req, res, next) {
-    const userId = nanoid(5)
+    //const userId = nanoid(5)
+    const userId = '12345'
     const newUser = { ...req.body, userId }//preference也保存了
 
     if (req._existedUsers.map(user => user.username).includes(newUser.username)) {
