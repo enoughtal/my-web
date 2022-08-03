@@ -19,7 +19,7 @@ module.exports = {
         //publicPath: '/',
         filename: 'server.js',
         clean: true,
-        //chunkFormat: 'module',
+        chunkFormat: 'module',
         module: true
         //library: {
         //    type: 'module'
