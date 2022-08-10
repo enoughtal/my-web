@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
-import ReactMarkdown from 'react-markdown'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../store/files'
 import Category from './Category'
 import './index.sass'
+
+const ReactMarkdown = lazy(() => import('react-markdown'))
 
 export default function Blog() {
     const [dropdown, setDropdown] = useState(false)
@@ -40,9 +41,11 @@ export default function Blog() {
                     <div className='myapp-blog-main-center-content-time'>
                         {time}
                     </div>
-                    <ReactMarkdown>
-                        {content}
-                    </ReactMarkdown>
+                    <Suspense fallback={<div>Loading...</div>}>
+                        <ReactMarkdown>
+                            {content}
+                        </ReactMarkdown>
+                    </Suspense>
                 </div>
             </div>
 

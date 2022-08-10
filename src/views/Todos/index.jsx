@@ -1,8 +1,9 @@
+import { lazy, Suspense } from 'react'
 import { useSelector } from 'react-redux'
 import { themeClass } from '../../tools/helper'
 import './index.sass'
 import TodosForm from "./TodosForm"
-import TodosTable from "./TodosTable"
+const TodosTable = lazy(() => import('./TodosTable'))
 
 export default function Todos() {
     const theme = useSelector(state => state.user.preference.theme)
@@ -13,7 +14,9 @@ export default function Todos() {
                 <TodosForm />
             </div>
             <div className={themeClass(theme, 'myapp-todos-table-container')}>
-                <TodosTable />
+                <Suspense fallback={<div>Loading...</div>}>
+                    <TodosTable />
+                </Suspense>
             </div>
         </>
     )

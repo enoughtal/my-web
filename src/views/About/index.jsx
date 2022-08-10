@@ -1,7 +1,9 @@
+import { lazy, Suspense } from 'react'
 import './index.sass'
-import ProjectList from './ProjectList'
 import list from './projects.json'
 import Resume from './Resume'
+
+const ProjectList = lazy(() => import('./ProjectList'))
 
 export default function About() {
     return (
@@ -15,7 +17,9 @@ export default function About() {
                     个人项目
                 </div>
                 <hr />
-                <ProjectList list={list}/>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <ProjectList list={list}/>
+                </Suspense>
             </div>
         </div>
     )
