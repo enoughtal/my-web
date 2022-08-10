@@ -2,8 +2,8 @@ import { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { themeClass } from '../../../tools/helper'
 import './index.sass'
-import ScoreText from './ScoreText/index.jsx'
-import UserScore from './UserScore/index.jsx'
+import ScoreText from './ScoreText'
+import UserScore from './UserScore'
 
 export default function LeftPanel({ mode, setMode, level, setLevel, end, start }) {
     const theme = useSelector(state => state.user.preference.theme)

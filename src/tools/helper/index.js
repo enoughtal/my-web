@@ -1,4 +1,4 @@
-import { token } from "../variables/index.js"
+import { token } from "../variables"
 
 /* 生成带主题的类名 */
 export function themeClass(theme, className = '') {

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCategory } from '../../store/files'
-import Category from './Category/index.jsx'
+import Category from './Category'
 import './index.sass'
 
 export default function Blog() {

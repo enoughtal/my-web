@@ -1,7 +1,6 @@
-import { createAsyncThunk, createSelector, createSlice } from "@reduxjs/toolkit"
+import { createAsyncThunk, createSelector, createSlice, nanoid } from "@reduxjs/toolkit"
 import { logout } from "../user/index.js"
 import fetch from "./fetch.js"
-
 /*
     从服务器获取todos
 */
@@ -45,8 +44,7 @@ export const saveTodos = createAsyncThunk(
 function generateTodo(inputs) {
     const createdTime = Date.now() + 8 * 3600 * 1000
     const completed = false
-    //const id = nanoid(8)
-    const id = '12345678'
+    const id = nanoid(8)
     const todo = {
         ...inputs,
         createdTime,

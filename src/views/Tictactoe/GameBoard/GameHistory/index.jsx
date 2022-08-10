@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
-import { themeClass } from '../../../../tools/helper/index.js'
+import { themeClass } from '../../../../tools/helper'
 import './index.sass'
 
 export default function GameHistory({ currentStep, goToStep }) {

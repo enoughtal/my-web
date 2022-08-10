@@ -1,13 +1,13 @@
 import { message } from 'antd'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import userSlice from '../../store/user/index.js'
-import Ai from '../../tools/game/Ai.js'
-import Game from '../../tools/game/Game.js'
-import { GUEST_ID } from '../../tools/variables/index.js'
-import GameBoard from './GameBoard/index.jsx'
+import userSlice from '../../store/user'
+import Ai from '../../tools/game/Ai'
+import Game from '../../tools/game/Game'
+import { GUEST_ID } from '../../tools/variables'
+import GameBoard from './GameBoard'
 import './index.sass'
-import LeftPanel from './LeftPanel/index.jsx'
+import LeftPanel from './LeftPanel'
 
 const cheatPattern = [
     [1, 2, 2],

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import fetch from "./fetch.js";
+import fetch from "./fetch";
 
 /* 获取文章内容 */
 export const getFile = createAsyncThunk(

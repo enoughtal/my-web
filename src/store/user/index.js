@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { GUEST_ID } from '../../tools/variables/index.js'
-import noticeSlice from '../notice/index.js'
-import fetch from './fetch.js'
+import { GUEST_ID } from '../../tools/variables'
+import noticeSlice from '../notice'
+import fetch from './fetch'
 import preferenceReducers from './preference.js'
 
 const initialState = {
