@@ -119,14 +119,15 @@ export default function Layout() {
                         {dropdown &&
                         <div className='myapp-layout-header-nav-dropdown-vertical'>
                             <div>
-                                <NavLink to='/blog'
+                                {/*<NavLink to='/blog'
                                     className={({ isActive }) =>
                                         isActive
                                         ? 'myapp-layout-header-nav-dropdown-vertical-active'
                                         : ''}
                                 >
                                     Blog
-                                </NavLink>
+                                </NavLink>*/}
+                                <a href='https://localhost/blog'>adf</a>
                             </div>
                             <div>
                                 <NavLink to='/todos'
@@ -163,14 +164,15 @@ export default function Layout() {
 
                     <div className='myapp-layout-header-nav-horizontal'>
                         <span className='myapp-layout-header-nav-horizontal-link'>
-                            <NavLink to='/blog'
+                            {/*<NavLink to='/blog'
                                 className={({ isActive }) =>
                                     isActive
                                     ? 'myapp-layout-header-nav-horizontal-link-active'
                                     : ''}
                             >
                                 Blog
-                            </NavLink>
+                            </NavLink>*/}
+                            <a href='https://localhost/blog'>adf</a>
                         </span>
                         <span className='myapp-layout-header-nav-horizontal-seperator'>
                             |

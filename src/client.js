@@ -4,5 +4,5 @@ import App from './App.js'
 
 ReactDOM.hydrateRoot(
     document,
-    <App assets={window.assetManifest} Router={BrowserRouter}/>
+    <App assets={window.assetManifest} Router={BrowserRouter} />
 )

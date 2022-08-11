@@ -28,7 +28,7 @@ function Page() {
     )
 }
 
-export default function App({ assets, Router, title = 'myapp' }) {
+export default function App({ assets, Router }) {
     return (
         <html lang="en">
             <head>
@@ -36,7 +36,7 @@ export default function App({ assets, Router, title = 'myapp' }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="data:,"/>
                 <link rel="stylesheet" href={assets["main.css"]} />
-                <title>{title}</title>
+                <title>{assets.baseUrl}</title>
             </head>
             <body>
                 <noscript
