@@ -5,13 +5,11 @@ import "./index.sass"
 export default function DropdownCategory() {
     const [dropdown, setDropdown] = useState(false)
     const [isWaiting, setIsWaiting] = useState(true)
-    const foo = 'bar'
+
     useEffect(() => {
-        setTimeout(() => setIsWaiting(false), 3000)
-        console.log(foo)
+        const timer = setTimeout(() => setIsWaiting(false), 400)
         return () => {
-            clearTimeout()
-            setIsWaiting(true)
+            clearTimeout(timer)
         }
     }, [])
 

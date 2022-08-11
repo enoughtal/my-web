@@ -1,6 +1,6 @@
 import * as ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import store from '../src/store'
 import About from '../src/views/About/index.jsx'
 import Blog from '../src/views/Blog/index.jsx'
@@ -30,8 +30,8 @@ function App() {
 const root = ReactDOM.createRoot(document.getElementById('app'))
 root.render(
     <Provider store={store}>
-        <BrowserRouter>
+        <HashRouter>
             <App />
-        </BrowserRouter>
+        </HashRouter>
     </Provider>
 )

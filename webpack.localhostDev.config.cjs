@@ -54,7 +54,7 @@ const config = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            title: 'dev',
+            //title: 'dev',
             template: './localhostDev/index.html',
             minify: {
                 ...defaultMinifyOptions,

@@ -49,7 +49,9 @@ export default function UserScore() {
 
     const login =
         <p className='myapp-comp-userscore-login'>
-            <span onClick={() => navigate('/login', { state: { from: location } })}>
+            <span onClick={() => {
+                navigate('/login', { state: { from: location } })
+            }}>
                 登录
             </span>
             以显示更多
