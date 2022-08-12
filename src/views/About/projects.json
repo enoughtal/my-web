@@ -11,10 +11,9 @@
             "express",
             "mongodb",
             "webpack",
-            "antd",
-            "ssr"
+            "antd"
         ],
-        "details": "这个项目就是本网站，一个使用“MERN”的全栈开发。前端框架使用react，状态管理使用redux toolkit，导航使用react router，组件使用了antd。后端使用node的express框架，数据库使用mongodb官方node库，云服务器是1核 2GB 2Mbps windows系统。本网站采用了服务端渲染，应用和数据库部署在同一个服务器上。开发和打包使用了webpack，全手动配置，未用脚手架。网站具有简单的用户系统，界面采用响应式设计。本网站在第一次打开时加载速度较慢，部分原因是免费版的域名解析速度慢。"
+        "details": "这个项目就是本网站，一个使用“MERN”的全栈开发。前端框架使用react，状态管理使用redux toolkit，导航使用react router，组件使用了antd。后端使用node的express框架，数据库使用mongodb官方node库，云服务器是1核 2GB 2Mbps windows系统。本网站采用了服务端渲染，应用和数据库部署在同一个服务器上。开发和打包使用了webpack，未用脚手架，全手动配置。网站具有简单的用户系统，界面采用响应式设计。本网站在第一次打开时加载速度较慢，部分原因是免费版的域名解析速度慢。由于水平有限，代码分离和分包等做的不好，首页加载大概需要5秒。"
     },
     {
         "name": "aUniappProject",

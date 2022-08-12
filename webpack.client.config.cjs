@@ -17,7 +17,7 @@ const sharedConfig = require('./webpack.shared.config.cjs')
 const config = {
     entry: './src/client.js',
     output: {
-        filename: 'main.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, './dist/client'),
         publicPath: '/client/',
         clean: true
@@ -59,7 +59,7 @@ const config = {
         //        removeComments: false
         //    }
         //}),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
     ]
 }
 

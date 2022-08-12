@@ -18,7 +18,7 @@ const defaultMinifyOptions = {
 const config = {
     devServer: {
         static: './dev',
-        port: 443,
+        port: 4444,//the port of corresponding data server is 444(another node process)
         server: {
             type: 'https',
             options: {
@@ -54,14 +54,13 @@ const config = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            //title: 'dev',
             template: './localhostDev/index.html',
             minify: {
                 ...defaultMinifyOptions,
                 removeComments: false
             }
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
     ]
 }
 

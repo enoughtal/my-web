@@ -36,7 +36,6 @@ export default function App({ assets, Router }) {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="data:,"/>
                 <link rel="stylesheet" href={assets["main.css"]} />
-                <title>{`${assets.baseUrl} | hueyond`}</title>
             </head>
             <body>
                 <noscript

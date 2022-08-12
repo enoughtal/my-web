@@ -1,5 +1,6 @@
-export const dataHost = process.env.dataHost
-export const dataPort = process.env.dataPort
+/* eslint-disable no-undef */
+export const dataHost = _DATA_HOST
+export const dataPort = _DATA_PORT
 export const GUEST_ID = 'guest'
 export const LOGIN_PATH = '/login'
 export const DELAY_TIME = 5_000
