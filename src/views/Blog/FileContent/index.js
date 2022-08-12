@@ -7,7 +7,7 @@ export default function FileContent() {
     const time = createdAt ? new Date(createdAt).toISOString().slice(0, 10) : ''
 
     return (
-        <>
+        <div className='myapp-comp-filecontent'>
             <div className='myapp-comp-filecontent-title'>
                 {title}
             </div>
@@ -15,6 +15,6 @@ export default function FileContent() {
                 {time}
             </div>
             <ReactMarkdown>{content}</ReactMarkdown>
-        </>
+        </div>
     )
 }

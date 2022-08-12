@@ -22,9 +22,7 @@ export default function Blog() {
                     </Suspense>
                 </div>
 
-                <div className='myapp-blog-main-center-content'>
-                    <FileContent />
-                </div>
+                <FileContent />
             </div>
 
             <div className='myapp-blog-main-right'>
