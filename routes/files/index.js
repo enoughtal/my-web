@@ -6,7 +6,7 @@ async function getFile(req, res, next) {
     const { subject, filename } = req.body
 
     try {
-        const filePath = path.resolve('static', subject, filename)
+        const filePath = path.resolve('public', subject, filename)
         const text = await readFile(filePath, { encoding: 'utf8' })
         const stats = await stat(filePath)
         const data = {
@@ -43,7 +43,7 @@ async function getCategory(req, res, next) {
     }
 
     try {
-        await getFilesInDir('static', result)
+        await getFilesInDir('public', result)
     }
     catch (err) {
         next(err)
