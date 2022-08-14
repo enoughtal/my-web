@@ -6,24 +6,68 @@
     &-main-left
         flex: 1 1
         margin-left: 2rem
+        min-height: 90vh
     &-main-center
         flex: 5
         margin-right: 2rem
         background-color: inherit
-        &-headline
-            font-size: 1.2rem
-            text-align: center
-        hr
-            font-size: 1rem
-            border: none
-            color: inherit
+        &-tabs
+            font-size: 1em
+            &-item
+                display: inline-block
+                padding: 0.2rem 0.5rem
+                border: 1px solid gray
+                border-bottom-width: 2px
+                border-top-left-radius: 10px
+                transform: translateY(2px)
+            &-item-chosen
+                @extend .myapp-about-main-center-tabs-item
+                border-right: none
+                &-dark
+                    @extend .myapp-about-main-center-tabs-item-chosen
+                    border-bottom-color: #333333
+                &-light
+                    @extend .myapp-about-main-center-tabs-item-chosen
+                    border-bottom-color: #ffffff
+            &-voiditem
+                @extend .myapp-about-main-center-tabs-item
+                border: none
+                transform: translate(-1px, 2px)
+            &-voiditem-chosen
+                @extend .myapp-about-main-center-tabs-voiditem
+                border-left: 1px solid gray
+                border-bottom: 2px solid gray
+                border-bottom-left-radius: 10px
+                border-top-left-radius: 0
+                &-dark
+                    @extend .myapp-about-main-center-tabs-voiditem-chosen
+                    box-shadow: -3px 3px #333333
+                &-light
+                    @extend .myapp-about-main-center-tabs-voiditem-chosen
+                    box-shadow: -3px 3px #ffffff
+        &-content
+            border: 1px solid gray
+            border-top-width: 2px
+            border-top-right-radius: 2rem
+            border-bottom-left-radius: 2rem
             background-color: inherit
-            overflow: visible
-            text-align: center
-            border-bottom: 3px double gray
-            height: 0.8rem
-            &::after
+            padding: 1rem 1rem
+            &-projects
                 background-color: inherit
-                content: 'All done by myself'
-                padding: 0 3px
-                font-style: italic
+                &-headline
+                    font-size: 1.2rem
+                    text-align: center
+                hr
+                    font-size: 1rem
+                    border: none
+                    color: inherit
+                    background-color: inherit
+                    overflow: visible
+                    text-align: center
+                    border-bottom: 3px double gray
+                    height: 0.8rem
+                    &::after
+                        background-color: inherit
+                        content: 'All done by myself'
+                        padding: 0 3px
+                        font-style: italic
