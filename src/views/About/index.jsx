@@ -1,12 +1,10 @@
-import { lazy, Suspense, useState } from 'react'
+import { useState } from 'react'
 import { useSelector } from 'react-redux'
-
 import './index.sass'
 import PersonalStatement from './PersonalStatement'
+import ProjectList from './ProjectList'
 import list from './projects.json'
 import Resume from './Resume'
-
-const ProjectList = lazy(() => import('./ProjectList'))
 
 export default function About() {
     const [tab, setTab] = useState('projects')
@@ -57,13 +55,13 @@ export default function About() {
                                 个人项目
                             </div>
                             <hr />
-                            <Suspense fallback={<div>Loading...</div>}>
-                                <ProjectList list={list}/>
-                            </Suspense>
+                            <ProjectList list={list}/>
                         </div>
                     )}
                     {tab === 'statement'
-                    && <PersonalStatement />}
+                    && (
+                        <PersonalStatement />
+                    )}
                 </div>
             </div>
         </div>
