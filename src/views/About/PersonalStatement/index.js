@@ -80,7 +80,7 @@ const statement = `
 
 1. 使用过uniapp的sqlite。学习过sql语言，可快速上手。
 
-1. 使用过mongodb及其第三方框架mongoose。
+1. 使用过mongodb及其第三方库mongoose。
 ***
 
 ### 其他技能

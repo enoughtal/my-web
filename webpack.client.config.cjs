@@ -20,7 +20,7 @@ const config = {
         filename: '[name].js',
         path: path.resolve(__dirname, './dist/client'),
         publicPath: '/client/',
-        clean: true
+        clean: true,
     },
     module: {
         rules: [
