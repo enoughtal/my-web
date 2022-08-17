@@ -11,7 +11,6 @@ const fn = (arg = true) => {
 }
 
 let foo
-// if (true) foo = 'some value'
 fn(foo) // do something
 ```
 Firstly, I thought the foo was undefined and that its boolean value was false, so the call fn(foo) was equal to fn(false), and the fn would print 'do nothing'. But I was wrong! When calling fn(undefined), it is equal to fn(), so the fn will use the default argument - true, then print 'do something'. If I rewrote it as follows,
