@@ -12,9 +12,9 @@ const statement = `
 
 ## 个人技能：
 ### javascript
-1. 精通javascript。掌握js语言的精粹——一等对象（first class）的函数、简洁强大的对象、基于原型链的类继承；掌握js的异步编程，理解会用回调函数、Promise、then catch、async await；掌握js的异常处理，理解会用throw、try catch finally。
+1. 熟练掌握javascript。掌握js语言的精粹——一等对象（first class）的函数、简洁强大的对象、基于原型链的类继承；掌握js的异步编程，理解会用回调函数、Promise、then catch、async await；掌握js的异常处理，理解会用throw、try catch finally。
 
-1. 精通es6+语法。掌握箭头函数及其与普通函数的区别；掌握esmodule、import import() export、解构赋值、扩展运算符（...）、可迭代对象等。
+1. 熟练掌握es6+语法。掌握箭头函数及其与普通函数的区别；掌握esmodule、import import() export、解构赋值、扩展运算符（...）、可迭代对象等。
 
 1. 熟悉会用node。掌握commonjs及其与esmodule的区别；熟悉会用fs读写文件、http/https构建网络服务等。
 
