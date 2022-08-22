@@ -52,7 +52,7 @@ const statement = `
 ### 前端框架
 1. 熟悉会用react。
 
-1. 熟悉会用vue2，快速上手vue3。
+1. 熟悉会用vue2、vue3。
 
 1. 熟悉会用状态管理redux、vuex、pinia；熟悉会用客户端路由react-router、vue-router。
 
