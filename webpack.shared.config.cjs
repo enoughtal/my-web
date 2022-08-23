@@ -29,6 +29,10 @@ module.exports = env => ({
                     ]
                 }
             },
+            {
+                test: /\.txt/,
+                type: 'asset/inline',
+            }
         ]
     },
     plugins: [

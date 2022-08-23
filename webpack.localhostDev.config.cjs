@@ -49,7 +49,7 @@ const config = {
             {
                 test: /\.woff$/,
                 type: 'asset/resource',
-            }
+            },
         ]
     },
     plugins: [

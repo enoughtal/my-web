@@ -47,7 +47,7 @@ const config = {
                     outputPath: './assets',
                     publicPath: '/client/assets/',
                 }
-            }
+            },
         ]
     },
     plugins: [
