@@ -83,5 +83,12 @@ watch and watchEffect
 useEffect
 ***
 
+### Provide / inject
+***
+provide/inject
+
+React.createContext/Context.Provider/useContext
+***
+
 ### the knowledge chain of vue
 reactive-ref-computed-watch-watchEffect-component-props-events-slots-composables
