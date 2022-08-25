@@ -48,20 +48,16 @@ export default function About() {
                 </div>
 
                 <div className='myapp-about-main-center-content'>
-                    {tab === 'projects'
-                    && (
-                        <div className="myapp-about-main-center-content-projects">
-                            <div className="myapp-about-main-center-content-projects-headline">
-                                个人项目
-                            </div>
-                            <hr />
-                            <ProjectList list={list}/>
+                    <div className={"myapp-about-main-center-content-projects" + (tab === 'projects' ? "" : " invisible")}>
+                        <div className="myapp-about-main-center-content-projects-headline">
+                            个人项目
                         </div>
-                    )}
-                    {tab === 'statement'
-                    && (
+                        <hr />
+                        <ProjectList list={list} />
+                    </div>
+                    <div className={tab === 'statement' ? "" : "invisible"}>
                         <PersonalStatement />
-                    )}
+                    </div>
                 </div>
             </div>
         </div>

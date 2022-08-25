@@ -3,6 +3,7 @@ import './index.sass'
 
 export default function ProjectList({ list }) {
     const [folded, setFolded] = useState(list.map(() => true))
+
     const handleFold = (index) => {
         setFolded(state => state.map((val, key) => {
             if (key === index) {

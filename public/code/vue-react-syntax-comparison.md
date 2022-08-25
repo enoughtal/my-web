@@ -1,4 +1,7 @@
 # vue-react-syntax-comparison
+***
+***
+
 ### Template Syntax
 ***
 {{msg}}
@@ -37,6 +40,7 @@ there is no direct syntax
 
 there is no direct syntax
 ***
+***
 
 ### Reactivity Fundamentals
 ***
@@ -48,18 +52,22 @@ ref(0)
 
 useState()
 ***
+***
 
 ### Computed Properties
 ***
 computed(() => author.books.length > 0 ? 'Yes' : 'No')
 
 useMemo()
+***
+***
 
 ### Conditional Rendering
 ***
 v-if
 
 if
+***
 ***
 
 ### List Rendering
@@ -68,12 +76,22 @@ v-for='item of items'
 
 items.map()
 ***
+***
+
+### Form Input Bindings
+***
+v-model='text'
+
+there is no direct syntax
+***
+***
 
 ### Lifecycle Hooks
 ***
 onMounted, onUpdated, and onUnmounted
 
 there is no direct syntax in the functional component
+***
 ***
 
 ### Watchers
@@ -82,12 +100,30 @@ watch and watchEffect
 
 useEffect
 ***
+***
+
+### Template Refs
+***
+const input = ref(); <input ref='input' />
+
+const input = useRef(); <input ref={input} />
+***
+***
 
 ### Provide / inject
 ***
 provide/inject
 
 React.createContext/Context.Provider/useContext
+***
+***
+
+### Async Components
+***
+defineAsyncComponent
+
+lazy
+***
 ***
 
 ### the knowledge chain of vue
