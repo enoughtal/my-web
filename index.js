@@ -1,4 +1,5 @@
 import compression from 'compression'
+import cors from 'cors'
 import express from 'express'
 import session from 'express-session'
 import https from 'https'
@@ -17,6 +18,12 @@ async function createServer() {
         只在第一次运行程序时初始化数据库的collection和expired字段，并不是打开也不是连接db
     */
     await initDb()
+
+    /* CORS */
+    app.use(cors({
+        origin: true,
+        credentials: true
+    }))
 
     /* session middleware */
     app.use(session({
