@@ -18,4 +18,4 @@ react的简洁是vue无法比的，当然了vue有它的template compilation，�
 
 我只想说，其实vue比react更难，因为vue的api实在太多，当然了api多还可以说成是渐进式吗。
 
-> I am a React cult fun boy.
+> I am a React cult fun boy, you can just 'hehe'.
