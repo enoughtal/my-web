@@ -1,0 +1,1 @@
+# onCreated和onBeforeRouteEnter并不存在
