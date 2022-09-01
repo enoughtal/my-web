@@ -1,6 +1,6 @@
 # react里的KeepAlive
 
-偶然想到一个问题，在react里怎么实现vue里<KeepAlive>的效果，大概有3个办法：
+偶然想到一个问题，在react里怎么实现vue里`<KeepAlive>`的效果，大概有3个办法：
 1. 通过css的display: none
 1. 通过状态管理使用全局状态
 1. 将子组件的状态提升到父组件

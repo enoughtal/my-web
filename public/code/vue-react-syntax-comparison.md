@@ -104,9 +104,9 @@ useEffect
 
 ### Template Refs
 ***
-const input = ref(); <input ref='input' />
+const input = ref(); `<input ref='input' />`
 
-const input = useRef(); <input ref={input} />
+const input = useRef(); `<input ref={input} />`
 ***
 ***
 
