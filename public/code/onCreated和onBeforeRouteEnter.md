@@ -1,1 +1,3 @@
-# onCreated和onBeforeRouteEnter并不存在
+# onCreated和onBeforeRouteEnter
+
+onCreated和onBeforeRouteEnter在vue3的composition api里*不*存在。因为在setup的时候，就在执行这两个钩子，我猜的。

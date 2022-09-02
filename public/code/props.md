@@ -1,4 +1,4 @@
-# 其实一个props就够了
+# props
 
 在[vue文档里的函数组件](https://vuejs.org/guide/extras/render-function.html#functional-components)里看到一个函数签名：
 ```
@@ -13,5 +13,3 @@ function MyComponent(props) {
   // ...
 }
 ```
-
-react的简洁是vue无法比的，vue的api实在太多（所以是渐进式😂）

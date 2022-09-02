@@ -1,4 +1,4 @@
-# node Buffer to web String
+# Buffer to String
 If writing the following code in Node,
 ```
 readFile(filePath)

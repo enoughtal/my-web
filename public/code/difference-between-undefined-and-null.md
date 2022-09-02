@@ -1,4 +1,4 @@
-# the difference between undefined and null
+# difference between undefined and null
 
 Most time, the primary types undefined and null are the same. For example, their truth is both false, reading their property will cause an error, and the new syntax ?., ??, ??= are treating them as the `nullish` value.
 
