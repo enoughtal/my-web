@@ -96,9 +96,9 @@ there is no direct syntax in the functional component
 
 ### Watchers
 ***
-watch and watchEffect
+watch, watchEffect((onCleanup) => { ...; onCleanup(cleanupFn); ... })
 
-useEffect
+useEffect(() => { ...; return cleanupFn; })
 ***
 ***
 
