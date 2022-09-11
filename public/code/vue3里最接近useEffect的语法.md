@@ -19,7 +19,7 @@ watchPostEffect((onCleanup) => {
 })
 
 // 或者
-watch(state, (_, _, onCleanup) => {
+watch(state, (n, o, onCleanup) => {
     onCleanup(() => {
         console.log('do some cleanup')
     })
