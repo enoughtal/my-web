@@ -1,4 +1,6 @@
+const { DefinePlugin } = require('webpack')
 const path = require('path')
+const fs = require('fs')
 const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { merge } = require('webpack-merge')
@@ -11,7 +13,7 @@ const config = {
     output: {
         filename: 'server.cjs',
         path: path.resolve(__dirname, './dist'),
-        clean: true,
+        //clean: true,
     },
     module: {
         rules: [
@@ -50,7 +52,15 @@ const config = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        {
+            apply(compiler) {
+                compiler.hooks.environment.tap('P', () => {
+                    const assets = fs.readFileSync('temp.txt', { encoding: 'utf8' })
+                    new DefinePlugin({ _ASSETS: assets }).apply(compiler)
+                })
+            }
+        },
     ]
 }
 

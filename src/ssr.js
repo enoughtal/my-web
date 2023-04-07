@@ -1,13 +1,14 @@
+/* eslint-disable no-undef */
 import { renderToPipeableStream } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
 import App from './App.js'
 
-
 export default function render(url, res) {
-    const assets = {
-        'main.js': '/client/main.js',
-        'main.css': '/client/main.css',
-    }
+    //const assets = {
+    //    'main.js': '/client/main.js',
+    //    'main.css': '/client/main.css',
+    //}
+    const assets = _ASSETS
     const Router = ({ children }) => <StaticRouter location={url}>{children}</StaticRouter>
     let didError = false
 

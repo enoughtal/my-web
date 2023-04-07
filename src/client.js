@@ -4,5 +4,6 @@ import App from './App.js'
 
 hydrateRoot(
     document,
-    <App assets={window.assetManifest} Router={BrowserRouter} />
+    //<App assets={window.assetManifest} Router={BrowserRouter} />
+    <App Router={BrowserRouter} />
 )

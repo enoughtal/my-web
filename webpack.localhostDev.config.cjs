@@ -18,7 +18,9 @@ const defaultMinifyOptions = {
 const config = {
     devServer: {
         static: './dev',
-        port: 4444,//the port of corresponding data server is 444(another node process)
+        //the port of corresponding data server is 444(another node process)
+        // npm script: "serve_for_dev": "node ./localServer.js"
+        port: 4444,
         server: {
             type: 'https',
             options: {

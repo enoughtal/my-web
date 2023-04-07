@@ -38,7 +38,7 @@ module.exports = env => ({
     plugins: [
         new DefinePlugin({
             _DATA_HOST: env.production ? '"hueyond.run"' : '"localhost"',
-            _DATA_PORT: env.localhostDev ? '"444"' : '"443"'
+            _DATA_PORT: env.localhostDev ? '"444"' : '"443"',
         }),
         //new BundleAnalyzerPlugin()
     ]

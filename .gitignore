@@ -16,6 +16,7 @@ dist-ssr
 .VSCodeCounter/202*/*
 !.VSCodeCounter/202*/results.md
 private
+temp.txt
 
 # Editor directories and files
 .vscode/*

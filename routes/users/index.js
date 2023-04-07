@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import { nanoid } from '@reduxjs/toolkit'
+//import { nanoid } from '@reduxjs/toolkit'
+import RTK from '@reduxjs/toolkit'
 import debug from 'debug'
 import { GUEST_ID } from '../../global.cjs'
 import {
@@ -10,6 +11,7 @@ import {
     operateUpdateOne
 } from '../../mongodb/index.js'
 
+const { nanoid } = RTK
 const COLL_NAME = 'users'
 
 /* 读取全部users，存储在req */

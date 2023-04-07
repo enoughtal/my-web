@@ -28,7 +28,7 @@ function Page() {
     )
 }
 
-export default function App({ assets, Router }) {
+export default function App({ assets = {}, Router }) {
     return (
         <html lang="en">
             <head>
@@ -50,11 +50,11 @@ export default function App({ assets, Router }) {
                         </Router>
                     </Provider>
                 </div>
-                <script
+                {/*<script
                     dangerouslySetInnerHTML={{
                         __html: `assetManifest = ${JSON.stringify(assets)};`
                     }}
-                />
+                />*/}
             </body>
         </html>
     )
