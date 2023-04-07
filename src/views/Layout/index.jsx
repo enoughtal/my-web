@@ -2,6 +2,7 @@ import { message } from 'antd'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
+import Tooltip from '../../components/Tooltip'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import userSlice, { getUserFromSession, logout, savePreference, saveTic } from '../../store/user'
 import { themeClass } from '../../tools/helper'
@@ -178,6 +179,11 @@ export default function Layout() {
                                     : ''}
                             >
                                 Blog
+                                <Tooltip place='left'
+                                    size={0.8}
+                                >
+                                    博客
+                                </Tooltip>
                             </NavLink>
                         </span>
                         <span className='myapp-layout-header-nav-horizontal-seperator'>
@@ -191,6 +197,11 @@ export default function Layout() {
                                     : ''}
                             >
                                 TO DO
+                                <Tooltip place='left'
+                                    size={0.8}
+                                >
+                                    待办
+                                </Tooltip>
                             </NavLink>
                         </span>
                         <span className='myapp-layout-header-nav-horizontal-seperator'>
@@ -204,6 +215,11 @@ export default function Layout() {
                                     : ''}
                             >
                                 Tic Tac Toe
+                                <Tooltip place='left'
+                                    size={0.8}
+                                >
+                                    小游戏
+                                </Tooltip>
                             </NavLink>
                         </span>
                         <span className='myapp-layout-header-nav-horizontal-seperator'>
@@ -217,6 +233,11 @@ export default function Layout() {
                                     : ''}
                             >
                                 About
+                                <Tooltip place='left'
+                                    size={0.8}
+                                >
+                                    关于我
+                                </Tooltip>
                             </NavLink>
                         </span>
                     </div>
