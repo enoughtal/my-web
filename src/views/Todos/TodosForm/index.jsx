@@ -1,6 +1,7 @@
 import { message } from 'antd'
 import { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import Tooltip from '../../../components/Tooltip'
 import todosSlice from '../../../store/todos'
 import userSlice, { savePreference } from '../../../store/user'
 import { themeClass } from '../../../tools/helper'
@@ -74,11 +75,17 @@ export default function TodosForm() {
                     onClick={() => dispatch(userSlice.actions.changeElement())}
                 >
                     👽
+                    <Tooltip size={0.8}>
+                        🔥🗻⚡🌊
+                    </Tooltip>
                 </span>
                 <span className='myapp-comp-todosform-title-text none-user-select'
                     onClick={generateRandomTodo}
                 >
                     To D<span>🔮</span>
+                    <Tooltip size={0.8}>
+                        一堆土豆
+                    </Tooltip>
                 </span>
             </div>
 

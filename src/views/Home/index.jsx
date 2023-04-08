@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import Tooltip from '../../components/Tooltip'
 import './index.sass'
 import universe1000w from './universe-1000w.jpg'
 import universe600w from './universe-600w.jpg'
@@ -51,6 +52,12 @@ When I feel lonely inside.`}
                     onClick={() => navigate('/about')}
                 >
                     About
+                    <Tooltip size={2}
+                        place='top-left'
+                        arrowSize={24}
+                    >
+                        关于我
+                    </Tooltip>
                 </div>
             </div>
         </div>

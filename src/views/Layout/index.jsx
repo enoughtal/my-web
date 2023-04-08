@@ -100,6 +100,11 @@ export default function Layout() {
             {theme === 'dark'
                 ? '☀️'
                 : '🌑'}
+            <Tooltip place='bottom-left'
+                size={0.8}
+            >
+                主题
+            </Tooltip>
         </span>
 
     return (
@@ -113,6 +118,11 @@ export default function Layout() {
                     <img src={logo}
                         alt='logo'
                     />
+                    <Tooltip place='bottom'
+                        size={0.8}
+                    >
+                        首页
+                    </Tooltip>
                 </div>
 
                 <nav className='myapp-layout-header-nav'>
@@ -179,10 +189,10 @@ export default function Layout() {
                                     : ''}
                             >
                                 Blog
-                                <Tooltip place='left'
+                                <Tooltip place='bottom-left'
                                     size={0.8}
                                 >
-                                    博客
+                                    笔记
                                 </Tooltip>
                             </NavLink>
                         </span>
@@ -197,10 +207,10 @@ export default function Layout() {
                                     : ''}
                             >
                                 TO DO
-                                <Tooltip place='left'
+                                <Tooltip place='bottom-left'
                                     size={0.8}
                                 >
-                                    待办
+                                    土豆
                                 </Tooltip>
                             </NavLink>
                         </span>
@@ -215,10 +225,10 @@ export default function Layout() {
                                     : ''}
                             >
                                 Tic Tac Toe
-                                <Tooltip place='left'
+                                <Tooltip place='bottom-left'
                                     size={0.8}
                                 >
-                                    小游戏
+                                    井字棋
                                 </Tooltip>
                             </NavLink>
                         </span>
@@ -233,7 +243,7 @@ export default function Layout() {
                                     : ''}
                             >
                                 About
-                                <Tooltip place='left'
+                                <Tooltip place='bottom-left'
                                     size={0.8}
                                 >
                                     关于我
@@ -249,6 +259,11 @@ export default function Layout() {
 
                 <div className='myapp-layout-header-user'>
                     {user}
+                    <Tooltip place='bottom'
+                        size={0.8}
+                    >
+                        {username} , 你好
+                    </Tooltip>
                 </div>
 
                 <div className='myapp-layout-header-sign'>
