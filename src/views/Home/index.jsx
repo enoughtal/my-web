@@ -53,8 +53,8 @@ When I feel lonely inside.`}
                 >
                     About
                     <Tooltip size={2}
-                        place='top-left'
-                        arrowSize={24}
+                        place='bottom-right'
+                        arrowSize={16}
                     >
                         关于我
                     </Tooltip>
