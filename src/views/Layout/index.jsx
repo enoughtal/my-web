@@ -1,8 +1,9 @@
-import { message } from 'antd'
+import Tooltip from '@cdztt/tooltip-react'
+//import { message } from 'antd'
+import Message, { useMessage } from 'message-react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
-import Tooltip from '../../components/Tooltip'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import userSlice, { getUserFromSession, logout, savePreference, saveTic } from '../../store/user'
 import { themeClass } from '../../tools/helper'
@@ -11,12 +12,12 @@ import { DELAY_TIME, GUEST_ID } from '../../tools/variables'
 import './index.sass'
 import logo from './logo.png'
 
-message.config({
-    top: 100,
-    duration: 1
-})
+//message.config({
+//    top: 100,
+//    duration: 1
+//})
 
-export default function Layout() {
+function Layout() {
     const theme = useSelector(state => state.user.preference.theme)
     const tic = useSelector(state => state.user.tic)
     const userId = useSelector(state => state.user.userId)
@@ -29,6 +30,8 @@ export default function Layout() {
     const navigate = useNavigate()
     const location = useLocation()
     const [locked, lock] = useLock()
+
+    const message = useMessage()
 
     const isAuth = userId !== GUEST_ID
     const ticData = {
@@ -61,12 +64,14 @@ export default function Layout() {
     /* 注册登录登出消息提示 */
     useEffect(() => {
         if (notice.success) {
-            message.success(notice.msg)
+            //message.success(notice.msg)
+            message.show({ content: notice.msg, type: 'success' })
         }
         else if (notice.msg){
-            message.warning(notice.msg)
+            //message.warning(notice.msg)
+            message.show({ content: notice.msg, type: 'warning' })
         }
-    }, [notice])
+    }, [message, notice.msg, notice.success])
 
     /* 导航至登录 */
     const navLogin = () => {
@@ -277,5 +282,13 @@ export default function Layout() {
                 <Outlet />
             </main>
         </div>
+    )
+}
+
+export default function LayoutWrapper() {
+    return (
+        <Message>
+            <Layout></Layout>
+        </Message>
     )
 }

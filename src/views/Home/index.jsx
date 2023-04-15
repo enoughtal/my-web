@@ -1,11 +1,12 @@
+import { useMessage } from 'message-react'
 import { useNavigate } from 'react-router-dom'
-import Tooltip from '../../components/Tooltip'
 import './index.sass'
 import universe1000w from './universe-1000w.jpg'
 import universe600w from './universe-600w.jpg'
 
 export default function Home() {
     const navigate = useNavigate()
+    const myMsg = useMessage()
 
     return (
         <div className='myapp-home'>
@@ -52,13 +53,12 @@ When I feel lonely inside.`}
                     onClick={() => navigate('/about')}
                 >
                     About
-                    <Tooltip size={2}
-                        place='bottom-right'
-                        arrowSize={16}
-                    >
-                        关于我
-                    </Tooltip>
                 </div>
+                <button onClick={() => {
+                    myMsg.show({ content: 'fuck', type: 'warning' })
+                }}>
+                    test
+                </button>
             </div>
         </div>
     )
