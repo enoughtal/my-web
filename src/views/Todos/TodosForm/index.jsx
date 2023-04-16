@@ -1,5 +1,6 @@
 import Tooltip from '@cdztt/tooltip-react'
-import { message } from 'antd'
+//import { message } from 'antd'
+import { useMessage } from '@cdztt/message-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import todosSlice from '../../../store/todos'
@@ -21,6 +22,8 @@ export default function TodosForm() {
     const dispatch = useDispatch()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const randomTodo = useMemo(() => new RandomTodo(), [userId])
+
+    const message = useMessage()
 
     const handleContentChange = (e) => {
         setContent(e.target.value)
@@ -56,7 +59,8 @@ export default function TodosForm() {
             || trimmedContent === ' '
             || trimmedContent.length > 24
         ) {
-            message.warning('内容长度不符合')
+            //message.warning('内容长度不符合')
+            message.show({ content: '内容长度不符合', type: 'warning' })
             return
         }
         const todo = {

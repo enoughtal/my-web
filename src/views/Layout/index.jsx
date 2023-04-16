@@ -1,6 +1,6 @@
 import Tooltip from '@cdztt/tooltip-react'
 //import { message } from 'antd'
-import Message, { useMessage } from 'message-react'
+import { Message, useMessage } from '@cdztt/message-react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'

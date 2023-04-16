@@ -1,4 +1,5 @@
-import { message } from 'antd'
+//import { message } from 'antd'
+import { useMessage } from '@cdztt/message-react'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import userSlice from '../../store/user'
@@ -6,8 +7,8 @@ import Ai from '../../tools/game/Ai'
 import Game from '../../tools/game/Game'
 import { GUEST_ID } from '../../tools/variables'
 import GameBoard from './GameBoard'
-import './index.sass'
 import LeftPanel from './LeftPanel'
+import './index.sass'
 
 const cheatPattern = [
     [1, 2, 2],
@@ -32,6 +33,8 @@ export default function Tictactoe() {
     const currentStep = game.getCurrentStep()
     const isCurrent = step === currentStep
     const snapshot = game.getHistorySnapshot(step)//根据step的改变而改变
+
+    const message = useMessage()
 
     //作弊
     useEffect(() => {
@@ -79,12 +82,14 @@ export default function Tictactoe() {
                 }
             }
 
-            message.info(msg)
+            //message.info(msg)
+            message.show({ content: msg, type: 'info' })
             if (isAuth && mode !== '0') {//登录,非练习
                 dispatch(userSlice.actions.refleshTic(gameResult))
             }
         }
-    }, [active, ai, dispatch, game, isAuth, isCurrent, mode])
+    //}, [active, ai, dispatch, game, isAuth, isCurrent, mode])
+    }, [active, ai, dispatch, game, isAuth, isCurrent, message, mode])
 
     //ai落子
     const aiDropPiece = useCallback(() => {
