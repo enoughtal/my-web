@@ -1,7 +1,8 @@
 # 4个react自定义钩子
 
-### useToggle
-```
+## useToggle
+
+```javascript
 function useToggle(initialValue) {
     const [value, setValue] = useState(initialValue)
 
@@ -14,10 +15,13 @@ function useToggle(initialValue) {
     return [value, toggle]
 }
 ```
+
 > toggle很常用
 ***
-### useArray
-```
+
+## useArray
+
+```javascript
 function useArray(initialValue = []) {
     const [array, setArray] = useState(initialValue)
 
@@ -53,10 +57,13 @@ function useArray(initialValue = []) {
     }
 }
 ```
+
 > 这个很实用
 ***
-# useDebounce
-```
+
+## useDebounce
+
+```javascript
 function useDebounce(value, delay) {
     const [debouncedValue, setDebouncedValue] = useState(value)
 
@@ -73,10 +80,13 @@ function useDebounce(value, delay) {
     return debouncedValue
 }
 ```
+
 > 这个我已经实际用过
 ***
-# useUpdateEffect
-```
+
+## useUpdateEffect
+
+```javascript
 function useUpdateEffect(callback, deps) {
     const didMount = useRef(true)
 
@@ -89,4 +99,5 @@ function useUpdateEffect(callback, deps) {
     }, deps)
 }
 ```
+
 > 这个钩子似乎只有在StrictMode模式下才有意义。这个对理解useEffect有帮助，也可理解vue3中watch和watchEffect的区别——初始化时前者不执行后者执行

@@ -2,7 +2,7 @@
     {
         "name": "my-web",
         "description": "个人主页",
-        "code": "https://github.com/enoughtallisymcrift/my-web",
+        "code": "https://github.com/cdztt/my-web",
         "libraries": [
             "react",
             "redux",
@@ -18,7 +18,7 @@
     {
         "name": "aUniappProject",
         "description": "体育测试类安卓app",
-        "code": "https://github.com/enoughtallisymcrift/aUniappProject",
+        "code": "https://github.com/cdztt/aUniappProject",
         "libraries": [
             "uniapp",
             "vue2",
@@ -29,7 +29,7 @@
     {
         "name": "anElectronProject",
         "description": "桌面应用",
-        "code": "https://github.com/enoughtallisymcrift/anElectronProject",
+        "code": "https://github.com/cdztt/anElectronProject",
         "libraries": [
             "electron",
             "vue2",
@@ -41,7 +41,7 @@
     {
         "name": "anArduinoProject",
         "description": "短跑测试仪硬件程序",
-        "code": "https://github.com/enoughtallisymcrift/anArduinoProject",
+        "code": "https://github.com/cdztt/anArduinoProject",
         "libraries": [
             "arduino"
         ],
@@ -50,7 +50,7 @@
     {
         "name": "monocraft",
         "description": "VSCode主题",
-        "code": "https://github.com/enoughtallisymcrift/monocraft-VSCodeColorTheme",
+        "code": "https://github.com/cdztt/monocraft-VSCodeColorTheme",
         "libraries": [
             "VSCode"
         ],

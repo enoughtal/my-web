@@ -17,6 +17,7 @@ dist-ssr
 !.VSCodeCounter/202*/results.md
 private
 temp.txt
+package-lock.json
 
 # Editor directories and files
 .vscode/*

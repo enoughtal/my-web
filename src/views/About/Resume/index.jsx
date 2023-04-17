@@ -1,11 +1,9 @@
 import { GithubOutlined, WechatOutlined } from '@ant-design/icons'
-import { useState } from 'react'
+import Tooltip from '@cdztt/tooltip-react'
 import avatar from './avatar-transparent.png'
 import './index.sass'
 
 export default function Resume() {
-    const [showWx, setShowWx] = useState(false)
-    let timer
     return (
         <div className='myapp-comp-resume'>
             <img src={avatar}
@@ -14,7 +12,7 @@ export default function Resume() {
             />
 
             <div className='myapp-comp-resume-github'>
-                <a href='https://github.com/enoughtallisymcrift'
+                <a href='https://github.com/cdztt'
                     target='_blank'
                     rel='noreferrer'
                 >
@@ -22,14 +20,11 @@ export default function Resume() {
                 </a>
             </div>
 
-            <div onMouseOver={() => { clearTimeout(timer); setShowWx(true) }}
-                onMouseOut={() => timer = setTimeout(() => setShowWx(false), 1000)}
-            >
+            <div>
                 <WechatOutlined />
-                {showWx &&
-                <span className='myapp-comp-resume-wx'>
-                    yzchendan86
-                </span>}
+                <Tooltip place='bottom'>
+                    TEL/WX: 181 1825 5713
+                </Tooltip>
             </div>
         </div>
     )
