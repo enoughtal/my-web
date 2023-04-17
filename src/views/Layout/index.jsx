@@ -71,6 +71,7 @@ function Layout() {
             //message.warning(notice.msg)
             message.show({ content: notice.msg, type: 'warning' })
         }
+    //}, [notice.msg, notice.success])
     }, [message, notice.msg, notice.success])
 
     /* 导航至登录 */

@@ -74,6 +74,7 @@ export default function Tictactoe() {
 
                 msg += `${result.info}赢了！`
                 if (result.info === 'ai') {
+                    // eslint-disable-next-line no-unused-vars
                     msg += `Never make mistakes in a hurry.`
                     gameResult = 'lose-' + gameResult
                 }
