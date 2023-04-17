@@ -9,7 +9,7 @@
     "build:production:client": "cross-env NODE_ENV=production webpack --config webpack.client.config.cjs --env production",
     "build:production:server": "cross-env NODE_ENV=production webpack --config webpack.server.config.cjs --env production",
     "build": "npm run build:client && npm run build:server",
-    "build:production": "npm run build:production:server && npm run build:production:client",
+    "build:production": "npm run build:production:client && npm run build:production:server",
     "start": "node ./dist/server.cjs",
     "dev": "cross-env NODE_ENV=development webpack serve --config webpack.localhostDev.config.cjs --env development --env localhostDev",
     "serve_for_dev": "node ./localServer.js"
