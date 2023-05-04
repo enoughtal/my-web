@@ -1,1 +1,0 @@
-{"main.css":"/client/main.ab6957d4dd71b4e84acc.css","main.js":"/client/main.885f2f0ab9398e544ab7.js"}
