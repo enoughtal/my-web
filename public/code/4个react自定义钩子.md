@@ -16,7 +16,6 @@ function useToggle(initialValue) {
 }
 ```
 
-> toggle很常用
 ***
 
 ## useArray
@@ -58,7 +57,6 @@ function useArray(initialValue = []) {
 }
 ```
 
-> 这个很实用
 ***
 
 ## useDebounce
@@ -81,7 +79,6 @@ function useDebounce(value, delay) {
 }
 ```
 
-> 这个我已经实际用过
 ***
 
 ## useUpdateEffect
@@ -99,5 +96,3 @@ function useUpdateEffect(callback, deps) {
     }, deps)
 }
 ```
-
-> 这个钩子似乎只有在StrictMode模式下才有意义。这个对理解useEffect有帮助，也可理解vue3中watch和watchEffect的区别——初始化时前者不执行后者执行

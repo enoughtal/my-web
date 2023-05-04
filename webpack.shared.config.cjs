@@ -5,7 +5,7 @@ module.exports = env => ({
     mode: env.production
         ? 'production'
         : 'development',
-    devtool: 'inline-source-map',
+    //devtool: 'inline-source-map',
     resolve: {
         extensions: ['.js', '.jsx', '...'],
         mainFiles: ['index']
