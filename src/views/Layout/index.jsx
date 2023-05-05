@@ -40,7 +40,9 @@ function Layout() {
 
     /* 根据cookie获取用户信息 */
     useEffect(() => {
-        dispatch(getUserFromSession())
+        if (window._isSPA) {
+            dispatch(getUserFromSession())
+        }
     }, [dispatch])
 
     /* theme变更后n秒上传至服务器 */

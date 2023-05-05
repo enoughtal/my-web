@@ -109,28 +109,30 @@ function logout(req, res, next) {
 }
 
 /* 获取用户 */
-async function getUser(req, res, next) {
+export async function _whoVisit(req) {
     const userId = req.session.userId
-
-    if (userId === GUEST_ID) {
-        res.send({
-            userId: GUEST_ID
-        })
+    let who = {
+        userId: GUEST_ID
     }
-    else {
+
+    if (userId !== GUEST_ID) {
         const filter = { userId }
         const opts = { projection: { _id: 0, password: 0 } }
         try {
             const user = await operateInCollection(operateFindOne(filter, opts), COLL_NAME)
             debug('db:users')(user)
-            res.send(user)//客户端通过此对象的username属性来确定本次session是否已登录
+            who = user//客户端通过此对象的username属性来确定本次session是否已登录
         }
         catch (err) {
-            res.send({
-                userId: GUEST_ID
-            })
+            who.msg = '服务器错误'
         }
     }
+
+    return who
+}
+
+async function getUser(req, res, next) {
+    res.send(await _whoVisit(req))
 }
 
 /* 保存个人设置 */

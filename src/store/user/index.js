@@ -88,7 +88,7 @@ export const getUserFromSession = createAsyncThunk(
         const user = await fetch.getUser()
 
         if (user.username) {//真实用户
-            return { ...initialState, ...user}
+            return { ...initialState, ...user }
         }
         else {//游客
             return initialState
@@ -99,7 +99,7 @@ export const getUserFromSession = createAsyncThunk(
 /* userSlice */
 const userSlice = createSlice({
     name: 'user',
-    initialState,
+    initialState: null,
     reducers: {
         ...preferenceReducers,
     },

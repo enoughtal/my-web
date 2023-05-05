@@ -3,7 +3,7 @@ import { renderToPipeableStream } from 'react-dom/server'
 import { StaticRouter } from 'react-router-dom/server'
 import App from './App.js'
 
-export default function render(url, res) {
+export default function render(url, userState, res) {
     //const assets = {
     //    'main.js': '/client/main.js',
     //    'main.css': '/client/main.css',
@@ -13,7 +13,7 @@ export default function render(url, res) {
     let didError = false
 
     const stream = renderToPipeableStream(
-        <App assets={assets} Router={Router} />,
+        <App assets={assets} userState={userState} Router={Router} />,
         {
             bootstrapScripts: [assets['main.js']],
             onShellReady() {

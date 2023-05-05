@@ -1,8 +1,9 @@
 import { lazy, Suspense } from 'react'
 import { Provider } from 'react-redux'
 import { Route, Routes } from 'react-router-dom'
-import store from './store'
+import getStore from './store'
 import Layout from './views/Layout'
+import Loading from './views/Loading'
 
 const About = lazy(() => import('./views/About'))
 const Blog = lazy(() => import('./views/Blog'))
@@ -13,7 +14,7 @@ const Tictactoe = lazy(() => import('./views/Tictactoe'))
 
 function Page() {
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loading />}>
             <Routes>
                 <Route path='/' element={<Layout />}>
                     <Route index element={<Home />} />
@@ -28,7 +29,7 @@ function Page() {
     )
 }
 
-export default function App({ assets, Router }) {
+export default function App({ assets, userState, Router }) {
     return (
         <html lang="en">
             <head>
@@ -44,7 +45,7 @@ export default function App({ assets, Router }) {
                     }}
                 />
                 <div>
-                    <Provider store={store}>
+                    <Provider store={getStore(userState)}>
                         <Router>
                             <Page />
                         </Router>
@@ -52,7 +53,7 @@ export default function App({ assets, Router }) {
                 </div>
                 <script
                     dangerouslySetInnerHTML={{
-                        __html: `assetManifest = ${JSON.stringify(assets)};`
+                        __html: `assetManifest = ${JSON.stringify(assets)}; userState = ${JSON.stringify(userState)}`
                     }}
                 />
             </body>

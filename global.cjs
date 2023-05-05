@@ -7,6 +7,19 @@ const SESSION_TTL = 60_000 * 60 * 24 * 7//ms
 const secret = '22/7/12'
 const token = '22/7/13/18/57'
 const rootPath = process.cwd()
+const guestState = {
+    userId: GUEST_ID,
+    username: '访客',
+    preference: {
+        theme: 'light',
+        element: '🔥'
+    },
+    tic: {
+        totalScore: 0,
+        lose: 0,
+        count: 0
+    },
+}
 
 /* https */
 let tls
@@ -34,5 +47,6 @@ module.exports = {
     secret,
     token,
     rootPath,
-    tls
+    tls,
+    guestState
 }
