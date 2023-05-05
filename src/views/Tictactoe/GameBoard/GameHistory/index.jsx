@@ -51,6 +51,9 @@ export default function GameHistory({ currentStep, goToStep }) {
         <div className='myapp-comp-gamehistory'>
             {reset}
             <div className='myapp-comp-gamehistory-step'>
+                <div className='myapp-comp-gamehistory-step-text'>
+                    -每步记录-
+                </div>
                 {history}
             </div>
         </div>

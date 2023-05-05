@@ -1,4 +1,3 @@
-//import { message } from 'antd'
 import { useMessage } from '@cdztt/message-react'
 import { useCallback, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -83,13 +82,11 @@ export default function Tictactoe() {
                 }
             }
 
-            //message.info(msg)
             message.show({ content: msg, type: 'info' })
             if (isAuth && mode !== '0') {//登录,非练习
                 dispatch(userSlice.actions.refleshTic(gameResult))
             }
         }
-    //}, [active, ai, dispatch, game, isAuth, isCurrent, mode])
     }, [active, ai, dispatch, game, isAuth, isCurrent, message, mode])
 
     //ai落子

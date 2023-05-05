@@ -1,6 +1,5 @@
-import Tooltip from '@cdztt/tooltip-react'
-//import { message } from 'antd'
 import { useMessage } from '@cdztt/message-react'
+import Tooltip from '@cdztt/tooltip-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import todosSlice from '../../../store/todos'
@@ -59,8 +58,7 @@ export default function TodosForm() {
             || trimmedContent === ' '
             || trimmedContent.length > 24
         ) {
-            //message.warning('内容长度不符合')
-            message.show({ content: '内容长度不符合', type: 'warning' })
+            message.show({ content: '内容长度不符合', type: 'warning', top: 180 })
             return
         }
         const todo = {

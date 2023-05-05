@@ -1,4 +1,4 @@
-# mental model
+# Mental Model
 
 对于应用程序员来说，可以不知道底层实现，但是思想模型是很重要的。比如useState必须写在组件的顶层不能写在条件或循环里，对于这条规则只需要记住就行，但是也可以用一个思想模型来理解这条规则——useState是通过数组来记录的，数组的索引当然是不能随意变化的（[文档](https://medium.com/@ryardley/react-hooks-not-magic-just-arrays-cd4f1857236e)）。所以，想要深刻的理解和熟练的使用，好的思想模型是必要的。
 

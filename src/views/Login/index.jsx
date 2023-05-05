@@ -1,4 +1,3 @@
-//import { message } from 'antd'
 import { useMessage } from '@cdztt/message-react'
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
@@ -66,7 +65,6 @@ export default function Login() {
             const user = { username, password, preference }
 
             if (username === currentUsername) {
-                //message.warning('此用户已登录')
                 message.show({ content: '此用户已登录', type: 'warning' })
             }
             else if (confirmPass) {//输入了确认密码就注册
@@ -74,7 +72,6 @@ export default function Login() {
                     dispatch(register(user))
                 }
                 else {
-                    //message.warning('两次输入密码不一样')
                     message.show({ content: '两次输入密码不一样', type: 'warning' })
                 }
             }

@@ -1,6 +1,6 @@
-# 取数据（fetch data）时用useEffect并不好
+# 用useEffect取数据（fetch data）并不好
 
-我的个人项目一直用useEffect取数据，react官网告诉我这有几点不好：
+我的个人项目一直用useEffect取数据，react的新官网告诉我这有几点不好：
 
 1. useEffect不能用在服务端渲染
 2. 造成“网络瀑布”，即父组件取完子组件取，依次进行，不能并行

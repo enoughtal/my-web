@@ -1,6 +1,5 @@
-import Tooltip from '@cdztt/tooltip-react'
-//import { message } from 'antd'
 import { Message, useMessage } from '@cdztt/message-react'
+import Tooltip from '@cdztt/tooltip-react'
 import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
@@ -11,11 +10,6 @@ import { useDebounce, useLock } from '../../tools/hooks'
 import { DELAY_TIME, GUEST_ID } from '../../tools/variables'
 import './index.sass'
 import logo from './logo.png'
-
-//message.config({
-//    top: 100,
-//    duration: 1
-//})
 
 function Layout() {
     const theme = useSelector(state => state.user.preference.theme)
@@ -64,14 +58,11 @@ function Layout() {
     /* 注册登录登出消息提示 */
     useEffect(() => {
         if (notice.success) {
-            //message.success(notice.msg)
             message.show({ content: notice.msg, type: 'success' })
         }
         else if (notice.msg){
-            //message.warning(notice.msg)
             message.show({ content: notice.msg, type: 'warning' })
         }
-    //}, [notice.msg, notice.success])
     }, [message, notice.msg, notice.success])
 
     /* 导航至登录 */
