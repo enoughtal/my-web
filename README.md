@@ -1,4 +1,4 @@
-# <https://hueyond.run>
+# A website built by MERN - Mongodb, Express, React, Node
 
 > [Wiki](https://github.com/cdztt/my-web/wiki)
 
