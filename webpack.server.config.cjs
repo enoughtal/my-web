@@ -1,6 +1,6 @@
-const { DefinePlugin } = require('webpack')
+//const { DefinePlugin } = require('webpack')
 const path = require('path')
-const fs = require('fs')
+//const fs = require('fs')
 const nodeExternals = require('webpack-node-externals')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { merge } = require('webpack-merge')
@@ -53,14 +53,14 @@ const config = {
     },
     plugins: [
         new MiniCssExtractPlugin(),
-        {
-            apply(compiler) {
-                compiler.hooks.environment.tap('P', () => {
-                    const assets = fs.readFileSync('temp.txt', { encoding: 'utf8' })
-                    new DefinePlugin({ _ASSETS: assets }).apply(compiler)
-                })
-            }
-        },
+        //{
+        //    apply(compiler) {
+        //        compiler.hooks.environment.tap('P', () => {
+        //            const assets = fs.readFileSync('temp.txt', { encoding: 'utf8' })
+        //            new DefinePlugin({ _ASSETS: assets }).apply(compiler)
+        //        })
+        //    }
+        //},
     ]
 }
 

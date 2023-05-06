@@ -1,9 +1,14 @@
+import { LoadingOutlined } from '@ant-design/icons'
+import { createPortal } from 'react-dom'
 import './index.sass'
 
 export default function Loading() {
     return (
-        <div className='myapp-comp-loading'>
-            Loading...
-        </div>
+        createPortal(
+            <div className='myapp-comp-loading'>
+                <LoadingOutlined />
+            </div>
+        , document.body
+        )
     )
 }
