@@ -152,7 +152,7 @@ export default function Login() {
                 </div>
 
                 <div className='myapp-login-form-submit'>
-                    <button type='submit'
+                    <button type='button'
                         onClick={handleSubmit}
                         className={themeClass(theme)}
                     >
