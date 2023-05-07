@@ -3,7 +3,7 @@ import cors from 'cors'
 import express from 'express'
 import session from 'express-session'
 import https from 'https'
-import { GUEST_ID, PORT, secret, SESSION_TTL, tls, token } from './global.cjs'
+import { GUEST_ID, PORT, SESSION_TTL, getTls, secret, token } from './global.cjs'
 import initDb from './mongodb/index.js'
 import connectDb from './mongodb/session.js'
 import filesRoute from './routes/files/index.js'
@@ -71,7 +71,7 @@ async function createServer() {
         res.status(500).send(err.stack)
     })
 
-    return https.createServer(tls, app)
+    return https.createServer(getTls(), app)
 }
 
 createServer().then(app => {

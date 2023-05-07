@@ -1,22 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
-import { GUEST_ID } from '../../tools/variables'
+import { guestState as initialState } from '../../../global.cjs'
 import noticeSlice from '../notice'
 import fetch from './fetch'
 import preferenceReducers from './preference.js'
-
-const initialState = {
-    userId: GUEST_ID,
-    username: '访客',
-    preference: {
-        theme: 'light',
-        element: '🔥'
-    },
-    tic: {
-        totalScore: 0,
-        lose: 0,
-        count: 0
-    },
-}
 
 /* 辅助函数，注册或登录 */
 function registerOrLogin(act) {
@@ -99,7 +85,7 @@ export const getUserFromSession = createAsyncThunk(
 /* userSlice */
 const userSlice = createSlice({
     name: 'user',
-    initialState: null,
+    initialState,
     reducers: {
         ...preferenceReducers,
     },

@@ -2,12 +2,12 @@ import { useMessage } from '@cdztt/message-react'
 import Tooltip from '@cdztt/tooltip-react'
 import { useEffect, useMemo, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { DELAY_TIME, GUEST_ID } from '../../../../global.cjs'
 import todosSlice from '../../../store/todos'
 import userSlice, { savePreference } from '../../../store/user'
 import { themeClass } from '../../../tools/helper'
 import { useDebounce } from '../../../tools/hooks'
 import RandomTodo from '../../../tools/todos/RandomTodo.js'
-import { DELAY_TIME, GUEST_ID } from '../../../tools/variables'
 import './index.sass'
 
 export default function TodosForm() {

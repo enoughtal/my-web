@@ -2,11 +2,11 @@ import { Table } from "antd"
 import { useEffect, useRef } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useLocation, useNavigate } from "react-router-dom"
+import { GUEST_ID, LOGIN_PATH } from "../../../../global.cjs"
 import todosSlice, { loadTodos, saveTodos, selectDirtyTodos, selectShowedTodos } from "../../../store/todos"
 import { savePreference } from "../../../store/user"
 import { themeClass, themeId } from "../../../tools/helper"
 import { useBlocker, useLock } from "../../../tools/hooks"
-import { GUEST_ID, LOGIN_PATH } from '../../../tools/variables'
 import './index.sass'
 
 const locale = {

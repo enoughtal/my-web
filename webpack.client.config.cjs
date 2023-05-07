@@ -13,6 +13,12 @@ const config = {
         publicPath: '/client/',
         clean: true,
     },
+    resolve: {
+        fallback: {
+            path: false,
+            fs: false,
+        }
+    },
     module: {
         rules: [
             {

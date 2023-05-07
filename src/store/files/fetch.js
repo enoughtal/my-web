@@ -1,5 +1,5 @@
+import { dataHost, dataPort } from '../../../global.cjs'
 import { getData, postData } from '../../tools/helper'
-import { dataHost, dataPort } from '../../tools/variables'
 
 const fetch = {
     async getFile(data) {

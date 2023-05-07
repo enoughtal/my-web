@@ -3,7 +3,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const { merge } = require('webpack-merge')
 const sharedConfig = require('./webpack.shared.config.cjs')
-const { tls } = require('./global.cjs')
+const { getTls } = require('./global.cjs')
 
 const defaultMinifyOptions = {
     collapseWhitespace: true,
@@ -24,7 +24,7 @@ const config = {
         server: {
             type: 'https',
             options: {
-                ...tls
+                ...getTls()
             }
         }
     },
@@ -33,6 +33,12 @@ const config = {
         filename: 'index.js',
         path: path.resolve(__dirname, './dev'),
         clean: true
+    },
+    resolve: {
+        fallback: {
+            path: false,
+            fs: false,
+        }
     },
     module: {
         rules: [

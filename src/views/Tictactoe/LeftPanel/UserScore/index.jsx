@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useMemo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { GUEST_ID } from '../../../../../global.cjs'
 import { saveTic, selectNotLoseRate, selectPower, selectTitle } from '../../../../store/user'
 import { useBlocker, useChanged } from '../../../../tools/hooks'
-import { GUEST_ID } from '../../../../tools/variables'
 import './index.sass'
 
 export default function UserScore() {

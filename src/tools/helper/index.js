@@ -1,4 +1,4 @@
-import { token } from "../variables"
+import { token } from "../../../global.cjs"
 
 /* 生成带主题的类名 */
 export function themeClass(theme, className = '') {

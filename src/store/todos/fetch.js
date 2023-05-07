@@ -1,5 +1,5 @@
+import { dataHost, dataPort } from "../../../global.cjs"
 import { postData } from "../../tools/helper"
-import { dataHost, dataPort } from '../../tools/variables'
 
 const readTodos = async (query) => {
     const res = await postData(`https://${dataHost}:${dataPort}/api/readTodos`, query)

@@ -1,5 +1,5 @@
+import { dataHost, dataPort } from '../../../global.cjs'
 import { getData, postData } from '../../tools/helper'
-import { dataHost, dataPort } from '../../tools/variables'
 
 /*
     后端对users的所有请求都以res.send结束，不存在返回的status等于500（服务器错误）的情况

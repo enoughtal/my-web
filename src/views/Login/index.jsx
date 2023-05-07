@@ -2,11 +2,11 @@ import { useMessage } from '@cdztt/message-react'
 import { useEffect, useRef, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
+import { GUEST_ID } from '../../../global.cjs'
 import { saveTodos, selectDirtyTodos } from '../../store/todos'
 import { login, register } from '../../store/user'
 import { themeClass } from '../../tools/helper'
 import { useLock } from '../../tools/hooks'
-import { GUEST_ID } from '../../tools/variables'
 import './index.sass'
 
 export default function Login() {

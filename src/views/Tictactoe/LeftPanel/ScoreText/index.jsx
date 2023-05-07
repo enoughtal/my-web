@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { powerValues, scoreValues } from '../../../../tools/variables'
+import { powerValues, scoreValues } from '../../../../../global.cjs'
 import './index.sass'
 
 export default function ScoreText() {
