@@ -85,7 +85,7 @@ export const getUserFromSession = createAsyncThunk(
 /* userSlice */
 const userSlice = createSlice({
     name: 'user',
-    initialState,
+    initialState: null,// 在configureStore时已经用了preloadedState
     reducers: {
         ...preferenceReducers,
     },

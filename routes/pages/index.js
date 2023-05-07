@@ -5,10 +5,10 @@ import { _whoVisit } from '../users/index.js'
 // eslint-disable-next-line no-unused-vars
 async function getPage(req, res, next) {
     const url = req.originalUrl
-    const user = await _whoVisit(req)
     let userState = guestState
 
-    if (user.username) {//真实用户
+    const user = await _whoVisit(req)
+    if (user?.username) {// 这里要用?. 否则部分浏览器会报错Cannot read properties of null (reading 'username')
         userState = { ...guestState, ...user }
     }
 

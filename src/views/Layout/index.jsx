@@ -65,7 +65,7 @@ function Layout() {
         else if (notice.msg){
             message.show({ content: notice.msg, type: 'warning' })
         }
-    }, [message, notice.msg, notice.success])
+    }, [message, notice])
 
     /* 导航至登录 */
     const navLogin = () => {
