@@ -1,3 +1,0 @@
-# hero-wars
-
-hero-wars
