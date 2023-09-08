@@ -6,18 +6,18 @@ But there is an absolute difference between them. It is when using them as the a
 
 ```javascript
 const fn = (arg = true) => {
-    if (arg) console.log('do something')
-    else console.log('do nothing')
-}
+  if (arg) console.log('do something');
+  else console.log('do nothing');
+};
 
-let foo
-fn(foo) // do something
+let foo;
+fn(foo); // do something
 ```
 
 Firstly, I thought the foo was undefined and that its boolean value was false, so the call fn(foo) was equal to fn(false), and the fn would print 'do nothing'. But I was wrong! When calling fn(undefined), it is equal to fn(), so the fn will use the default argument - true, then print 'do something'. If I rewrote it as follows,
 
 ```javascript
-let foo = null
+let foo = null;
 ```
 
 the result will come as my intention. So, remember that when using undefined as an argument of a function, it's just a placeholder meaning nothing was passed, and the function will use its default argument if it has.

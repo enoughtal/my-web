@@ -1,6 +1,6 @@
 {
   "name": "mern-ssr-webpack",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A MERN web app built with webpack.",
   "type": "module",
   "scripts": {
@@ -46,6 +46,7 @@
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "mongodb": "^4.8.1",
+    "prettier": "^3.0.3",
     "sass": "^1.54.2",
     "sass-loader": "^13.0.2",
     "webpack": "^5.74.0",

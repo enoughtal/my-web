@@ -1,8 +1,12 @@
-import { hydrateRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App.js'
+import { hydrateRoot } from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
+import App from './App.js';
 
 hydrateRoot(
-    document,
-    <App assets={window.assetManifest} userState={window.userState} Router={BrowserRouter} />
-)
+  document,
+  <App
+    assets={window.assetManifest}
+    userState={window.userState}
+    Router={BrowserRouter}
+  />
+);

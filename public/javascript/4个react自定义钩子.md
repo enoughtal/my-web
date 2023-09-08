@@ -4,19 +4,19 @@
 
 ```javascript
 function useToggle(initialValue) {
-    const [value, setValue] = useState(initialValue)
+  const [value, setValue] = useState(initialValue);
 
-    const toggle = useCallback(value => {
-        setValue(currentValue => typeof value === 'boolean'
-            ? value
-            : !currentValue)
-    }, [])
+  const toggle = useCallback((value) => {
+    setValue((currentValue) =>
+      typeof value === 'boolean' ? value : !currentValue
+    );
+  }, []);
 
-    return [value, toggle]
+  return [value, toggle];
 }
 ```
 
-***
+---
 
 ## useArray
 
@@ -57,42 +57,42 @@ function useArray(initialValue = []) {
 }
 ```
 
-***
+---
 
 ## useDebounce
 
 ```javascript
 function useDebounce(value, delay) {
-    const [debouncedValue, setDebouncedValue] = useState(value)
+  const [debouncedValue, setDebouncedValue] = useState(value);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setDebouncedValue(value)
-        }, delay)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
 
-        return () => {
-            clearTimeout(timer)
-        }
-    }, [value, delay])
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, delay]);
 
-    return debouncedValue
+  return debouncedValue;
 }
 ```
 
-***
+---
 
 ## useUpdateEffect
 
 ```javascript
 function useUpdateEffect(callback, deps) {
-    const didMount = useRef(true)
+  const didMount = useRef(true);
 
-    useEffect(() => {
-        if (didMount.current) {
-            didMount.current = false
-            return
-        }
-        return callback
-    }, deps)
+  useEffect(() => {
+    if (didMount.current) {
+      didMount.current = false;
+      return;
+    }
+    return callback;
+  }, deps);
 }
 ```

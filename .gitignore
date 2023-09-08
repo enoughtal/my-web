@@ -17,6 +17,8 @@ dist-ssr
 !.VSCodeCounter/202*/results.md
 private
 temp.txt
+.prettierignore
+.prettierrc.json
 
 # Editor directories and files
 .vscode/*
