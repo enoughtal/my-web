@@ -17,6 +17,7 @@ dist-ssr
 !.VSCodeCounter/202*/results.md
 private
 public
+global.cjs
 temp.txt
 .prettierignore
 .prettierrc.json
