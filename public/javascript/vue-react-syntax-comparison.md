@@ -153,6 +153,9 @@ n++;
 
 这里的state.count是一个数字0，无法代理，于是就disconnected了。如果是一个对象{ value: 0 }，那就不会disconnected，因为reactive()自动把嵌套的对象也代理了，即Deep Reactivity，也有shallowReactive的API。
 
+2024.2.27补充
+这里的区别本质上是：number是原始类型，而Object是引用类型。Proxy所拦截的操作必须是对象的属性，把对象的引用附加一些操作，类似于一个智能指针，而原始类型的变量不是引用，无法变成智能指针，除非包装成{ value: 0 }。
+
 ---
 
 ---
@@ -166,6 +169,7 @@ n++;
 computed(() => author.books.length > 0 ? 'Yes' : 'No')
 
 useMemo()
+事实上，react没有对应的computed语法，组件函数里的每个局部变量都是computed。
 
 ---
 
@@ -343,4 +347,4 @@ createPortal
 
 ### the knowledge chain of vue
 
-reactive-ref-computed-watch-watchEffect-component-props-events-slots-composables
+reactive-ref-computed-watch-watchEffect-component-props-Provide-events-slots-composables

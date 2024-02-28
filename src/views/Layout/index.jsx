@@ -40,7 +40,7 @@ function Layout() {
 
   /* 设置浏览器标题 */
   useEffect(() => {
-    document.title = `${location.pathname.slice(1)} | hueyond`;
+    document.title = `${location.pathname.slice(1)} | 个人程序开发记录分享`;
   }, [location.pathname]);
 
   /* 根据cookie获取用户信息 */
@@ -140,7 +140,7 @@ function Layout() {
             </div>
             {dropdown && (
               <div className="myapp-layout-header-nav-dropdown-vertical">
-                <div>
+                {/* <div>
                   <NavLink
                     to="/blog"
                     className={({ isActive }) =>
@@ -151,7 +151,7 @@ function Layout() {
                   >
                     Blog
                   </NavLink>
-                </div>
+                </div> */}
                 <div>
                   <NavLink
                     to="/todos"
@@ -176,7 +176,7 @@ function Layout() {
                     Tic Tac Toe
                   </NavLink>
                 </div>
-                <div>
+                {/* <div>
                   <NavLink
                     to="/about"
                     className={({ isActive }) =>
@@ -187,13 +187,13 @@ function Layout() {
                   >
                     About
                   </NavLink>
-                </div>
+                </div> */}
               </div>
             )}
           </div>
 
           <div className="myapp-layout-header-nav-horizontal">
-            <span className="myapp-layout-header-nav-horizontal-link">
+            {/* <span className="myapp-layout-header-nav-horizontal-link">
               <NavLink
                 to="/blog"
                 className={({ isActive }) =>
@@ -207,7 +207,7 @@ function Layout() {
                   笔记
                 </Tooltip>
               </NavLink>
-            </span>
+            </span> */}
             <span className="myapp-layout-header-nav-horizontal-seperator">
               |
             </span>
@@ -247,7 +247,7 @@ function Layout() {
             <span className="myapp-layout-header-nav-horizontal-seperator">
               |
             </span>
-            <span className="myapp-layout-header-nav-horizontal-link">
+            {/* <span className="myapp-layout-header-nav-horizontal-link">
               <NavLink
                 to="/about"
                 className={({ isActive }) =>
@@ -261,7 +261,7 @@ function Layout() {
                   关于我
                 </Tooltip>
               </NavLink>
-            </span>
+            </span> */}
           </div>
         </nav>
 
@@ -274,13 +274,19 @@ function Layout() {
           </Tooltip>
         </div>
 
-        <div className="myapp-layout-header-sign">{signButton}</div>
+        {/* <div className="myapp-layout-header-sign">{signButton}</div> */}
       </header>
 
       <main className={themeClass(theme, 'myapp-layout-main')}>
         <div className="myapp-layout-main-placeholder"></div>
         <Outlet />
       </main>
+
+      <footer className="myapp-layout-footer">
+        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
+          备案号：苏ICP备20027061号-2
+        </a>
+      </footer>
     </div>
   );
 }
