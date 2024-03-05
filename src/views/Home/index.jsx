@@ -31,12 +31,12 @@ When I feel lonely inside.`}
       </div>
 
       <div className="myapp-home-navigation">
-        {/* <div
+        <div
           className="myapp-home-navigation-entry"
           onClick={() => navigate('/blog')}
         >
           Blog
-        </div> */}
+        </div>
         <div
           className="myapp-home-navigation-entry"
           onClick={() => navigate('/todos')}
@@ -49,12 +49,12 @@ When I feel lonely inside.`}
         >
           Tic Tac Toe
         </div>
-        {/* <div
+        <div
           className="myapp-home-navigation-entry"
           onClick={() => navigate('/about')}
         >
           About
-        </div> */}
+        </div>
       </div>
     </div>
   );

@@ -15,6 +15,4 @@ react是没有响应系统的，也没有signal。vue，preact，qwik，solid，
 
 以上来自preact文档，说的是用了signal就可以不用virtual dom。这个大概就是vue的vapor mode，vue说这是受solid的启发。看来signal真的要全面流行，毕竟连angular都加入了它的行列。solid的作者说它的signal实现了一种细粒度的dom更新，而react是粗粒度的。前者是绝不多渲染一个结点，后者是多渲染一遍无所谓，这是两种不同的设计哲学。所以react的strictmode上来就是两遍重复渲染，不明白的人认为这是啥玩意为啥要这样，react文档说这是在查bug。在其他框架都只setup一遍，开发者只要设计好signal，computed和effect，其余就交给框架自动完成的时代，react还在让开发者自己在脑子里模拟重复执行的过程，确认依赖数组的正确，确认需要优化（useCallback, useMemo）的必要，很难说谁更好。
 
-这是一场函数（react）和类（signal）两种编程范式的较量。函数更自由，上来就写功能，而类则需要设计数据和功能的关系，避不开封装，关键是一开始根本不知道把哪些东西封装在一起。我写过一个下井字棋的类，棋子、一局游戏、玩家之间是什么关系？“落子”这个功能是属于棋子的还是玩家的？玩家和电脑之间如何复用代码？很难一开始就想明白，我的实现不清晰也很难扩展。所以架构师高薪。rust对类是没有封装的，它用的是trait。rust更侧重函数，有closure闭包函数的概念，而c++的闭包是function object，是一个重载了`()`操作符的类，java的闭包是一个接口。
-
-所以是怎么从signal到closure的😓
+这是一场函数（react）和类（signal）两种编程范式的较量。
