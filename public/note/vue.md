@@ -30,3 +30,7 @@ const model = defineModel() // model是A传下来的props
 vue在v-model的文档里用了双向数据流这一说法，这好像是第一次。因为在子组件里对props调用.value了，所以看起来是从子组件变更了父组件的数据，但文档又说是发送update:事件给父组件，这也不算是双向数据流啊，不一直是发送事件吗。
 
 开头那个A>B>C问题也可以用provide/inject来解决，我不知道是不是可以这么说：关于props drilling，只要传递到下下层（孙）组件，就直接用provide。当然了，用provide相当于是用全局变量，用props相当于是用函数参数，还是有本质区别的。
+
+## 3
+
+vue自带状态管理，真香

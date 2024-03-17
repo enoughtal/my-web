@@ -50,7 +50,29 @@ async function getCategory(req, res, next) {
   res.send(result);
 }
 
+async function getProjects(req, res, next) {
+  try {
+    const filePath = path.resolve('private', 'projects.json');
+    const json = await readFile(filePath, { encoding: 'utf8' });
+    res.send(json);
+  } catch (err) {
+    next(err);
+  }
+}
+
+async function getResume(req, res, next) {
+  try {
+    const filePath = path.resolve('private', 'personalStatement.txt');
+    const text = await readFile(filePath, { encoding: 'utf8' });
+    res.send(text);
+  } catch (err) {
+    next(err);
+  }
+}
+
 export default function filesRoute(app) {
   app.post('/getFile', getFile);
   app.get('/getCategory', getCategory);
+  app.get('/getProjects', getProjects);
+  app.get('/getResume', getResume);
 }

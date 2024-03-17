@@ -281,12 +281,6 @@ function Layout() {
         <div className="myapp-layout-main-placeholder"></div>
         <Outlet />
       </main>
-
-      <footer className="myapp-layout-footer">
-        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">
-          备案号：苏ICP备20027061号-2
-        </a>
-      </footer>
     </div>
   );
 }

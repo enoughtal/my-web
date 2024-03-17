@@ -18,4 +18,4 @@ const counter = ref(); // 可以不给参数
 watchEffect(() => (counter.value = props.initialCounter)); // 响应
 ```
 
-这样既可响应又可赋值。补充：这种模式是多此一举，直接写成const counter = ref(props.initialCounter)就好，因为子组件本来就要跟随props.initialCounter的改变而重新渲染。
+这样既可响应又可赋值。补充：这种模式是多此一举，直接写成const counter = ref(props.initialCounter)就好，因为子组件本来就要跟随props.initialCounter的改变而重新渲染。2024.3.17补充：上一个补充好像错了，props导致子组件更新只是update不是mount。

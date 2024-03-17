@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import './index.sass';
+import list from '../../../private/projects.json';
 import PersonalStatement from './PersonalStatement';
 import ProjectList from './ProjectList';
-import list from './projects.json';
 import Resume from './Resume';
+import './index.sass';
 
 export default function About() {
   const [tab, setTab] = useState('projects');
