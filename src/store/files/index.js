@@ -29,8 +29,8 @@ export const getCategory = createAsyncThunk(
 
     if (!getState().files.selectedFile) {
       const subjects = Object.keys(category);
-      //const randomSubject = subjects[Math.floor(Math.random() * subjects.length)]//初始渲染的时候随机选择一篇文章
-      const randomSubject = subjects[0];
+      const randomSubject =
+        subjects[Math.floor(Math.random() * subjects.length)]; //初始渲染的时候随机选择一篇文章
       const files = category[randomSubject];
       const randomFile = files[Math.floor(Math.random() * files.length)];
 
