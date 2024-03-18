@@ -5,6 +5,8 @@ import fetch from './fetch';
 export const getFile = createAsyncThunk(
   'files/server/getFile',
   async (data) => {
+    const { random } = data;
+
     const res = await fetch.getFile(data);
     if (!res) return {};
 
@@ -12,10 +14,12 @@ export const getFile = createAsyncThunk(
     const index = text.indexOf('\n');
     const title = text.slice(0, index);
     const content = text.slice(index);
+
     return {
       title,
       createdAt,
       content,
+      random,
     };
   }
 );
@@ -37,6 +41,7 @@ export const getCategory = createAsyncThunk(
       const data = {
         subject: randomSubject,
         filename: randomFile + '.md',
+        random: true,
       };
       dispatch(getFile(data));
 

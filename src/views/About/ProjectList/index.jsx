@@ -17,7 +17,9 @@ export default function ProjectList({ list }) {
 
   return list.map((project, index) => (
     <div className="myapp-comp-project" key={project.name}>
-      <div className="myapp-comp-project-title">{project.name}</div>
+      <div className="myapp-comp-project-title">
+        {index + 1}.&nbsp;&nbsp;{project.name}
+      </div>
 
       <div className="myapp-comp-project-subtitle">
         <div className="myapp-comp-project-subtitle-description">

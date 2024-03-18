@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import ReactMarkdown from 'react-markdown';
-import dataUrl from '../../../../private/personalstatement.txt';
+import dataUrl from '../../../../private/personalstatement.md';
 import './index.sass';
 
 const data = dataUrl.split(',')[1];

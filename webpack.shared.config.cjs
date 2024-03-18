@@ -25,7 +25,8 @@ module.exports = (env) => ({
         },
       },
       {
-        test: /\.txt/,
+        test: /\.(txt|md)/,
+        // test: /\.txt/,
         type: 'asset/inline',
       },
     ],
