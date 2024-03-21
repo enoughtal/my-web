@@ -193,6 +193,8 @@ function Layout() {
           </div>
 
           <div className="myapp-layout-header-nav-horizontal">
+            <span style={{ 'font-size': '0.8rem' }}>( React 版 )</span>
+
             <span className="myapp-layout-header-nav-horizontal-link">
               <NavLink
                 to="/blog"

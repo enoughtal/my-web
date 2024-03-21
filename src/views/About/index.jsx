@@ -42,7 +42,7 @@ export default function About() {
             className={tabClassName('statement')}
             onClick={() => setTab('statement')}
           >
-            个人说明
+            个人技能
           </span>
           <span className={tabClassName('statement', true)}>
             &nbsp;&nbsp;&nbsp;&nbsp;
