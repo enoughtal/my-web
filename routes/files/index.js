@@ -62,7 +62,7 @@ async function getProjects(req, res, next) {
 
 async function getResume(req, res, next) {
   try {
-    const filePath = path.resolve('private', 'personalStatement.md');
+    const filePath = path.resolve('private', 'skill.html');
     const text = await readFile(filePath, { encoding: 'utf8' });
     res.send(text);
   } catch (err) {

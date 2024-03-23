@@ -1,6 +1,6 @@
 @use '../../index.sass' as *
 .myapp-blog
-    font-size: calc(0.5rem + 1vw)
+    font-size: 1rem
     display: grid
     grid-template-columns: 1fr 6fr minmax(20ch, 2fr)
     gap: 1.5rem
@@ -9,6 +9,7 @@
         gap: 0.5rem
     &-main-center
         grid-column: 2
+        padding-right: 3rem
         &-catalog
             @media screen and (min-width: $breakpoint-small)
                 display: none

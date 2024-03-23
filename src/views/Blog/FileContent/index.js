@@ -13,7 +13,9 @@ export default function FileContent() {
   return (
     <div className="myapp-comp-filecontent">
       <div className="myapp-comp-filecontent-prompt">{prompt}</div>
-      <div className="myapp-comp-filecontent-title">{title}</div>
+      <div className="myapp-comp-filecontent-title">
+        {title?.replace('#', '')}
+      </div>
       <div className="myapp-comp-filecontent-time">{time}</div>
       <ReactMarkdown>{content}</ReactMarkdown>
     </div>
