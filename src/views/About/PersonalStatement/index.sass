@@ -1,4 +1,32 @@
-.myapp-comp-personalstatement
-    & *
-        color: inherit
-        font-size: 1em
+// .myapp-comp-personalstatement
+//   & *
+//     color: inherit
+//     font-size: 1em
+.myapp-comp-skill
+  display: flex
+
+  &-content
+    font-size: 1.2rem
+    h3
+      font-style: italic
+      &:after
+        content: "："
+    h4
+      font-weight: bold
+    span
+      font-weight: bold
+
+  &-labels
+    font-size: 0.8rem
+    position: fixed
+    right: calc(2rem + 2vw)
+    line-height: 2
+
+    &-h3
+      position: relative
+      left: -1rem
+      font-style: italic
+
+    &-h4
+      text-decoration: underline
+      cursor: pointer

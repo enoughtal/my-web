@@ -25,9 +25,12 @@ module.exports = (env) => ({
         },
       },
       {
-        test: /\.(txt|md)/,
-        // test: /\.txt/,
+        test: /\.(txt|md)$/i,
         type: 'asset/inline',
+      },
+      {
+        test: /\.html$/i,
+        loader: 'html-loader',
       },
     ],
   },

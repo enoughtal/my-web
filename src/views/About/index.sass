@@ -2,19 +2,30 @@
 .myapp-about
     font-size: calc(0.5rem + 1vw)
     display: flex
-    gap: 1rem
     background-color: inherit
     &-main-left
         flex: 1 1
-        margin-left: 2rem
         min-height: 90vh
     &-main-center
-        flex: 5
-        margin-right: 2rem
+        scroll-snap-type: y mandatory
+        overflow-y: scroll
+        height: calc(100vh - 3rem - 0.5rem)
+        flex: 8
         background-color: inherit
         &-tabs
-            font-size: 1em
+            position: sticky
+            top: 0
+            z-index: 10
+            font-size: 1.4rem
             cursor: pointer
+            &-blank
+                box-sizing: border-box
+                height: 1rem
+                width: 90%
+                border: 1px solid gray
+                border-top: 2px solid gray
+                border-right: none
+                border-bottom: none
             &-item
                 display: inline-block
                 padding: 0.2rem 0.5rem
@@ -50,17 +61,16 @@
                     box-shadow: -4px 4px #ffffff
         &-content
             border: 1px solid gray
-            border-top-width: 2px
-            border-top-right-radius: 2rem
+            border-top: none
+            border-right: none
             border-bottom-left-radius: 2rem
             background-color: inherit
-            padding: 1rem 1rem
+            padding: 1rem 0 1rem 2rem
             &-projects
+                padding: 0 10rem 0 0
                 background-color: inherit
-                &-headline
-                    font-size: 1.2rem
-                    text-align: center
                 hr
+                    width: 50%
                     font-size: 1rem
                     border: none
                     color: inherit
@@ -76,3 +86,8 @@
                         font-style: italic
 .invisible
     display: none
+.tabs-theme-light
+    background-color: white
+.tabs-theme-dark
+    color: #ffffff
+    background-color: #333333
