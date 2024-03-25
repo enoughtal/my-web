@@ -16,7 +16,7 @@ export default function Resume() {
 
       <div>
         <WechatOutlined />
-        <Tooltip place="bottom">TEL/WX: 181 1825 5713</Tooltip>
+        <Tooltip place="right">TEL/WX: 181 1825 5713</Tooltip>
       </div>
     </div>
   );

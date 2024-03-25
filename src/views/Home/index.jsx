@@ -53,7 +53,7 @@ When I feel lonely inside.`}
           className="myapp-home-navigation-entry"
           onClick={() => navigate('/about')}
         >
-          About
+          简历
         </div>
       </div>
 

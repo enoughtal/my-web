@@ -7,7 +7,7 @@ import Resume from './Resume';
 import './index.sass';
 
 export default function About() {
-  const [tab, setTab] = useState('projects');
+  const [tab, setTab] = useState('statement');
   const [labels, setLabels] = useState([]);
 
   const theme = useSelector((state) => state.user.preference.theme);
@@ -28,8 +28,10 @@ export default function About() {
   const jump = (idx) => {
     const base = skillRef.current.children[0].offsetTop;
 
-    scrollRef.current.scrollTop =
-      skillRef.current.children[idx].offsetTop - base;
+    scrollRef.current.scroll({
+      top: skillRef.current.children[idx].offsetTop - base,
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
@@ -64,22 +66,22 @@ export default function About() {
           }
         >
           <span
-            className={tabClassName('projects')}
-            onClick={() => setTab('projects')}
-          >
-            个人项目
-          </span>
-          <span className={tabClassName('projects', true)}>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-          </span>
-
-          <span
             className={tabClassName('statement')}
             onClick={() => setTab('statement')}
           >
             个人技能
           </span>
           <span className={tabClassName('statement', true)}>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+          </span>
+
+          <span
+            className={tabClassName('projects')}
+            onClick={() => setTab('projects')}
+          >
+            个人项目
+          </span>
+          <span className={tabClassName('projects', true)}>
             &nbsp;&nbsp;&nbsp;&nbsp;
           </span>
 

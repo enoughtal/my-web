@@ -185,7 +185,7 @@ function Layout() {
                         : ''
                     }
                   >
-                    About
+                    简历
                   </NavLink>
                 </div>
               </div>
@@ -193,7 +193,12 @@ function Layout() {
           </div>
 
           <div className="myapp-layout-header-nav-horizontal">
-            <span style={{ fontSize: '0.8rem' }}>( React 版 )</span>
+            <span style={{ fontSize: '0.8rem', textDecoration: 'underline' }}>
+              ( React 版 )
+              <Tooltip place="bottom" size={0.8}>
+                网址改成 http:// 访问 Vue 版
+              </Tooltip>
+            </span>
 
             <span className="myapp-layout-header-nav-horizontal-link">
               <NavLink
@@ -258,9 +263,9 @@ function Layout() {
                     : ''
                 }
               >
-                About
+                简历
                 <Tooltip place="bottom-left" size={0.8}>
-                  关于我
+                  技能和项目
                 </Tooltip>
               </NavLink>
             </span>
