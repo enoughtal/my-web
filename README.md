@@ -23,4 +23,4 @@
 
 1. on a terminal, run **`npm run build:production`** to build the app
 1. then, run **`npm run start`** to start the app server
-1. visit your website, mine is <https://hueyond.run>
+1. visit your website, mine is <https://cdztt.cn>

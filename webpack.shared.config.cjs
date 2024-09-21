@@ -37,7 +37,7 @@ module.exports = (env) => ({
   plugins: [
     new DefinePlugin({
       'process.env._DATA_HOST': env.production
-        ? '"hueyond.run"'
+        ? '"cdztt.cn"'
         : '"localhost"',
       'process.env._DATA_PORT': env.localhostDev ? '"444"' : '"443"',
     }),
