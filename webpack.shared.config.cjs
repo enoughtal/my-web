@@ -37,7 +37,8 @@ module.exports = (env) => ({
   plugins: [
     new DefinePlugin({
       'process.env._DATA_HOST': env.production
-        ? '"cdztt.cn"'
+        // ? '"cdztt.cn"'
+        ? '"124.223.92.23"'
         : '"localhost"',
       'process.env._DATA_PORT': env.localhostDev ? '"444"' : '"443"',
     }),
